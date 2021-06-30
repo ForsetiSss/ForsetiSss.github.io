@@ -775,8 +775,8 @@ cusdis:
 # Archive Page
 #---------------------------
 archive:
-  banner_img: /img/default.png
-  banner_img_height: 60
+  banner_img: /img/18180428_1361087742584.jpg
+  banner_img_height: 30
   banner_mask_alpha: 0.3
   subtitle:
 
@@ -787,8 +787,8 @@ archive:
 #---------------------------
 category:
   enable: true
-  banner_img: /img/default.png
-  banner_img_height: 60
+  banner_img: /img/18180428_1361087742584.jpg
+  banner_img_height: 30
   banner_mask_alpha: 0.3
   subtitle:
 
@@ -817,8 +817,8 @@ category:
 #---------------------------
 tag:
   enable: true
-  banner_img: /img/default.png
-  banner_img_height: 80
+  banner_img: /img/18180428_1361087742584.jpg
+  banner_img_height: 30
   banner_mask_alpha: 0.3
   subtitle:
   tagcloud:
@@ -835,12 +835,12 @@ tag:
 #---------------------------
 about:
   enable: true
-  banner_img: /img/default.png
+  banner_img: /img/18180428_1361087742584.jpg
   banner_img_height: 60
   banner_mask_alpha: 0.3
   subtitle:
   avatar: /img/avatar.png
-  name: "Fluid"
+  name: "Daisy"
   intro: "An elegant theme for Hexo"
   # 更多图标可从 https://hexo.fluid-dev.com/docs/icon/ 查找，`class` 代表图标的 css class，添加 `qrcode` 后，图标不再是链接而是悬浮二维码
   # More icons can be found from https://hexo.fluid-dev.com/docs/en/icon/  `class` is the css class of the icon. If adding `qrcode`, The icon is no longer a link, but a hovering QR code
@@ -858,7 +858,7 @@ about:
 # Custom Page through `hexo new page`
 #---------------------------
 page:
-  banner_img: /img/default.png
+  banner_img: /img/18180428_1361087742584.jpg
   banner_img_height: 60
   banner_mask_alpha: 0.3
 
