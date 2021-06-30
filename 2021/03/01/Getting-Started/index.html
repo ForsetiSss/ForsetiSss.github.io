@@ -1,0 +1,541 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="Shi Daming">
+  <meta name="keywords" content="">
+  
+  <title>Getting Started：使用Jekyll创建GitHub Pages站点搭建博客（Windows） - Research Notes</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"forsetisss.github.io","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":"G-QTJ4C2S4VR","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Getting Started：使用Jekyll创建GitHub Pages站点搭建博客（Windows）">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-03-01 09:00" pubdate>
+        2021年3月1日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.6k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      22
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Getting Started：使用Jekyll创建GitHub Pages站点搭建博客（Windows）</h1>
+            
+            <div class="markdown-body">
+              <p><strong>目录</strong></p>
+<p>- <a href="#%E4%B8%80%E5%BF%85%E8%A6%81%E7%BB%84%E4%BB%B6%E7%9A%84%E5%AE%89%E8%A3%85">一、必要组件的安装</a></p>
+<p>- <a href="#%E4%BA%8C%E7%BD%91%E7%AB%99%E6%89%98%E7%AE%A1%E5%9C%A8github%E4%B8%8A%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84repo">二、网站托管（在Github上创建自己的repo）</a></p>
+<p>- <a href="#%E4%B8%89%E5%9F%BA%E4%BA%8Ejekyll%E6%A8%A1%E6%9D%BF%E5%BB%BA%E7%AB%8B%E7%BD%91%E7%AB%99">三、基于Jekyll模板建立网站</a></p>
+<p>- <a href="#%E5%9B%9Bjekyll%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84">四、Jekyll目录结构</a></p>
+<h3 id="一、必要组件的安装"><a href="#一、必要组件的安装" class="headerlink" title="一、必要组件的安装"></a>一、必要组件的安装</h3><p>需要首先安装以下内容</p>
+<ul>
+<li><p><strong>Ruby</strong> - <a href="">是一种面向对象</a>、命令式、函数式、动态的通用编程语言。Windows下直接下载安装即可<a target="_blank" rel="noopener" href="https://rubyinstaller.org/">Ruby installer</a>。注意，如遇报错，可能需要将安装目录（xxx\Ruby27-x64\bin）加入系统环境变量PATH。</p>
+</li>
+<li><p><strong>Bundler</strong> - 是一个官方推荐的Ruby gem包管理软件，可以减少Jekyll的编译错误，和环境依赖相关的bug，相关链接<a target="_blank" rel="noopener" href="https://bundler.io/">Bundler</a>。只需在终端中运行以下两步：</p>
+<p>1.安装bundler</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">gem <span class="hljs-keyword">install</span> bundler<br></code></pre></td></tr></table></figure>
+
+<p>2.指定源</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">gem</span> sources <span class="hljs-string">&#x27;https://rubygems.org&#x27;</span><br></code></pre></td></tr></table></figure></li>
+<li><p><strong>Jekyll</strong> -相当于一个编译工具，安装好jekyll后，你可以通过jekyll创建一个网站模板从而在本地进行预览，而不用上传至Github后再进行查看，此软件包将在之后的步骤中自动安装。</p>
+</li>
+</ul>
+<h3 id="二、网站托管（在Github上创建自己的repo）"><a href="#二、网站托管（在Github上创建自己的repo）" class="headerlink" title="二、网站托管（在Github上创建自己的repo）"></a>二、网站托管（在Github上创建自己的repo）</h3><p>github.io是完全基于github创建的，其本质上是在你的github账户下创建一个特殊的repo。你可以参照如下步骤完成：</p>
+<ul>
+<li><p>创建repo</p>
+<p>登陆你的账户后，创建一个新的repo。请务必注意该repo的名字，必须保持格式<code>&lt;username&gt;.github.io</code>，其中 `&lt;username） 替换成你的github账户名。</p>
+</li>
+<li><p>把repo clone到本地</p>
+<p>在目录下新建一个index.html的文件,在里面输入任意内容，然后再把代码push送到github上。</p>
+</li>
+<li><p>测试地址</p>
+<p>浏览器里访问<u>https://(username).github.io/</u>,可以发现这个url可以被访问了。</p>
+</li>
+</ul>
+<p>到这里，一个免费且无限流量的Github代码托管仓库就创建完成了。</p>
+<h3 id="三、基于Jekyll模板建立网站"><a href="#三、基于Jekyll模板建立网站" class="headerlink" title="三、基于Jekyll模板建立网站"></a>三、基于Jekyll模板建立网站</h3><p>为了在发布前预览自己的网站，我们需要使用Jekyll，同时它也能为我们提供很多模板。</p>
+<ol>
+<li><p>首先点击前往<a target="_blank" rel="noopener" href="http://jekyllthemes.org/">jekyll 主题官网</a>。</p>
+</li>
+<li><p>然后选择一个自己喜欢的主题模板，比如<a target="_blank" rel="noopener" href="http://jekyllthemes.org/themes/jekyll-theme-chirpy/">Chirpy</a>。</p>
+</li>
+<li><p>点击Download下载该模板至repo的本地目录，注意确保根目录下含有Gemfile这个文件。</p>
+<img src="/images/QQ截图20210308194033.png" srcset="/img/loading.gif" lazyload/>
+
+<p>注意插入图片时需要将图片文件放入assets文件夹，在md文件中由于路径不一致会无法正常显示，在网页中是正常的，无须担心。</p>
+</li>
+<li><p>在本地repo目录下打开命令窗口并运行</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">bundle <span class="hljs-keyword">install</span><br></code></pre></td></tr></table></figure>
+
+<p>自动安装所有依赖的环境</p>
+</li>
+<li><p>最后一步，开启测试</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm"><span class="hljs-keyword">bundle </span>exec <span class="hljs-keyword">jekyll </span>serve<br></code></pre></td></tr></table></figure>
+
+<p>成功运行之后，我们就可以通过<a target="_blank" rel="noopener" href="http://127.0.0.1:4000/%E5%9C%A8%E6%9C%AC%E5%9C%B0%E8%AE%BF%E9%97%AE%E5%88%9B%E5%BB%BA%E7%9A%84%E7%BD%91%E7%AB%99%E4%BA%86%E3%80%82%E6%AD%A4%E6%97%B6%E5%8F%AF%E4%BB%A5%E9%9A%8F%E6%97%B6%E6%9B%B4%E6%94%B9%E7%BD%91%E7%AB%99%E5%86%85%E5%AE%B9%EF%BC%8C%E5%B9%B6%E8%83%BD%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%AE%9E%E6%97%B6%E6%9B%B4%E6%96%B0%E3%80%82">http://127.0.0.1:4000/在本地访问创建的网站了。此时可以随时更改网站内容，并能实现自动实时更新。</a></p>
+</li>
+</ol>
+<h3 id="四、Jekyll目录结构"><a href="#四、Jekyll目录结构" class="headerlink" title="四、Jekyll目录结构"></a>四、Jekyll目录结构</h3><p>​    Jekyll使用Ruby脚本根据模板生成静态网页，实现了内容与排版的分离。模板以嵌入<a target="_blank" rel="noopener" href="https://shopify.github.io/liquid/">Liquid</a>脚本的HTML格式存放。内容为markdown或者html。为了撰写自己的博客，需要对模板内容进行修改。</p>
+<p>Jekyll模板通常包含的目录结构：</p>
+<figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs sqf"><span class="hljs-variable">_posts</span> 博客内容<br><span class="hljs-variable">_pages</span> 其他需要生成的网页，如About页<br><span class="hljs-variable">_layouts</span> 网页排版模板<br><span class="hljs-variable">_includes</span> 被模板包含的HTML片段，可在<span class="hljs-variable">_config</span>.yml中修改位置<br>assets 辅助资源 css布局 js脚本 图片等<br><span class="hljs-variable">_data</span> 动态数据<br><span class="hljs-variable">_sites</span> 最终生成的静态网页<br><span class="hljs-variable">_config</span>.yml 网站的一些配置信息<br>index.html 网站的入口<br></code></pre></td></tr></table></figure>
+
+<ol>
+<li><p>我们打开根目录下的index.html可以看到：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html">---<br>layout: home<br># Index page<br>---<br></code></pre></td></tr></table></figure></li>
+<li><p>上面的home我们到_layouts目录下可以找到：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><code class="hljs html">---<br>layout: page<br># The Home page layout<br>---<br><br>&#123;% raw %&#125;<br>&#123;% assign pinned = site.posts | where_exp: &quot;item&quot;, &quot;item.pin == true&quot;  %&#125;<br>&#123;% assign default = site.posts | where_exp: &quot;item&quot;, &quot;item.pin != true&quot;  %&#125;<br>&#123;% assign posts = &quot;&quot; | split: &quot;&quot; %&#125;<br>...<br>   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;post-meta text-muted d-flex justify-content-between&quot;</span>&gt;</span><br><br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-comment">&lt;!-- posted date --&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;far fa-calendar fa-fw&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><br>        &#123;% include timeago.html date=post.date tooltip=true %&#125;<br><br>        <span class="hljs-comment">&lt;!-- time to read --&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;far fa-clock fa-fw&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><br>        &#123;% include read-time.html content=post.content %&#125;<br><br>        <span class="hljs-comment">&lt;!-- page views --&gt;</span><br>        &#123;% if site.google_analytics.pv.enabled %&#125;<br>        <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;far fa-eye fa-fw&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;pv_&#123;&#123;-post.title-&#125;&#125;&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;pageviews&quot;</span>&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;fas fa-spinner fa-spin fa-fw&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>        &#123;% endif %&#125;<br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br>      &#123;% if post.pin %&#125;<br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;pin&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;fas fa-thumbtack fa-fw&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>&#123;&#123; site.data.label.pin_prompt | default: &#x27;Pinned&#x27; &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>      &#123;% endif %&#125;<br><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span> <span class="hljs-comment">&lt;!-- .post-meta --&gt;</span><br><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span> <span class="hljs-comment">&lt;!-- .post-review --&gt;</span><br><br>&#123;% endfor %&#125;<br><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span> <span class="hljs-comment">&lt;!-- #post-list --&gt;</span><br><br>&#123;% if paginator.total_pages &gt; 0 %&#125;<br>  &#123;% include post-paginator.html %&#125;<br>&#123;% endif %&#125;<br>&#123;% endraw %&#125;<br></code></pre></td></tr></table></figure>
+
+<p>实际上根目录下index.html运行后是home里面的代码内容，1中<strong>html代码段</strong>会填充的上图中的<strong>content</strong>位置。jekyll是将分散在各个目录下的html文件拼接起来运行。</p>
+</li>
+<li><p>上图的page布局也可以在_layouts目录下找到：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs html">---<br>layout: default<br># The page layout<br>---<br>&#123;% raw %&#125;<br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;row&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;col-12 col-lg-11 col-xl-8&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;page&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;post pb-5 pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4 mb-md-4&quot;</span>&gt;</span><br>    &#123;% if page.dynamic_title %&#125;<br>      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;dynamic-title&quot;</span>&gt;</span>&#123;&#123; page.title &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;post-content&quot;</span>&gt;</span><br>        &#123;&#123; content &#125;&#125;<br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    &#123;% else %&#125;<br>      &#123;&#123; content &#125;&#125;<br>    &#123;% endif %&#125;<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span> <span class="hljs-comment">&lt;!-- #page --&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><span class="hljs-comment">&lt;!-- .col-12 --&gt;</span><br><br>  &#123;% include panel.html %&#125;<br><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br>&#123;% if site.disqus.comments and page.comments %&#125;<br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;row&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;col-12 col-lg-11 col-xl-8&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4&quot;</span>&gt;</span><br><br>    &#123;% include disqus.html %&#125;<br><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span> <span class="hljs-comment">&lt;!-- .pl-1 pr-1 --&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span> <span class="hljs-comment">&lt;!-- .col-12 --&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span> <span class="hljs-comment">&lt;!-- .row --&gt;</span><br>&#123;% endif %&#125;<br>&#123;% endraw %&#125;<br></code></pre></td></tr></table></figure>
+
+<p>关于Jekyll的更详细用法可以参考<a target="_blank" rel="noopener" href="http://jekyllcn.com/docs/home/">官方网站</a></p>
+<p>ps: </p>
+<ul>
+<li>GitHub Page 的（一种）输入是 markdown 文件，输出是 HTML/CSS/JS 文件。</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><p>如果 markdown 文件包含代码块，且代码块中包含花括号 { 或 }，尤其是包含 { % 或 { { 符号组合时，GitHub Page 会报错。</p>
+<ul>
+<li>在代码前后添加{ % raw % }和{ % endraw % }（去掉大括号内的空格）</li>
+</ul>
+</li>
+<li><p>新版本Google Analytics的Tracking ID在管理→媒体资源→数据流中，也可以直接搜索。</p>
+<p> pps:</p>
+</li>
+<li><p>本站已使用Hexo重新部署，以上仅供参考。</p>
+</li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/jekyll-update/">jekyll update</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/getting-started/">getting started</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/04/06/Matlab%E9%A2%9C%E8%89%B2%E8%BF%9B%E9%98%B6/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Matlab作图：更改图像、填充或曲面的透明度</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    <!-- Google Analytics -->
+    <script defer>
+      window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) };
+      ga.l = +new Date;
+      ga('create', 'G-QTJ4C2S4VR', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
