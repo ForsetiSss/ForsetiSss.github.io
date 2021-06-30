@@ -1,7 +1,7 @@
 sudo: false
 language: node_js
 node_js:
-  - 10 # use nodejs v12 LTS
+  - 12 # use nodejs v12 LTS
 cache: npm
 branches:
   only:
@@ -14,5 +14,5 @@ deploy:
   github-token: $GH_TOKEN
   keep-history: true
   on:
-    branch: main
+    all_branches: true
   local-dir: public
