@@ -56,7 +56,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"forsetisss.github.io","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":"G-QTJ4C2S4VR","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"forsetisss.github.io","root":"/","version":"1.8.11","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":"G-QTJ4C2S4VR","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -64,7 +64,7 @@
 
 
 <body>
-  <header style="height: 70vh;">
+  <header style="height: 30vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -158,17 +158,24 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
+         style="background: url('/img/18180428_1361087742584.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
             <span class="h2" id="subtitle" title="Matlab作图：设置曲面颜色及范围函数 caxis">
               
+                Matlab作图：设置曲面颜色及范围函数 caxis
+              
             </span>
 
             
               <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      Shi Daming
+    </span>
   
   
     <span class="post-meta">
@@ -185,7 +192,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      990 字
+      936 字
     </span>
   
 
@@ -195,7 +202,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      12
+      23
        分钟
     </span>
   
@@ -227,18 +234,14 @@
             <!-- SEO header -->
             <h1 style="display: none">Matlab作图：设置曲面颜色及范围函数 caxis</h1>
             
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年7月1日 中午
+                
+              </p>
+            
             <div class="markdown-body">
-              <p><strong>目录</strong></p>
-<p> - <a href="#%E8%AF%AD%E6%B3%95">语法</a></p>
-<p> - <a href="#%E8%AF%B4%E6%98%8E">说明</a></p>
-<p> - <a href="#%E7%A4%BA%E4%BE%8B">示例</a></p>
-<p>  - <a href="#%E6%8F%90%E9%AB%98%E4%B8%8B%E9%99%90">提高下限</a></p>
-<p>  - <a href="#%E4%BF%9D%E6%8C%81%E5%A4%9A%E4%B8%AA%E6%9B%B2%E9%9D%A2%E5%9B%BE%E7%9A%84%E9%A2%9C%E8%89%B2%E8%8C%83%E5%9B%B4%E4%B8%8D%E5%8F%98">保持多个曲面图的颜色范围不变</a></p>
-<p>  - <a href="#%E6%8C%87%E5%AE%9A%E6%9B%B2%E9%9D%A2%E5%9B%BE%E7%9A%84%E9%A2%9C%E8%89%B2%E5%9B%BE%E9%A2%9C%E8%89%B2">指定曲面图的颜色图颜色</a></p>
-<p>  - <a href="#%E4%B8%BA%E6%9B%B2%E9%9D%A2%E5%9B%BE%E6%8C%87%E5%AE%9A%E7%9C%9F%E5%BD%A9%E8%89%B2">为曲面图指定真彩色</a></p>
-<p>  - <a href="#%E4%BF%AE%E6%94%B9%E6%9B%B2%E9%9D%A2%E5%9B%BE%E7%9A%84%E5%A4%96%E8%A7%82">修改曲面图的外观</a></p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">caxis</span><span class="hljs-params">(limits)</span></span><br><span class="hljs-function"><span class="hljs-title">caxis</span><span class="hljs-params">(<span class="hljs-string">&#x27;auto&#x27;</span>)</span></span><br><span class="hljs-function"><span class="hljs-title">caxis</span><span class="hljs-params">(<span class="hljs-string">&#x27;manual&#x27;</span>)</span></span><br><span class="hljs-function"><span class="hljs-title">caxis</span><span class="hljs-params">(target,___)</span></span><br>cl = caxis<br></code></pre></td></tr></table></figure>
-
+              <h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">caxis</span><span class="hljs-params">(limits)</span></span><br><span class="hljs-function"><span class="hljs-title">caxis</span><span class="hljs-params">(<span class="hljs-string">&#x27;auto&#x27;</span>)</span></span><br><span class="hljs-function"><span class="hljs-title">caxis</span><span class="hljs-params">(<span class="hljs-string">&#x27;manual&#x27;</span>)</span></span><br><span class="hljs-function"><span class="hljs-title">caxis</span><span class="hljs-params">(target,___)</span></span><br>cl = caxis<br></code></pre></td></tr></table></figure>
 <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p><code>caxis(limits)</code> 设置当前坐标区的颜色图范围。<code>limits</code> 是 <code>[cmin cmax]</code> 形式的二元素向量。<a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/help/matlab/ref/caxis.html#mw_262386a0-0173-40a5-b123-7b5834c1d396">颜色图索引数组</a>中小于或等于 <code>cmin</code> 的所有值映射到颜色图的第一行。大于或等于 <code>cmax</code> 的所有值映射到颜色图的最后一行。介于 <code>cmin</code> 和 <code>cmax</code> 之间的所有值以线性方式映射到颜色图的中间各行。</p>
 <p><strong>注意</strong></p>
 <p><code>caxis</code> 函数只影响 <code>CDataMapping</code> 属性设置为 <code>&#39;scaled&#39;</code> 的图形对象，不影响使用真彩色或 <code>CDataMapping</code> 设置为 <code>&#39;direct&#39;</code> 的图形对象。</p>
@@ -248,43 +251,32 @@
 <p><code>cl = caxis</code> 返回当前坐标区或图的当前颜色图范围。</p>
 <h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><h4 id="提高下限"><a href="#提高下限" class="headerlink" title="提高下限"></a>提高下限</h4><p>绘制带有颜色栏的抛物面。</p>
 <figure class="highlight tp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs tp">[<span class="hljs-keyword">X</span>,<span class="hljs-keyword">Y</span>] = meshgrid(<span class="hljs-number">-5</span>:<span class="hljs-number">.5</span>:<span class="hljs-number">5</span>);<br><span class="hljs-keyword">Z</span> = <span class="hljs-keyword">X</span>.^<span class="hljs-number">2</span> + <span class="hljs-keyword">Y</span>.^<span class="hljs-number">2</span>;<br>surf(<span class="hljs-keyword">Z</span>);<br>colorbar<br></code></pre></td></tr></table></figure>
-
 <p><img src="https://ww2.mathworks.cn/help/matlab/ref/caxisraiselowerlimitexample_01_zh_CN.png" srcset="/img/loading.gif" lazyload alt="img"></p>
 <p>获取当前颜色范围。</p>
 <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">lim</span> = caxis<br><span class="hljs-attribute">lim</span> = <span class="hljs-number">1</span>×<span class="hljs-number">2</span><br><br>     <span class="hljs-attribute">0</span>    <span class="hljs-number">50</span><br></code></pre></td></tr></table></figure>
-
 <p>将下限提高到 <code>20</code>。请注意，小于或等于 <code>20</code> 的所有 <code>Z</code> 值映射到第一种颜色。</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">caxis</span><span class="hljs-params">([<span class="hljs-number">20</span> <span class="hljs-number">50</span>])</span></span><br></code></pre></td></tr></table></figure>
-
 <p><img src="https://ww2.mathworks.cn/help/matlab/ref/caxisraiselowerlimitexample_02_zh_CN.png" srcset="/img/loading.gif" lazyload alt="img"></p>
 <h4 id="保持多个曲面图的颜色范围不变"><a href="#保持多个曲面图的颜色范围不变" class="headerlink" title="保持多个曲面图的颜色范围不变"></a>保持多个曲面图的颜色范围不变</h4><p>创建两个垂直偏移的抛物面。</p>
 <figure class="highlight tp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs tp">[<span class="hljs-keyword">X</span>,<span class="hljs-keyword">Y</span>] = meshgrid(<span class="hljs-number">-5</span>:<span class="hljs-number">.5</span>:<span class="hljs-number">5</span>);<br><span class="hljs-keyword">Z</span><span class="hljs-number">1</span> = <span class="hljs-keyword">X</span>.^<span class="hljs-number">2</span> + <span class="hljs-keyword">Y</span>.^<span class="hljs-number">2</span>;<br><span class="hljs-keyword">Z</span><span class="hljs-number">2</span> = <span class="hljs-keyword">Z</span><span class="hljs-number">1</span> + <span class="hljs-number">50</span>;<br></code></pre></td></tr></table></figure>
-
 <p>绘制第一个抛物面。添加颜色栏，然后保持第二个抛物面的坐标区不变。</p>
 <figure class="highlight tp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs tp">surf(<span class="hljs-keyword">X</span>,<span class="hljs-keyword">Y</span>,<span class="hljs-keyword">Z</span><span class="hljs-number">1</span>);<br>colorbar<br>hold on<br></code></pre></td></tr></table></figure>
-
 <p><img src="https://ww2.mathworks.cn/help/matlab/ref/caxissharecolorlimitsexample_01_zh_CN.png" srcset="/img/loading.gif" lazyload alt="img"></p>
 <p>使用 <code>&#39;manual&#39;</code> 选项保持当前颜色范围不变。然后绘制第二个抛物面。</p>
 <figure class="highlight tp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs tp">caxis(<span class="hljs-string">&#x27;manual&#x27;</span>);<br>surf(<span class="hljs-keyword">X</span>,<span class="hljs-keyword">Y</span>,<span class="hljs-keyword">Z</span><span class="hljs-number">2</span>);<br></code></pre></td></tr></table></figure>
-
 <p><img src="https://ww2.mathworks.cn/help/matlab/ref/caxissharecolorlimitsexample_02_zh_CN.png" srcset="/img/loading.gif" lazyload alt="img"></p>
 <h4 id="指定曲面图的颜色图颜色"><a href="#指定曲面图的颜色图颜色" class="headerlink" title="指定曲面图的颜色图颜色"></a>指定曲面图的颜色图颜色</h4><p>通过包含第四个矩阵输入 <code>C</code> 来指定曲面图的颜色。曲面图使用 <code>Z</code> 表示高度，<code>C</code> 表示颜色。使用<em>颜色图</em>指定颜色，该颜色图使用单个数字表示色谱上的颜色。使用颜色图时，<code>C</code> 与 <code>Z</code> 大小相同。向图中添加颜色栏以显示 <code>C</code> 中的数据值如何对应于颜色图中的颜色。</p>
 <figure class="highlight tp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs tp">[<span class="hljs-keyword">X</span>,<span class="hljs-keyword">Y</span>] = meshgrid(<span class="hljs-number">1</span>:<span class="hljs-number">0</span><span class="hljs-number">.5</span>:<span class="hljs-number">10</span>,<span class="hljs-number">1</span>:<span class="hljs-number">20</span>);<br><span class="hljs-keyword">Z</span> = sin(<span class="hljs-keyword">X</span>) + cos(<span class="hljs-keyword">Y</span>);<br>C = <span class="hljs-keyword">X</span>.*<span class="hljs-keyword">Y</span>;<br>surf(<span class="hljs-keyword">X</span>,<span class="hljs-keyword">Y</span>,<span class="hljs-keyword">Z</span>,C)<br>colorbar<br></code></pre></td></tr></table></figure>
-
 <p><img src="https://ww2.mathworks.cn/help/matlab/ref/specifycolorsforsurfaceplotexample_01_zh_CN.png" srcset="/img/loading.gif" lazyload alt="img"></p>
 <h4 id="为曲面图指定真彩色"><a href="#为曲面图指定真彩色" class="headerlink" title="为曲面图指定真彩色"></a>为曲面图指定真彩色</h4><p>通过包含第四个矩阵输入 <code>CO</code> 来指定曲面图的颜色。曲面图使用 <code>Z</code> 表示高度，<code>CO</code> 表示颜色。使用<em>真彩色</em>指定颜色，真彩色使用三个数字（即三元组）表示所有可能的颜色。使用真彩色时，如果 <code>Z</code> 为 <code>m</code>×<code>n</code>，则 <code>CO</code> 为 <code>m</code>×<code>n</code>×3。数组的第一页指示每种颜色的红色分量；第二页指示绿色分量；第三页指示蓝色分量。</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs matlab">[X,Y,Z] = peaks(<span class="hljs-number">25</span>);<br>CO(:,:,<span class="hljs-number">1</span>) = <span class="hljs-built_in">zeros</span>(<span class="hljs-number">25</span>); <span class="hljs-comment">% red</span><br>CO(:,:,<span class="hljs-number">2</span>) = <span class="hljs-built_in">ones</span>(<span class="hljs-number">25</span>).*<span class="hljs-built_in">linspace</span>(<span class="hljs-number">0.5</span>,<span class="hljs-number">0.6</span>,<span class="hljs-number">25</span>); <span class="hljs-comment">% green</span><br>CO(:,:,<span class="hljs-number">3</span>) = <span class="hljs-built_in">ones</span>(<span class="hljs-number">25</span>).*<span class="hljs-built_in">linspace</span>(<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">25</span>); <span class="hljs-comment">% blue</span><br>surf(X,Y,Z,CO)<br></code></pre></td></tr></table></figure>
-
 <p><img src="https://ww2.mathworks.cn/help/matlab/ref/surfaceplotwithtruecolorsexample_01_zh_CN.png" srcset="/img/loading.gif" lazyload alt="img"></p>
 <h4 id="修改曲面图的外观"><a href="#修改曲面图的外观" class="headerlink" title="修改曲面图的外观"></a>修改曲面图的外观</h4><p>通过指定以 <code>0.5</code> 为值的 <code>FaceAlpha</code> 名称-值对组，来创建半透明曲面。要允许进一步修改，请将曲面对象赋给变量 <code>s</code>。</p>
 <figure class="highlight tp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs tp">[<span class="hljs-keyword">X</span>,<span class="hljs-keyword">Y</span>] = meshgrid(<span class="hljs-number">-5</span>:<span class="hljs-number">.5</span>:<span class="hljs-number">5</span>);<br><span class="hljs-keyword">Z</span> = <span class="hljs-keyword">Y</span>.*sin(<span class="hljs-keyword">X</span>) - <span class="hljs-keyword">X</span>.*cos(<span class="hljs-keyword">Y</span>);<br>s = surf(<span class="hljs-keyword">X</span>,<span class="hljs-keyword">Y</span>,<span class="hljs-keyword">Z</span>,<span class="hljs-string">&#x27;FaceAlpha&#x27;</span>,<span class="hljs-number">0</span><span class="hljs-number">.5</span>)<br></code></pre></td></tr></table></figure>
-
 <p><img src="https://ww2.mathworks.cn/help/matlab/ref/modifysurfaceplotappearanceexample_01_zh_CN.png" srcset="/img/loading.gif" lazyload alt="img"></p>
 <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs vim">s = <br>  Surface with propertie<span class="hljs-variable">s:</span><br><br>       EdgeColor: [<span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span>]<br>       LineStyle: <span class="hljs-string">&#x27;-&#x27;</span><br>       FaceColor: <span class="hljs-string">&#x27;flat&#x27;</span><br>    FaceLightin<span class="hljs-variable">g:</span> <span class="hljs-string">&#x27;flat&#x27;</span><br>       FaceAlph<span class="hljs-variable">a:</span> <span class="hljs-number">0.5000</span><br>           XDat<span class="hljs-variable">a:</span> [<span class="hljs-number">21</span>x21 double]<br>           YDat<span class="hljs-variable">a:</span> [<span class="hljs-number">21</span>x21 double]<br>           ZDat<span class="hljs-variable">a:</span> [<span class="hljs-number">21</span>x21 double]<br>           CDat<span class="hljs-variable">a:</span> [<span class="hljs-number">21</span>x21 double]<br><br>  Show <span class="hljs-keyword">all</span> properties<br></code></pre></td></tr></table></figure>
-
 <p>在创建曲面对象之后可使用 <code>s</code> 访问并修改其属性。例如，通过设置 <code>EdgeColor</code> 属性来隐藏边。</p>
 <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">s.EdgeColor</span> = <span class="hljs-string">&#x27;none&#x27;</span><span class="hljs-comment">;</span><br></code></pre></td></tr></table></figure>
-
 <p><img src="https://ww2.mathworks.cn/help/matlab/ref/modifysurfaceplotappearanceexample_02_zh_CN.png" srcset="/img/loading.gif" lazyload alt="img"></p>
 
             </div>
@@ -295,7 +287,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/jekyll-update/">jekyll update</a>
+                      <a class="hover-with-bg" href="/categories/Matlab/">Matlab</a>
                     
                   </div>
                 
@@ -467,20 +459,48 @@
 
 
 
-  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
-      
-      typing(title)
-      
-    })(window, document);
-  </script>
 
 
 
 
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.4/es5/tex-svg.js" ></script>
+
+  
 
 
 

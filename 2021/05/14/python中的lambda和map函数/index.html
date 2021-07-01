@@ -56,7 +56,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"forsetisss.github.io","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":"G-QTJ4C2S4VR","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"forsetisss.github.io","root":"/","version":"1.8.11","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":"G-QTJ4C2S4VR","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -64,7 +64,7 @@
 
 
 <body>
-  <header style="height: 70vh;">
+  <header style="height: 30vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -158,17 +158,24 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
+         style="background: url('/img/18180428_1361087742584.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
             <span class="h2" id="subtitle" title="python中的lambda和map函数">
               
+                python中的lambda和map函数
+              
             </span>
 
             
               <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      Shi Daming
+    </span>
   
   
     <span class="post-meta">
@@ -185,7 +192,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      699 字
+      680 字
     </span>
   
 
@@ -195,7 +202,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      9
+      19
        分钟
     </span>
   
@@ -227,36 +234,30 @@
             <!-- SEO header -->
             <h1 style="display: none">python中的lambda和map函数</h1>
             
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年7月1日 中午
+                
+              </p>
+            
             <div class="markdown-body">
-              <p><strong>目录</strong></p>
-<p>- <a href="#1lambda%E5%87%BD%E6%95%B0">1、lambda函数</a></p>
-<p>- <a href="#2map%E5%87%BD%E6%95%B0">2、map函数</a></p>
-<p>- <a href="#3map%E5%87%BD%E6%95%B0%E5%92%8Clambda%E5%87%BD%E6%95%B0%E7%BB%93%E5%90%88">3、map函数和lambda函数结合</a></p>
-<h3 id="1、lambda函数"><a href="#1、lambda函数" class="headerlink" title="1、lambda函数"></a>1、lambda函数</h3><p>他就是个没有名字的函数，比如匿名信这种。我们能在某一函数参数条件中直接调用他、或者借用其返回的实体构成新的函数名 如下。</p>
+              <h3 id="1、lambda函数"><a href="#1、lambda函数" class="headerlink" title="1、lambda函数"></a>1、lambda函数</h3><p>他就是个没有名字的函数，比如匿名信这种。我们能在某一函数参数条件中直接调用他、或者借用其返回的实体构成新的函数名 如下。</p>
 <p>比如说  lambda x,y: x+y  就是说我的函数输入x,y，返回x+y</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">y=<span class="hljs-keyword">lambda</span> a,b,c:a+b+c<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;\n&#x27;</span>,y(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>))<br></code></pre></td></tr></table></figure>
-
-
 <p>结果为6</p>
 <p>仔细看看，是不是y成为了新的函数名？！</p>
 <h3 id="2、map函数"><a href="#2、map函数" class="headerlink" title="2、map函数"></a>2、map函数</h3><p>map就是映射的意思，他肯定是将两种东西结合映射为某一个结果。他就是接收一个函数function和一个list列表，并通过把函数f依次作用在list的每一个元素，从而得到一个新的list返回（py3中返回一个map对象，用list函数转换一下即可）</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fib_recur</span>(<span class="hljs-params">n</span>):</span><br>    <span class="hljs-keyword">if</span> n&lt;=<span class="hljs-number">1</span>:<br>        <span class="hljs-keyword">return</span> n<br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">return</span> fib_recur(n-<span class="hljs-number">1</span>)+fib_recur(n-<span class="hljs-number">2</span>)<br><br><br>X=<span class="hljs-built_in">input</span>().strip().split()<br>N=<span class="hljs-built_in">list</span>(<span class="hljs-built_in">map</span>(<span class="hljs-built_in">int</span>, X))[<span class="hljs-number">0</span>]<br><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>, N):<br>    <span class="hljs-built_in">print</span>(fib_recur(i),end=<span class="hljs-string">&#x27; &#x27;</span>)<br></code></pre></td></tr></table></figure>
-
-
 <p>注意哈这个X必须是列表，int则表示函数了，当然也可以其他函数命名</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fib_recur</span>(<span class="hljs-params">n</span>):</span><br>    <span class="hljs-keyword">if</span> n&lt;=<span class="hljs-number">1</span>:<br>        <span class="hljs-keyword">return</span> n<br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">return</span> fib_recur(n-<span class="hljs-number">1</span>)+fib_recur(n-<span class="hljs-number">2</span>)<br><br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">ex</span>(<span class="hljs-params">c</span>):</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">int</span>(c)<br>        <br>X=<span class="hljs-built_in">input</span>().strip().split()<br>N=<span class="hljs-built_in">list</span>(<span class="hljs-built_in">map</span>(ex, X))[<span class="hljs-number">0</span>]<br><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>, N):<br>    <span class="hljs-built_in">print</span>(fib_recur(i),end=<span class="hljs-string">&#x27; &#x27;</span>)<br></code></pre></td></tr></table></figure>
-
-
 <p>注意他是自动迭代地对X列表的每一个元素操作，也就是说map自带迭代器！</p>
 <h3 id="3、map函数和lambda函数结合"><a href="#3、map函数和lambda函数结合" class="headerlink" title="3、map函数和lambda函数结合"></a>3、map函数和lambda函数结合</h3><p>显然只用改变map函数中的函数体就可以，无非就是函数体没有了实名，将lambda放于map的参数条件之中</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fib_recur</span>(<span class="hljs-params">n</span>):</span><br>    <span class="hljs-keyword">if</span> n&lt;=<span class="hljs-number">1</span>:<br>        <span class="hljs-keyword">return</span> n<br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">return</span> fib_recur(n-<span class="hljs-number">1</span>)+fib_recur(n-<span class="hljs-number">2</span>)<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">ex</span>(<span class="hljs-params">c</span>):</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">int</span>(c)<br>        <br><span class="hljs-comment">##X=input().strip().split()</span><br><span class="hljs-comment">##N=list(map(ex, X))[0]</span><br><span class="hljs-comment">##</span><br><span class="hljs-comment">##for i in range(1, N):</span><br><span class="hljs-comment">##	print(fib_recur(i),end=&#x27; &#x27;)</span><br><br>X=<span class="hljs-built_in">input</span>().strip().split()<br>N=<span class="hljs-built_in">list</span>(<span class="hljs-built_in">map</span>(<span class="hljs-keyword">lambda</span> a:<span class="hljs-built_in">int</span>(a), X))[<span class="hljs-number">0</span>]<br><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>, N):<br>    <span class="hljs-built_in">print</span>(fib_recur(i),end=<span class="hljs-string">&#x27; &#x27;</span>)<br></code></pre></td></tr></table></figure>
-
 <p>在本代码list(map(lambda a:int(a), X)) 这一句只用注意两个点：</p>
 <p>1） lambda参数只能是一个参数标量，因为map是自动对列表X的元素迭代的</p>
 <p>2）X为一维情况，所以他的每一个元素是标量</p>
 <p>针对X为二维情况，博主暂时没想到好的解决办法，只能是X[2]来选择其中的一个向量列表。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fib_recur</span>(<span class="hljs-params">n</span>):</span><br>    <span class="hljs-keyword">if</span> n&lt;=<span class="hljs-number">1</span>:<br>        <span class="hljs-keyword">return</span> n<br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">return</span> fib_recur(n-<span class="hljs-number">1</span>)+fib_recur(n-<span class="hljs-number">2</span>)<br><br><br>X=[[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>],[<span class="hljs-number">2</span>,<span class="hljs-number">4</span>,<span class="hljs-number">6</span>],[<span class="hljs-number">3</span>,<span class="hljs-number">6</span>,<span class="hljs-number">9</span>]]<br>N=<span class="hljs-built_in">list</span>(<span class="hljs-built_in">map</span>(<span class="hljs-keyword">lambda</span> a:<span class="hljs-built_in">int</span>(a), X[<span class="hljs-number">2</span>]))[<span class="hljs-number">2</span>]<br><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>, N):<br>    <span class="hljs-built_in">print</span>(fib_recur(i),end=<span class="hljs-string">&#x27; &#x27;</span>)<br></code></pre></td></tr></table></figure>
-
 <p>————————————————<br>版权声明：本文为CSDN博主「lamusique」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/lamusique/article/details/89162363">https://blog.csdn.net/lamusique/article/details/89162363</a></p>
 
             </div>
@@ -267,7 +268,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/jekyll-update/">jekyll update</a>
+                      <a class="hover-with-bg" href="/categories/python/">python</a>
                     
                   </div>
                 
@@ -439,20 +440,48 @@
 
 
 
-  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
-      
-      typing(title)
-      
-    })(window, document);
-  </script>
 
 
 
 
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.4/es5/tex-svg.js" ></script>
+
+  
 
 
 

@@ -18,7 +18,7 @@
   <meta name="author" content="Shi Daming">
   <meta name="keywords" content="">
   
-  <title>Keras中LN层的使用 - Research Notes</title>
+  <title>周总结 - Research Notes</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -163,9 +163,9 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Keras中LN层的使用">
+            <span class="h2" id="subtitle" title="周总结">
               
-                Keras中LN层的使用
+                周总结
               
             </span>
 
@@ -180,8 +180,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-06-09 15:00" pubdate>
-        2021年6月9日 下午
+      <time datetime="2021-07-01 11:03" pubdate>
+        2021年7月1日 上午
       </time>
     </span>
   
@@ -192,7 +192,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      427 字
+      1.2k 字
     </span>
   
 
@@ -202,7 +202,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      10
+      25
        分钟
     </span>
   
@@ -232,59 +232,30 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Keras中LN层的使用</h1>
+            <h1 style="display: none">周总结</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年7月1日 中午
+                  本文最后更新于：2021年7月1日 上午
                 
               </p>
             
             <div class="markdown-body">
-              <h3 id="1、BN的问题"><a href="#1、BN的问题" class="headerlink" title="1、BN的问题"></a>1、BN的问题</h3><p>BN是按照样本数计算归一化统计量的，当样本数很少时，比如说只有4个。这四个样本的均值和方差便不能反映全局的统计分布息，所以基于少量样本的BN的效果会变得很差。</p>
-<h3 id="2、LN层的使用"><a href="#2、LN层的使用" class="headerlink" title="2、LN层的使用"></a>2、LN层的使用</h3><p><img src="/images/BN_and_LN.png" srcset="/img/loading.gif" lazyload style="zoom:80%;" /></p>
-<p>这张图与我们平常看到的feature maps有些不同，立方体的3个维度为别为batch/ channel/ HW，而我们常见的feature maps中，3个维度分别为channel/ H/ W，没有batch。分析上图可知：BN计算均值和标准差时，固定channel(在一个channel内)，对HW和batch作平均；LN计算均值和标准差时，固定batch(在一个batch内)，对HW和channel作平均，更详细的推导过程可以查阅参考文献。</p>
-<p>可以看到与BN不同，LN没有对batch作平均，所以当batch变化时，网络的错误率不会有明显变化。论文的实验显示：LN和IN 在时间序列模型(RNN/LSTM)和生成模型(GAN)上有很好的效果，而GN在视觉模型(CNN)上表现更好。</p>
-<p>LN与BN层非常相似，特点主要体现在两个方面：</p>
-<ol>
-<li>LN得到的模型更稳定；</li>
-<li>LN有正则化的作用，得到的模型更不容易过拟合。</li>
-</ol>
-<p>关于Layer normalization， Keras官方API连接如下</p>
-<p><a target="_blank" rel="noopener" href="https://keras.io/api/layers/normalization_layers/layer_normalization/">https://keras.io/api/layers/normalization_layers/layer_normalization/</a></p>
-<p>但是请注意，这个函数在Keras中可能无法正常使用，但可以通过pip正确安装</p>
-<p><strong>Install</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">pip install keras-layer-normalization<br></code></pre></td></tr></table></figure>
-<p><strong>Usage</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> keras<br><span class="hljs-keyword">from</span> keras_layer_normalization <span class="hljs-keyword">import</span> LayerNormalization<br><br><br>input_layer = keras.layers.Input(shape=(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>))<br>norm_layer = LayerNormalization()(input_layer)<br>model = keras.models.Model(inputs=input_layer, outputs=norm_layer)<br>model.<span class="hljs-built_in">compile</span>(optimizer=<span class="hljs-string">&#x27;adam&#x27;</span>, loss=<span class="hljs-string">&#x27;mse&#x27;</span>, metrics=&#123;&#125;,)<br>model.summary()<br></code></pre></td></tr></table></figure>
-<p><strong>Reference</strong></p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1607.06450.pdf">Lei Ba et al., 2016</a>.</li>
-</ul>
+              <h3 id="2021-06-22"><a href="#2021-06-22" class="headerlink" title="2021\06\22"></a>2021\06\22</h3><p>1.准备ppt并参加会议<br>18th CIRP Conference on Modelling of Machining Operations<br>        2.复习了一下傅里叶变换及频域信号分解相关知识，详见博客（Latex公式有bug，待修复）<a href="https://forsetisss.github.io/">https://forsetisss.github.io/</a><br>        3.看论文（下周写review）<br>        4.准备ppt，25号开会<br>首届“智能航空器设计与制造”长江教育创新带博士生创新发展论坛<br>        5.看文献，transfer learning 和 fault diagnosis 相关<br>        6.健身房锻炼*2<br>                        羽毛球*1</p>
+<h3 id="2021-06-29"><a href="#2021-06-29" class="headerlink" title="2021\06\29"></a>2021\06\29</h3><h4 id="首届“智能航空器设计与制造”长江教育创新带博士生创新发展论坛-特邀嘉宾报告"><a href="#首届“智能航空器设计与制造”长江教育创新带博士生创新发展论坛-特邀嘉宾报告" class="headerlink" title="首届“智能航空器设计与制造”长江教育创新带博士生创新发展论坛 特邀嘉宾报告"></a>首届“智能航空器设计与制造”长江教育创新带博士生创新发展论坛 特邀嘉宾报告</h4><p>王振强院士：关于超燃冲压发动机的报告<br>此类发动机区别于一般的涡轮发动机，主要应用于高超声速飞行器。由于保密原因，主要介绍的是美国的超燃冲压发动机的研究历史。从上世纪六十年代以来，经历四起三落，现在仍在不断发展中。目前可公开的型号是X-51，仍然只是实验阶段。最新的研究进展都属于保密状态，因为装备此类发动机的飞行器具有极大的战略价值，具有不易拦截和飞行速度快的特点。该类发动机有两个设计难点，高速进气和燃油的混合，以及点火装置。</p>
+<p>另外，南航的曲宁松教授介绍了电解加工技术，该加工方法几乎没有热应力和残余应力，且具有较高的加工精度。已经应用于太行航空发动机高压压气机叶片，型面精度达到0.06mm。但一般只能用于导电材料的加工，加工速度较机械加工慢。在电解加工基础上研发精密电解加工技术时，研发人员一直围绕着两个核心问题：如何减少电解液流过的工件和刀具(阴极)的加工间隙；如何提高电解液的充分交换。德国一个公司最先研制出高频脉冲电解加工技术，采用脉冲电流代替直流进行电解加工，从而提高了对电解产物和反应热的排除能力。但曲老师主要介绍的还是电解微纳加工技术 ，通过掩膜形成所需的结构，没听太懂所以就不详细展开了233。</p>
+<h4 id="摆线铣"><a href="#摆线铣" class="headerlink" title="摆线铣"></a>摆线铣</h4><p>一般在加工过程中都期望提高材料去除率，传统铣削方法通常采用增大刀具啮合角来满足材料去除率的要求；然而，这必然导致刀具和工件之间的接触时间长、切削温度升高，进而影响刀具使用寿命。</p>
+<p>摆线铣的轨迹形式通常采用的摆线刀具轨迹有两种模型：圆形模型和次摆线模型。</p>
+<h5 id="摆线铣的原理"><a href="#摆线铣的原理" class="headerlink" title="摆线铣的原理"></a>摆线铣的原理</h5><p>圆形模型轨迹由圆和直线段组成，刀具公转运行轨迹为圆形，旋转一周后沿圆弧一侧的直线移动一个步长再进行公转。这种加工轨迹的计算较为简单，但是会产生加速度的不连续。</p>
+<p>次摆线模型轨迹与圆形模型轨迹相比，主要差别在于刀具进给方向上的运动不单纯是直线运动。这种摆线轨迹在切向和曲率上都是连续的，更容易满足数控机床的运动学要求。一般常用的轨迹是次摆线模型轨迹的改进版，这种轨迹在次摆线轨迹的基础上缩短非切削部分的轨迹长度，采用直线进行连接，从而有助于提高加工效率。</p>
+<h5 id="摆线铣的优点"><a href="#摆线铣的优点" class="headerlink" title="摆线铣的优点"></a>摆线铣的优点</h5><p>摆线铣加工中，刀具沿摆线轨迹进行切削，可以适应各种加工余量的变化，从而降低加工余量突变对刀具的破坏；特别适合难加工材料的切削加工，如高温合金、钛合金、耐热不锈钢等材料；摆线铣加工技术可以采用较大的轴向切削深度，从而可以代替传统加工中需要进行多次分层的情况。</p>
+<p>摆线铣加工过程中刀具负载在每一个摆线循环中都经历了从小到大然后再变小的过程，不会出现刀具负载的突变，从而可以有效减少刀具的磨损，刀具寿命最高可延长5 倍以上；在每一次刀具公转走刀循环过程中，到包含了切削过程和非切削过程，切屑薄容易排出，使得切削区域冷却充分；由于切削时切削力较小，将摆线铣技术与高速加工技术结合则特别适合薄壁零件的高效加工。</p>
 
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/python/">python</a>
-                    
-                  </div>
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/python/">python</a>
-                    
-                      <a class="hover-with-bg" href="/tags/Keras/">Keras</a>
-                    
-                      <a class="hover-with-bg" href="/tags/LN/">LN</a>
-                    
-                  </div>
                 
               </div>
               
@@ -294,29 +265,6 @@
                   
                 </p>
               
-              
-                <div class="post-prevnext">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/2021/06/19/%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E3%80%81%E7%9F%AD%E6%97%B6%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E3%80%81%E5%B0%8F%E6%B3%A2%E5%8F%98%E6%8D%A2%E3%80%81%E5%B8%8C%E5%B0%94%E4%BC%AF%E7%89%B9%E5%8F%98%E6%8D%A2%E3%80%81%E5%B8%8C%E5%B0%94%E4%BC%AF%E7%89%B9%E9%BB%84%E5%8F%98%E6%8D%A2/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">信号处理|傅里叶变换、短时傅里叶变换、小波变换、希尔伯特变换、希尔伯特黄变换</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/2021/05/14/python%E4%B8%AD%E7%9A%84lambda%E5%92%8Cmap%E5%87%BD%E6%95%B0/">
-                        <span class="hidden-mobile">python中的lambda和map函数</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
               
             </div>
 

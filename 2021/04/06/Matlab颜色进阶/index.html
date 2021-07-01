@@ -56,7 +56,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"forsetisss.github.io","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":"G-QTJ4C2S4VR","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"forsetisss.github.io","root":"/","version":"1.8.11","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":"G-QTJ4C2S4VR","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -64,7 +64,7 @@
 
 
 <body>
-  <header style="height: 70vh;">
+  <header style="height: 30vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -158,17 +158,24 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
+         style="background: url('/img/18180428_1361087742584.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
             <span class="h2" id="subtitle" title="Matlab作图：更改图像、填充或曲面的透明度">
               
+                Matlab作图：更改图像、填充或曲面的透明度
+              
             </span>
 
             
               <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      Shi Daming
+    </span>
   
   
     <span class="post-meta">
@@ -185,7 +192,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      869 字
+      815 字
     </span>
   
 
@@ -195,7 +202,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      11
+      22
        分钟
     </span>
   
@@ -227,42 +234,35 @@
             <!-- SEO header -->
             <h1 style="display: none">Matlab作图：更改图像、填充或曲面的透明度</h1>
             
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年7月1日 中午
+                
+              </p>
+            
             <div class="markdown-body">
-              <p><strong>目录</strong></p>
-<p> - <a href="#%E4%B8%80%E5%9D%90%E6%A0%87%E5%8C%BA%E6%A1%86%E4%B8%AD%E6%89%80%E6%9C%89%E5%AF%B9%E8%B1%A1%E7%9A%84%E9%80%8F%E6%98%8E%E5%BA%A6">一、坐标区框中所有对象的透明度</a></p>
-<p> - <a href="#%E4%BA%8C%E4%B8%AA%E5%88%AB%E6%9B%B2%E9%9D%A2%E7%9A%84%E9%80%8F%E6%98%8E%E5%BA%A6">二、个别曲面的透明度</a></p>
-<p> - <a href="#%E4%B8%89%E4%B8%AA%E5%88%AB%E5%9B%BE%E5%83%8F%E7%9A%84%E9%80%8F%E6%98%8E%E5%BA%A6">三、个别图像的透明度</a></p>
-<p> - <a href="#%E5%9B%9B%E4%B8%AA%E5%88%AB%E5%A1%AB%E5%85%85%E7%9A%84%E9%80%8F%E6%98%8E%E5%BA%A6">四、个别填充的透明度</a></p>
-<p> - <a href="#%E4%BA%94%E5%8C%85%E5%90%AB%E7%BA%B9%E7%90%86%E6%98%A0%E5%B0%84%E7%9A%84%E9%80%8F%E6%98%8E%E5%BA%A6">五、包含纹理映射的透明度</a></p>
-<h3 id="一、坐标区框中所有对象的透明度"><a href="#一、坐标区框中所有对象的透明度" class="headerlink" title="一、坐标区框中所有对象的透明度"></a>一、坐标区框中所有对象的透明度</h3><p>透明度值称为 alpha 值。使用 <code>alpha</code> 函数设置当前坐标区范围内所有图像、填充或曲面对象的透明度。指定一个介于 0（完全透明）和 1（完全不透明）之间的透明度值。</p>
+              <h3 id="1、坐标区框中所有对象的透明度"><a href="#1、坐标区框中所有对象的透明度" class="headerlink" title="1、坐标区框中所有对象的透明度"></a>1、坐标区框中所有对象的透明度</h3><p>透明度值称为 alpha 值。使用 <code>alpha</code> 函数设置当前坐标区范围内所有图像、填充或曲面对象的透明度。指定一个介于 0（完全透明）和 1（完全不透明）之间的透明度值。</p>
 <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">t</span> = <span class="hljs-number">0</span>:<span class="hljs-number">0</span>.<span class="hljs-number">1</span>:<span class="hljs-number">2</span>*pi;<br><span class="hljs-attribute">x</span> = sin(t);<br><span class="hljs-attribute">y</span> = cos(t);<br><br><span class="hljs-attribute">figure</span><br><span class="hljs-attribute">patch</span>(x,y,&#x27;r&#x27;)            % make a red circular patch<br><span class="hljs-attribute">patch</span>(x+<span class="hljs-number">0</span>.<span class="hljs-number">8</span>,y,&#x27;g&#x27;)        % make a green circular path<br><span class="hljs-attribute">patch</span>(x+<span class="hljs-number">0</span>.<span class="hljs-number">4</span>,y+<span class="hljs-number">0</span>.<span class="hljs-number">8</span>,&#x27;b&#x27;)    % make a blue circular path<br><span class="hljs-attribute">axis</span> square tight         % set axis to square<br><br><span class="hljs-attribute">alpha</span>(<span class="hljs-number">0</span>.<span class="hljs-number">3</span>)                % set <span class="hljs-literal">all</span> patches transparency to <span class="hljs-number">0</span>.<span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
-
 <p><img src="https://ww2.mathworks.cn/help/matlab/creating_plots/changingtransparencyexample_01_zh_CN.png" srcset="/img/loading.gif" lazyload alt="img"></p>
-<h3 id="二、个别曲面的透明度"><a href="#二、个别曲面的透明度" class="headerlink" title="二、个别曲面的透明度"></a>二、个别曲面的透明度</h3><p>曲面的透明度由其 <code>AlphaData</code> 属性定义。将 alpha 数据设置为用于指定曲面的每个顶点透明度的标量值或值矩阵。<code>FaceAlpha</code> 属性指示如何从顶点透明度确定曲面透明度。</p>
+<h3 id="2、个别曲面的透明度"><a href="#2、个别曲面的透明度" class="headerlink" title="2、个别曲面的透明度"></a>2、个别曲面的透明度</h3><p>曲面的透明度由其 <code>AlphaData</code> 属性定义。将 alpha 数据设置为用于指定曲面的每个顶点透明度的标量值或值矩阵。<code>FaceAlpha</code> 属性指示如何从顶点透明度确定曲面透明度。</p>
 <figure class="highlight tp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs tp">[<span class="hljs-keyword">X</span>,<span class="hljs-keyword">Y</span>,<span class="hljs-keyword">Z</span>] = peaks(<span class="hljs-number">20</span>);<br>s<span class="hljs-number">2</span> = surf(<span class="hljs-keyword">X</span>,<span class="hljs-keyword">Y</span>,<span class="hljs-keyword">Z</span>);<br><br>s<span class="hljs-number">2</span>.AlphaData = gradient(<span class="hljs-keyword">Z</span>);    % set vertex transparencies<br>s<span class="hljs-number">2</span>.FaceAlpha = <span class="hljs-string">&#x27;flat&#x27;</span>;<br></code></pre></td></tr></table></figure>
-
 <p><img src="https://ww2.mathworks.cn/help/matlab/creating_plots/changingtransparencyexample_02_zh_CN.png" srcset="/img/loading.gif" lazyload alt="img"></p>
-<h3 id="三、个别图像的透明度"><a href="#三、个别图像的透明度" class="headerlink" title="三、个别图像的透明度"></a>三、个别图像的透明度</h3><p>与曲面一样，图像的透明度也由其 <code>AlphaData</code> 属性定义。对于图像，将 alpha 数据设置为用于指定图像数据的每个元素透明度的标量值或值矩阵。</p>
+<h3 id="3、个别图像的透明度"><a href="#3、个别图像的透明度" class="headerlink" title="3、个别图像的透明度"></a>3、个别图像的透明度</h3><p>与曲面一样，图像的透明度也由其 <code>AlphaData</code> 属性定义。对于图像，将 alpha 数据设置为用于指定图像数据的每个元素透明度的标量值或值矩阵。</p>
 <p>例如，使用透明度覆盖两个图像。首先，显示地球的图像。</p>
 <figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs maxima">earth = imread(&#x27;landOcean.jpg&#x27;);<br><span class="hljs-built_in">image</span>(earth)    <span class="hljs-symbol">%</span> <span class="hljs-built_in">display</span> Earth <span class="hljs-built_in">image</span><br>axis <span class="hljs-built_in">image</span><br></code></pre></td></tr></table></figure>
-
 <p><img src="https://ww2.mathworks.cn/help/matlab/creating_plots/changingtransparencyexample_03_zh_CN.png" srcset="/img/loading.gif" lazyload alt="img"></p>
 <p>然后，使用透明度将云图层添加到地球图像。</p>
 <figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs sqf">clouds = imread(<span class="hljs-string">&#x27;cloudCombined.jpg&#x27;</span>);<br><span class="hljs-built_in">image</span>(earth)<br>axis <span class="hljs-built_in">image</span><br>hold on<br><br>im = <span class="hljs-built_in">image</span>(clouds);<br>im.AlphaData = <span class="hljs-built_in">max</span>(clouds,[],<span class="hljs-number">3</span>);    % <span class="hljs-built_in">set</span> transparency <span class="hljs-keyword">to</span> maximum cloud value<br>hold off<br></code></pre></td></tr></table></figure>
-
 <p><img src="https://ww2.mathworks.cn/help/matlab/creating_plots/changingtransparencyexample_04_zh_CN.png" srcset="/img/loading.gif" lazyload alt="img"></p>
-<h3 id="四、个别填充的透明度"><a href="#四、个别填充的透明度" class="headerlink" title="四、个别填充的透明度"></a>四、个别填充的透明度</h3><p>填充的透明度由其 <code>FaceAlpha</code> 和 <code>FaceVertexAlphaData</code> 属性定义。若要在整个填充上实现单一的透明度，请将 <code>FaceVertexAlphaData</code> 设置为一个介于 0（完全透明）和 1（完全不透明）之间的常量，并将 <code>FaceAlpha</code> 属性设置为 <code>&#39;flat&#39;</code>。</p>
+<h3 id="4、个别填充的透明度"><a href="#4、个别填充的透明度" class="headerlink" title="4、个别填充的透明度"></a>4、个别填充的透明度</h3><p>填充的透明度由其 <code>FaceAlpha</code> 和 <code>FaceVertexAlphaData</code> 属性定义。若要在整个填充上实现单一的透明度，请将 <code>FaceVertexAlphaData</code> 设置为一个介于 0（完全透明）和 1（完全不透明）之间的常量，并将 <code>FaceAlpha</code> 属性设置为 <code>&#39;flat&#39;</code>。</p>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs routeros">cla<br>p1 = patch(x,y,<span class="hljs-string">&#x27;r&#x27;</span>);             % make a red circular patch<br>axis square tight                % <span class="hljs-builtin-name">set</span> axis <span class="hljs-keyword">to</span> square<br><br>p1.FaceVertexAlphaData = 0.2;    % <span class="hljs-builtin-name">Set</span> constant transparency <br>p1.FaceAlpha = <span class="hljs-string">&#x27;flat&#x27;</span> ;          % Interpolate <span class="hljs-keyword">to</span> <span class="hljs-builtin-name">find</span> face transparency<br></code></pre></td></tr></table></figure>
-
 <p><img src="https://ww2.mathworks.cn/help/matlab/creating_plots/changingtransparencyexample_05_zh_CN.png" srcset="/img/loading.gif" lazyload alt="img"></p>
 <p>若要在整个填充上实现可变的透明度，请将 <code>FaceVertexAlphaData</code> 设置为用于指定填充的每个顶点或每个面的透明度的值矩阵。然后，通过 <code>FaceAlpha</code> 属性指示如何使用 <code>FaceVertexAlphaData</code> 确定面的透明度。如果为顶点指定了 alpha 数据，则必须将 <code>FaceAlpha</code> 设置为 <code>&#39;interp&#39;</code>。</p>
 <figure class="highlight erlang-repl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs erlang-repl">p1.FaceVertexAlphaData = x&#x27;;   <span class="hljs-comment">% Set vertex transparency to x values</span><br>p1.FaceAlpha = <span class="hljs-string">&#x27;interp&#x27;</span> ;      <span class="hljs-comment">% Interpolate to find face transparency</span><br></code></pre></td></tr></table></figure>
-
 <p><img src="https://ww2.mathworks.cn/help/matlab/creating_plots/changingtransparencyexample_06_zh_CN.png" srcset="/img/loading.gif" lazyload alt="img"></p>
-<h3 id="五、包含纹理映射的透明度"><a href="#五、包含纹理映射的透明度" class="headerlink" title="五、包含纹理映射的透明度"></a>五、包含纹理映射的透明度</h3><p>纹理映射将二维图像映射到三维曲面上。通过将 <code>CData</code> 属性设置为图像数据并将 <code>FaceColor</code> 属性设置为 <code>&#39;texturemap&#39;</code>，可将图像映射到曲面上。</p>
+<h3 id="5、包含纹理映射的透明度"><a href="#5、包含纹理映射的透明度" class="headerlink" title="5、包含纹理映射的透明度"></a>5、包含纹理映射的透明度</h3><p>纹理映射将二维图像映射到三维曲面上。通过将 <code>CData</code> 属性设置为图像数据并将 <code>FaceColor</code> 属性设置为 <code>&#39;texturemap&#39;</code>，可将图像映射到曲面上。</p>
 <p>此示例创建地球和云的三维视图。它创建球形表面，并使用纹理映射将地球和云的图像映射到曲面上。</p>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs routeros">[px,py,pz] = sphere(50);                % generate coordinates <span class="hljs-keyword">for</span> a 50 x 50 sphere<br><br>cla<br>sEarth = surface(py, px ,flip(pz));   <br>sEarth.FaceColor = <span class="hljs-string">&#x27;texturemap&#x27;</span>;        % <span class="hljs-builtin-name">set</span> color <span class="hljs-keyword">to</span> texture mapping<br>sEarth.EdgeColor = <span class="hljs-string">&#x27;none&#x27;</span>;              % <span class="hljs-builtin-name">remove</span> surface edge color<br>sEarth.CData = earth;                   % <span class="hljs-builtin-name">set</span> color data <br><br>hold on<br>sCloud = surface(px<span class="hljs-number">*1</span>.02,py<span class="hljs-number">*1</span>.02,flip(pz)<span class="hljs-number">*1</span>.02); <br><br>sCloud.FaceColor = <span class="hljs-string">&#x27;texturemap&#x27;</span>;        % <span class="hljs-builtin-name">set</span> color <span class="hljs-keyword">to</span> texture mapping<br>sCloud.EdgeColor = <span class="hljs-string">&#x27;none&#x27;</span>;              % <span class="hljs-builtin-name">remove</span> surface edge color<br>sCloud.CData = clouds;                  % <span class="hljs-builtin-name">set</span> color data <br> <br>sCloud.FaceAlpha = <span class="hljs-string">&#x27;texturemap&#x27;</span>;        % <span class="hljs-builtin-name">set</span> transparency <span class="hljs-keyword">to</span> texture mapping<br>sCloud.AlphaData = max(clouds,[],3);    % <span class="hljs-builtin-name">set</span> transparency data <br>hold off<br><br>view([80 2])                            % specify viewpoint <br>daspect([1 1 1])                        % <span class="hljs-builtin-name">set</span> aspect ratio<br>axis off tight                          % <span class="hljs-builtin-name">remove</span> axis <span class="hljs-keyword">and</span> <span class="hljs-builtin-name">set</span> limits <span class="hljs-keyword">to</span> data range<br></code></pre></td></tr></table></figure>
-
 <p><img src="https://ww2.mathworks.cn/help/matlab/creating_plots/changingtransparencyexample_07_zh_CN.png" srcset="/img/loading.gif" lazyload alt="img"></p>
 
             </div>
@@ -273,7 +273,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/jekyll-update/">jekyll update</a>
+                      <a class="hover-with-bg" href="/categories/Matlab/">Matlab</a>
                     
                   </div>
                 
@@ -443,20 +443,48 @@
 
 
 
-  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
-      
-      typing(title)
-      
-    })(window, document);
-  </script>
 
 
 
 
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.4/es5/tex-svg.js" ></script>
+
+  
 
 
 

@@ -56,7 +56,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"forsetisss.github.io","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":"G-QTJ4C2S4VR","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"forsetisss.github.io","root":"/","version":"1.8.11","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":"G-QTJ4C2S4VR","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -64,7 +64,7 @@
 
 
 <body>
-  <header style="height: 70vh;">
+  <header style="height: 30vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -158,17 +158,24 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
+         style="background: url('/img/18180428_1361087742584.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
             <span class="h2" id="subtitle" title="信号处理|傅里叶变换、短时傅里叶变换、小波变换、希尔伯特变换、希尔伯特黄变换">
               
+                信号处理|傅里叶变换、短时傅里叶变换、小波变换、希尔伯特变换、希尔伯特黄变换
+              
             </span>
 
             
               <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      Shi Daming
+    </span>
   
   
     <span class="post-meta">
@@ -195,7 +202,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      14
+      28
        分钟
     </span>
   
@@ -227,13 +234,28 @@
             <!-- SEO header -->
             <h1 style="display: none">信号处理|傅里叶变换、短时傅里叶变换、小波变换、希尔伯特变换、希尔伯特黄变换</h1>
             
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年7月1日 中午
+                
+              </p>
+            
             <div class="markdown-body">
               <p>对于非平稳信号，其频率特性会随时间变化，为了捕获这一时变特性，我们需要对信号进行时频域分析，包括短时傅里叶变换、小波变换、希尔伯特变换和希尔伯特黄变换，一下注意进行分析。</p>
-<h3 id="傅里叶变换-Fourier-Transform-FT"><a href="#傅里叶变换-Fourier-Transform-FT" class="headerlink" title="傅里叶变换(Fourier Transform, FT)"></a>傅里叶变换(Fourier Transform, FT)</h3><p>简单介绍一下一个连续信号$f(t)$的傅里叶变换和其逆变换<br>$$<br>\begin{array}{l}<br>F(\omega)=F[f(t)]=\int_{-\infty}^{+\infty} f(t) e^{-j \omega t} d t \<br>f(t)=F^{-1}[F(\omega)]=\frac{1}{2 \pi} \int_{-\infty}^{+\infty} F(\omega) e^{j \omega t} d \omega<br>\end{array}<br>$$</p>
-<p>当然在实际应用中，一般使用离散傅里叶变换<br>$$<br>X(k)=\sum_{n=0}^{N-1} x(n) e^{-j2\pi kn/N}\<br>x(n)=\frac{1}{N}\sum_{n=0}^{N-1} X(n) e^{j2\pi kn/N}<br>$$<br>如果信号的频率特性在任何时间都不发生改变(即该信号是平稳信号)的话，使用傅里叶变换是没有问题的，然而如果该信号是非平稳信号，这时候时域信息就相当重要了。</p>
-<h3 id="短时傅里叶变换-Short-Time-Fourier-Transform-STFT"><a href="#短时傅里叶变换-Short-Time-Fourier-Transform-STFT" class="headerlink" title="短时傅里叶变换(Short-Time Fourier Transform, STFT)"></a>短时傅里叶变换(Short-Time Fourier Transform, STFT)</h3><p>$$<br>X(n, \omega)=\sum_{m=-\infty}^{\infty} x(m) w(n-m) e^{-j \omega m}<br>$$</p>
-<p>其中$w(n-m)$是窗函数，我们可以据此对信号进行时频分析。</p>
-<h3 id="小波变换-Wavelet-Transform-WT"><a href="#小波变换-Wavelet-Transform-WT" class="headerlink" title="小波变换(Wavelet Transform, WT)"></a>小波变换(Wavelet Transform, WT)</h3><p>对于任意能量有限信号$f(t)$，其连续小波变换(CWT)定义为<br>$$<br>W_{f}(a, b)=\frac{1}{\sqrt{a}} \int_{-\infty}^{+\infty} f(t) \psi^{*}\left(\frac{t-b}{a}\right) d t<br>$$<br>在低频区域的变换结果具有较高的频率分辨率(频率轴是对数轴，在低频区域跨度较小)，在高频区域具有较高的时间分辨率。</p>
+<h3 id="傅里叶变换-Fourier-Transform-FT"><a href="#傅里叶变换-Fourier-Transform-FT" class="headerlink" title="傅里叶变换(Fourier Transform, FT)"></a>傅里叶变换(Fourier Transform, FT)</h3><p>简单介绍一下一个连续信号$f(t)$的傅里叶变换和其逆变换</p>
+<script type="math/tex; mode=display">
+\begin{array}{l}
+F(\omega)=F[f(t)]=\int_{-\infty}^{+\infty} f(t) e^{-j \omega t} d t \\
+f(t)=F^{-1}[F(\omega)]=\frac{1}{2 \pi} \int_{-\infty}^{+\infty} F(\omega) e^{j \omega t} d \omega
+\end{array}</script><p>当然在实际应用中，一般使用离散傅里叶变换</p>
+<script type="math/tex; mode=display">
+X(k)=\sum_{n=0}^{N-1} x(n) e^{-j2\pi kn/N}\\
+x(n)=\frac{1}{N}\sum_{n=0}^{N-1} X(n) e^{j2\pi kn/N}</script><p>如果信号的频率特性在任何时间都不发生改变(即该信号是平稳信号)的话，使用傅里叶变换是没有问题的，然而如果该信号是非平稳信号，这时候时域信息就相当重要了。</p>
+<h3 id="短时傅里叶变换-Short-Time-Fourier-Transform-STFT"><a href="#短时傅里叶变换-Short-Time-Fourier-Transform-STFT" class="headerlink" title="短时傅里叶变换(Short-Time Fourier Transform, STFT)"></a>短时傅里叶变换(Short-Time Fourier Transform, STFT)</h3><script type="math/tex; mode=display">
+X(n, \omega)=\sum_{m=-\infty}^{\infty} x(m) w(n-m) e^{-j \omega m}</script><p>其中$w(n-m)$是窗函数，我们可以据此对信号进行时频分析。</p>
+<h3 id="小波变换-Wavelet-Transform-WT"><a href="#小波变换-Wavelet-Transform-WT" class="headerlink" title="小波变换(Wavelet Transform, WT)"></a>小波变换(Wavelet Transform, WT)</h3><p>对于任意能量有限信号$f(t)$，其连续小波变换(CWT)定义为</p>
+<script type="math/tex; mode=display">
+W_{f}(a, b)=\frac{1}{\sqrt{a}} \int_{-\infty}^{+\infty} f(t) \psi^{*}\left(\frac{t-b}{a}\right) d t</script><p>在低频区域的变换结果具有较高的频率分辨率(频率轴是对数轴，在低频区域跨度较小)，在高频区域具有较高的时间分辨率。</p>
 <h3 id="conclusion"><a href="#conclusion" class="headerlink" title="conclusion"></a>conclusion</h3><ul>
 <li>对于时域信号，它可以有很高的时间分辨率，然而其频率分辨率为零。</li>
 <li>经过傅里叶变换得到的频域信号可以实现很高的频率分辨率，然而其时间分辨率为零。</li>
@@ -262,7 +284,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/jekyll-update/">jekyll update</a>
+                      <a class="hover-with-bg" href="/categories/signal-processing/">signal processing</a>
                     
                   </div>
                 
@@ -434,20 +456,48 @@
 
 
 
-  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
-      
-      typing(title)
-      
-    })(window, document);
-  </script>
 
 
 
 
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.4/es5/tex-svg.js" ></script>
+
+  
 
 
 
