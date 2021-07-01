@@ -2,20 +2,10 @@
 title: Getting Started：使用Jekyll创建GitHub Pages站点搭建博客（Windows）
 author: Shi Daming
 date: 2021-03-01 17:00:00 +0800
-categories: jekyll update
+categories: jekyll
 tags: [getting started]
 pin: true
 ---
-**目录**
-
-\- [一、必要组件的安装](#一必要组件的安装)
-
-\- [二、网站托管（在Github上创建自己的repo）](#二网站托管在github上创建自己的repo)
-
-\- [三、基于Jekyll模板建立网站](#三基于jekyll模板建立网站)
-
-\- [四、Jekyll目录结构](#四jekyll目录结构)
-
 ### 一、必要组件的安装
 
 需要首先安装以下内容

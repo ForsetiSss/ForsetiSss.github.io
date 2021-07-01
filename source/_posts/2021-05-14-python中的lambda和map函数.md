@@ -2,18 +2,9 @@
 title: python中的lambda和map函数
 author: Shi Daming
 date: 2021-05-14 23:00:00 +0800
-categories: jekyll update
+categories: python
 tags: [python, lambda, map]
-pin: true
 ---
-
-**目录**
-
-\- [1、lambda函数](#1lambda函数)
-
-\- [2、map函数](#2map函数)
-
-\- [3、map函数和lambda函数结合](#3map函数和lambda函数结合)
 
 
 ### 1、lambda函数
