@@ -10,5 +10,6 @@ Typora 正确插入图片（设定相对路径）
 ```
 <img src="/images/BN_and_LN.png" style="zoom:80%;" />
 ```
-
 该图片位于项目的images文件夹下。
+
+开头输入mathjax: true
