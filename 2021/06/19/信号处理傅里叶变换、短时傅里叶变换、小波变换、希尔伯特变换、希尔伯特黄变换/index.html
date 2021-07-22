@@ -192,7 +192,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.2k 字
+      2.6k 字
     </span>
   
 
@@ -202,7 +202,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      48
+      58
        分钟
     </span>
   
@@ -236,7 +236,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年7月22日 下午
+                  本文最后更新于：2021年7月22日 晚上
                 
               </p>
             
@@ -278,16 +278,36 @@ W_{f}(a, b)=\frac{1}{\sqrt{a}} \int_{-\infty}^{+\infty} f(t) \psi^{*}\left(\frac
 <h3 id="变分模态分解-VMD"><a href="#变分模态分解-VMD" class="headerlink" title="变分模态分解(VMD)"></a>变分模态分解(VMD)</h3><p>VMD（Variational mode decomposition）是一种自适应、完全非递归的模态变分和信号处理的方法。该技术具有可以确定模态分解个数的优点，其自适应性表现在根据实际情况确定所给序列的模态分解个数，随后的搜索和求解过程中可以自适应地匹配每种模态的最佳中心频率和有限带宽，并且可以实现固有模态分量（IMF）的有效分离、信号的频域划分、进而得到给定信号的有效分解成分，最终获得变分问题的最优解。它克服了EMD方法存在端点效应和模态分量混叠的问题。</p>
 <p>VMD的核心思想是构建和求解变分问题实现IMF的有效分离。</p>
 <p>推荐论文：<a target="_blank" rel="noopener" href="https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&amp;dbname=CJFDLAST2019&amp;filename=JGHW201811024&amp;v=UsZgNaRI7%25mmd2BXIcXhf68qkQ0zRFSa2mGSVb5rb%25mmd2FL48hZ9plvZdpsKV6H3NsWeyu3YT"> 基于VMD的激光雷达回波信号去噪方法研究</a></p>
-<h3 id="二维傅里叶变换-2D-FT"><a href="#二维傅里叶变换-2D-FT" class="headerlink" title="二维傅里叶变换(2D-FT)"></a>二维傅里叶变换(2D-FT)</h3><h5 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h5><p>一维信号是一个序列，FT将其分解成若干个一维的简单函数之和。而二维FT将一个图像分解成若干个复平面波$e^{j 2 \pi(u x+v y)}$之和。<strong>二维FT的公式</strong>如下： </p>
+<h3 id="二维傅里叶变换-2D-FT"><a href="#二维傅里叶变换-2D-FT" class="headerlink" title="二维傅里叶变换(2D-FT)"></a>二维傅里叶变换(2D-FT)</h3><p><strong>定义</strong></p>
+<p>一维信号是一个序列，FT将其分解成若干个一维的简单函数之和。而二维FT将一个图像分解成若干个复平面波$e^{j 2 \pi(u x+v y)}$之和。<strong>二维FT的公式</strong>如下： </p>
 <script type="math/tex; mode=display">
 F(u, v)=\int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} f(x, y) e^{-j 2 \pi(u x+v y)} d x d y</script><p>通过公式，我们可以计算出，每个平面波在图像中成分是多少。从公式也可以看到，二维傅里叶变换就是将图像与每个不同频率的不同方向的复平面波做内积（先点乘在求和），也就是一个求在<strong>基</strong>$e^{-j 2 \pi(u x+v y)}$上的<strong>投影</strong>的过程。</p>
-<h5 id="二维频率域K-SPACE"><a href="#二维频率域K-SPACE" class="headerlink" title="二维频率域K-SPACE"></a><strong>二维频率域K-SPACE</strong></h5><p>对于正弦平面波，可以这样理解，在一个方向上存在一个正弦函数，在法线方向上将其拉伸。前面说过三个参数可以确定一个一维的正弦波。哪几个参数可以确定一个二维的正弦平面波呢？答案是四个，其中三个和一维的情况一样（频率$\omega$ ,幅度$A$，相位$\varphi$），但是具有相同这些参数的平面波却可以有不同的方向$\vec{n}$ 。</p>
+<p><img src="/images/QQ截图20210722190017.png" srcset="/img/loading.gif" lazyload alt="QQ截图20210722190017"></p>
+<p><strong>二维频率域K-SPACE</strong></p>
+<p>对于正弦平面波，可以这样理解，在一个方向上存在一个正弦函数，在法线方向上将其拉伸。前面说过三个参数可以确定一个一维的正弦波。哪几个参数可以确定一个二维的正弦平面波呢？答案是四个，其中三个和一维的情况一样（频率$\omega$ ,幅度$A$，相位$\varphi$），但是具有相同这些参数的平面波却可以有不同的方向$\vec{n}$ 。</p>
 <p>类比一维中，幅度和相位可以用一个复数表示，它可以作为我们存储的内容。但是还有两个：一个频率一个方向。这时想到向量是有方向的，也是有长度的。所以我们用一个二维的矩阵的来保存分解之后得到的信息。这个矩阵就是K空间。（一般用k来表示空间频率，单位是1/m）</p>
 <p>就是说一个二维矩阵点 $(u,v)$代表这个平面波的法向量$\vec{n}$，这个向量的模$\sqrt{u^{2}+v^{2}}$代表这个平面波的频率$\omega$ ，这个点里面保存的内容复数就是此平面波的幅度和相位。下面这个图很好的体现了这一点：</p>
 <p><img src="/images/2d-fft.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>也因此K空间的中心对于低频，周围对于高频。再如下面这个图片，<strong>中心低频贡献了图像的主体，周围高频提供图像的细节和边缘。</strong></p>
+<p><img src="/images/QQ截图20210722185927.png" srcset="/img/loading.gif" lazyload alt="2d-fft_2"></p>
+<p>因此，k空间的每一个位置存储的数代表了所在位置复平面波在图像中占多少成分，我们就可以用每个系数所代表的平面波相加得到原来的图像。所以<strong>k空间和对应图像储存的信息含量是一样的</strong>，只不过表现形式不同，或者说基不同。</p>
+<p><strong>K空间的一些性质</strong></p>
+<p>频率混叠。在数字图像中，数据都是离散的。也就涉及到采样的问题，和一维一样，如果采样率过低，k空间就会混叠。同时在k空间中采样过低，图像也会混叠。<strong>FOV和分辨率在k空间和图像中是相反的关系</strong></p>
+<script type="math/tex; mode=display">
+\Delta x=\frac{1}{2 * k_{x m a x}}, \Delta k=\frac{1}{2 * x_{x m a x}}=\frac{1}{F O V}</script><p>旋转不变性。从平面波的角度很容易理解，旋转没有改变平面波的幅度相位，只是将所有的平面波都旋转了一个角度。下面这个图像显示了二维傅里叶变换中，实空间旋转多少，频率空间也会相应旋转多少。这其实是<strong>高维傅里叶变换缩放定理的一种特殊情况。</strong></p>
+<p><strong>PS</strong></p>
+<ul>
+<li><p>1.因为matlab中的fft算法都是将0放在第一个的，所有写matlab时一定要将k空间fftshift一下使得零频回到k空间中心。</p>
+</li>
+<li><p>2.简单的应用k空间进行去噪例子。通过去掉明显的k空间的异常峰，可以去除图像中有规律变化的噪声或者伪影。</p>
+</li>
+</ul>
+<p><img src="/images/QQ截图20210722185958.png" srcset="/img/loading.gif" lazyload alt="QQ截图20210722185958" style="zoom:80%;" /></p>
 <p><strong>Reference</strong></p>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/150705777">https://zhuanlan.zhihu.com/p/150705777</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/22611929">https://www.zhihu.com/question/22611929</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/110026009">https://zhuanlan.zhihu.com/p/110026009</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.robots.ox.ac.uk/~az/lectures/ia/lect2.pdf">https://www.robots.ox.ac.uk/~az/lectures/ia/lect2.pdf</a></p>
 
             </div>
             <hr>
