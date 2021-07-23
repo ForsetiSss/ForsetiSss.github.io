@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
-  <link rel="icon" href="/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar.png">
+  <link rel="icon" href="/img/avatar.png">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -52,6 +52,10 @@
 <link  rel="stylesheet" href="/css/main.css" />
 
 <!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
 
 
   <script id="fluid-configs">
@@ -236,7 +240,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年7月22日 晚上
+                  本文最后更新于：2021年7月23日 上午
                 
               </p>
             
@@ -282,14 +286,14 @@ W_{f}(a, b)=\frac{1}{\sqrt{a}} \int_{-\infty}^{+\infty} f(t) \psi^{*}\left(\frac
 <p>一维信号是一个序列，FT将其分解成若干个一维的简单函数之和。而二维FT将一个图像分解成若干个复平面波$e^{j 2 \pi(u x+v y)}$之和。<strong>二维FT的公式</strong>如下： </p>
 <script type="math/tex; mode=display">
 F(u, v)=\int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} f(x, y) e^{-j 2 \pi(u x+v y)} d x d y</script><p>通过公式，我们可以计算出，每个平面波在图像中成分是多少。从公式也可以看到，二维傅里叶变换就是将图像与每个不同频率的不同方向的复平面波做内积（先点乘在求和），也就是一个求在<strong>基</strong>$e^{-j 2 \pi(u x+v y)}$上的<strong>投影</strong>的过程。</p>
-<p><img src="/images/QQ截图20210722190017.png" srcset="/img/loading.gif" lazyload alt="QQ截图20210722190017"></p>
+<p><img src="/images/QQ截图20210722190017.png" srcset="/img/loading.gif" lazyload alt="通过傅里叶变换分解"></p>
 <p><strong>二维频率域K-SPACE</strong></p>
 <p>对于正弦平面波，可以这样理解，在一个方向上存在一个正弦函数，在法线方向上将其拉伸。前面说过三个参数可以确定一个一维的正弦波。哪几个参数可以确定一个二维的正弦平面波呢？答案是四个，其中三个和一维的情况一样（频率$\omega$ ,幅度$A$，相位$\varphi$），但是具有相同这些参数的平面波却可以有不同的方向$\vec{n}$ 。</p>
 <p>类比一维中，幅度和相位可以用一个复数表示，它可以作为我们存储的内容。但是还有两个：一个频率一个方向。这时想到向量是有方向的，也是有长度的。所以我们用一个二维的矩阵的来保存分解之后得到的信息。这个矩阵就是K空间。（一般用k来表示空间频率，单位是1/m）</p>
 <p>就是说一个二维矩阵点 $(u,v)$代表这个平面波的法向量$\vec{n}$，这个向量的模$\sqrt{u^{2}+v^{2}}$代表这个平面波的频率$\omega$ ，这个点里面保存的内容复数就是此平面波的幅度和相位。下面这个图很好的体现了这一点：</p>
-<p><img src="/images/2d-fft.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/images/2d-fft.jpg" srcset="/img/loading.gif" lazyload alt="二维傅里叶变换的K空间"></p>
 <p>也因此K空间的中心对于低频，周围对于高频。再如下面这个图片，<strong>中心低频贡献了图像的主体，周围高频提供图像的细节和边缘。</strong></p>
-<p><img src="/images/QQ截图20210722185927.png" srcset="/img/loading.gif" lazyload alt="2d-fft_2"></p>
+<p><img src="/images/QQ截图20210722185927.png" srcset="/img/loading.gif" lazyload alt="低通滤波和高通滤波"></p>
 <p>因此，k空间的每一个位置存储的数代表了所在位置复平面波在图像中占多少成分，我们就可以用每个系数所代表的平面波相加得到原来的图像。所以<strong>k空间和对应图像储存的信息含量是一样的</strong>，只不过表现形式不同，或者说基不同。</p>
 <p><strong>K空间的一些性质</strong></p>
 <p>频率混叠。在数字图像中，数据都是离散的。也就涉及到采样的问题，和一维一样，如果采样率过低，k空间就会混叠。同时在k空间中采样过低，图像也会混叠。<strong>FOV和分辨率在k空间和图像中是相反的关系</strong></p>
@@ -302,7 +306,7 @@ F(u, v)=\int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} f(x, y) e^{-j 2 \pi(u 
 <li><p>2.简单的应用k空间进行去噪例子。通过去掉明显的k空间的异常峰，可以去除图像中有规律变化的噪声或者伪影。</p>
 </li>
 </ul>
-<p><img src="/images/QQ截图20210722185958.png" srcset="/img/loading.gif" lazyload alt="QQ截图20210722185958" style="zoom:80%;" /></p>
+<p><img src="/images/QQ截图20210722185958.png" srcset="/img/loading.gif" lazyload alt="应用k空间进行降噪" style="zoom:80%;" /></p>
 <p><strong>Reference</strong></p>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/150705777">https://zhuanlan.zhihu.com/p/150705777</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/22611929">https://www.zhihu.com/question/22611929</a></p>
