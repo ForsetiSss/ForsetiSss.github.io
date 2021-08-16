@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>小波散射网络</title>
+    <link href="/2021/07/23/%E5%B0%8F%E6%B3%A2%E6%95%A3%E5%B0%84%E7%BD%91%E7%BB%9C/"/>
+    <url>/2021/07/23/%E5%B0%8F%E6%B3%A2%E6%95%A3%E5%B0%84%E7%BD%91%E7%BB%9C/</url>
+    
+    <content type="html"><![CDATA[<h3 id="小波散射网络和小波神经网络"><a href="#小波散射网络和小波神经网络" class="headerlink" title="小波散射网络和小波神经网络"></a>小波散射网络和小波神经网络</h3><ol><li>小波网络</li></ol><p>小波神经网络是一种改进的BP网络，区别是将原来隐藏层的激活函数替换为小波函数，该网络属于小波分析和神经网络“紧致型”结合的一种方式，按照文献[1]中的说法，由于小波变换的时频局部特性，使得该网络在信号处理方面具有自适应性、容错能力和较强的网络逼近能力。小波神经网络的结构</p><p><img src="D:\GitHub\ForsetiSss.github.io\source\_posts\2021-07-23-小波散射网络\小波神经网络的结构.png" alt="小波网络结构"></p><p>小波网络模型可以表示为</p><script type="math/tex; mode=display">y_{i}(t)=\sum_{i=0}^{n} w_{i j} \psi_{a, b}\left(\sum_{k=0}^{m} w_{j k} x_{k}(t)\right)</script><p>本质上该网络的表示能力和BP网络并无区别，虽然在某些情况下可以获得更为优良的收敛速度和容错能力，但随着数据量提高，其预设的小波基会限制泛化性能。</p><ol><li>小波散射网络</li></ol><p>小波散射网络是由Mallat[2]等人提出的具有平移不变性的小波散射卷积神经网络，</p><p>传统方法里，平移不变表示可以用配准算法或傅立叶变换模量来构造。为了避免傅立叶变换的不稳定性，建议用局部波形(如小波)代替正弦波。然而，小波变换对变化会有些敏感。从小波系数建立不变表示需要引入非线性算子，而卷积网络结构正好可以与之互补，有能力建立对变形反应稳定的大规模不变量。（PS:卷积网络的平移不变性仍然存疑[3]）。</p><p><img src="D:\GitHub\ForsetiSss.github.io\source\_posts\2021-07-23-小波散射网络\A scattering propagator.png" alt="A scattering propagator"></p><p><strong>参考文献</strong></p><p>[1] 左东广, 周帅, 张欣豫. 小波神经网络[J]. 四川兵工学报, 2012(05):90-92+104.</p><p>[2] Bruna J, Mallat S. Invariant scattering convolution networks[J]. IEEE transactions on pattern analysis and machine intelligence, 2013, 35(8): 1872-1886.</p><p>[3] Azulay A, Weiss Y. Why do deep convolutional networks generalize so poorly to small image transformations?[J]. arXiv preprint arXiv:1805.12177, 2018.</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>signal processing</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>信号处理|傅里叶变换、短时傅里叶变换、小波变换、希尔伯特变换、希尔伯特黄变换、经验小波变换、变分模态分解</title>
     <link href="/2021/06/19/%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E3%80%81%E7%9F%AD%E6%97%B6%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E3%80%81%E5%B0%8F%E6%B3%A2%E5%8F%98%E6%8D%A2%E3%80%81%E5%B8%8C%E5%B0%94%E4%BC%AF%E7%89%B9%E5%8F%98%E6%8D%A2%E3%80%81%E5%B8%8C%E5%B0%94%E4%BC%AF%E7%89%B9%E9%BB%84%E5%8F%98%E6%8D%A2/"/>
     <url>/2021/06/19/%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E3%80%81%E7%9F%AD%E6%97%B6%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E3%80%81%E5%B0%8F%E6%B3%A2%E5%8F%98%E6%8D%A2%E3%80%81%E5%B8%8C%E5%B0%94%E4%BC%AF%E7%89%B9%E5%8F%98%E6%8D%A2%E3%80%81%E5%B8%8C%E5%B0%94%E4%BC%AF%E7%89%B9%E9%BB%84%E5%8F%98%E6%8D%A2/</url>
