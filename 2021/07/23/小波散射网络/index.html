@@ -240,13 +240,13 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年8月17日 中午
+                  本文最后更新于：2021年8月25日 下午
                 
               </p>
             
             <div class="markdown-body">
               <h3 id="小波散射网络和小波神经网络"><a href="#小波散射网络和小波神经网络" class="headerlink" title="小波散射网络和小波神经网络"></a>小波散射网络和小波神经网络</h3><h4 id="1-小波网络"><a href="#1-小波网络" class="headerlink" title="1. 小波网络"></a>1. 小波网络</h4><p>小波神经网络是一种改进的BP网络，区别是将原来隐藏层的激活函数替换为小波函数，该网络属于小波分析和神经网络“紧致型”结合的一种方式，按照文献[1]中的说法，由于小波变换的时频局部特性，使得该网络在信号处理方面具有自适应性、容错能力和较强的网络逼近能力。小波神经网络的结构</p>
-<p><img src="/images/2021-07-23-小波散射网络/小波神经网络的结构.png" srcset="/img/loading.gif" lazyload alt="小波神经网络的结构"></p>
+<p><img src="/images/2021-07-23-小波散射网络/小波神经网络的结构.png" srcset="/img/loading.gif" lazyload alt="图1 小波神经网络的结构"></p>
 <p>小波网络模型可以表示为</p>
 <script type="math/tex; mode=display">
 y_{i}(t)=\sum_{i=0}^{n} w_{i j} \psi_{a, b}\left(\sum_{k=0}^{m} w_{j k} x_{k}(t)\right)</script><p>本质上该网络的表示能力和BP网络并无区别，虽然在某些情况下可以获得更为优良的收敛速度和容错能力，但随着数据量提高，其预设的小波基会限制泛化性能。</p>
@@ -264,7 +264,7 @@ U[\lambda] x=\left|x * \psi_{\lambda}\right|</script><p>则序列$p=(\lambda<em>
 <script type="math/tex; mode=display">
 S[p] x(u)=U[p] x * \phi_{2^{J}}(u)=\int U[p] x(v) \phi_{2^{J}}(u-v) d v</script><p>对于每个路径$p$，$S[p] x(u)$取决于窗的位置$u$。平均滤波器$\phi<em>{2^{J}}(u)$使得当$|c| \ll 2^{J}$时，$x</em>{c}(u)=x(u-c)$​​​ ，因此加窗的小波散射系数是近似具有平移不变性的。</p>
 <p>小波散射网络的迭代过程可以表示为如下所示</p>
-<p><img src="/images/2021-07-23-小波散射网络/A scattering propagator.png" srcset="/img/loading.gif" lazyload alt="A scattering propagator"></p>
+<p><img src="/images/2021-07-23-小波散射网络/A scattering propagator.png" srcset="/img/loading.gif" lazyload alt="图2 A scattering propagator"></p>
 <p>图3为两幅图像的傅里叶变换及其散射系数的幅值。平均尺度系数$2^J$等于图像尺寸。上面和下面的图像是非常不同的，但它们有相同的一阶散射系数。二阶系数可以清楚地分辨出这些图像。由于图像小波系数更稀疏，顶部图像的二阶散射系数振幅较大。高阶系数没有显示出来，因为它们的能量可以忽略不计。</p>
 <p><img src="/images/2021-07-23-小波散射网络/Scattering coefficients.PNG" srcset="/img/loading.gif" lazyload alt="图3 Scattering coefficients"></p>
 <p><strong>参考文献</strong></p>
