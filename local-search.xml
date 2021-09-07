@@ -4,11 +4,11 @@
   
   
   <entry>
-    <title>偏微分方程</title>
-    <link href="/2021/09/07/%E5%81%8F%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/"/>
-    <url>/2021/09/07/%E5%81%8F%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/</url>
+    <title>微分方程</title>
+    <link href="/2021/09/07/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/"/>
+    <url>/2021/09/07/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h3 id="微分方程边界条件"><a href="#微分方程边界条件" class="headerlink" title="微分方程边界条件"></a>微分方程边界条件</h3><p>以二阶常微分方程为例</p><script type="math/tex; mode=display">y^{\prime \prime}(s)=f\left(y(s), y^{\prime}(s), s\right)</script><p>柯西边界条件（起始值条件）</p><script type="math/tex; mode=display">y(a)=\alpha，y^{\prime}(a)=\beta</script><p>狄利克雷边界条件（第一类边界条件）</p><script type="math/tex; mode=display">y(a)=\alpha_{1}，y(b)=\alpha_{2}</script><p>诺依曼边界条件（第二类边界条件）</p><script type="math/tex; mode=display">y^{\prime}(a)=\alpha_{1},y^{\prime}(b)=\alpha_{2}</script>]]></content>
     
     
     
