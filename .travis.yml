@@ -1,8 +1,11 @@
-sudo: false
+sudo: true
 language: node_js
 node_js:
   - 16 # use nodejs v12 LTS
-cache: npm
+cache: npm 
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -y pandoc
 branches:
   only:
     - main # build master branch only
