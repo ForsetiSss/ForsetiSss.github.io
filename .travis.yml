@@ -10,6 +10,7 @@ cache:
 install:
   - sudo apt-get install -y pandoc
   - npm install -g hexo-cli
+  - npm uninstall hexo-renderer-marked --save
   - npm install hexo-renderer-pandoc --save
 branches:
   only:
