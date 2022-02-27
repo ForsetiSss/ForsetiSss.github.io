@@ -2,14 +2,24 @@ sudo: true
 language: node_js
 node_js:
   - 16 # use nodejs v12 LTS
-cache: npm 
+cache: 
+  - npm 
+  - pandoc
+  - hexo-cli
+  - hexo-renderer-pandoc
 before_install:
   - sudo apt-get -qq update
   - sudo apt-get install -y pandoc
+install:
+  - wget ${pandoc}
+  - sudo dpkg -i pandoc*.deb
+  - npm install -g hexo-cli
+  - npm install hexo-renderer-pandoc --save
 branches:
   only:
     - main # build master branch only
 script:
+  - hexo clean
   - hexo generate # generate static files
 deploy:
   provider: pages
