@@ -9,7 +9,7 @@ cache:
   - hexo-renderer-pandoc
 install:
   - wget https://github.com/jgm/pandoc/releases/download/2.7/pandoc-2.7-1-amd64.deb
-  - dpkg -i ./pandoc-2.7-1-amd64.deb
+  - sudo dpkg -i ./pandoc-2.7-1-amd64.deb
   - npm install -g hexo-cli
   - npm uninstall hexo-renderer-marked --save
   - npm install hexo-renderer-pandoc --save
