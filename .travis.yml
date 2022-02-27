@@ -7,12 +7,8 @@ cache:
   - pandoc
   - hexo-cli
   - hexo-renderer-pandoc
-before_install:
-  - sudo apt-get -qq update
-  - sudo apt-get install -y pandoc
 install:
-  - wget ${pandoc}
-  - sudo dpkg -i pandoc*.deb
+  - sudo apt-get install -y pandoc
   - npm install -g hexo-cli
   - npm install hexo-renderer-pandoc --save
 branches:
