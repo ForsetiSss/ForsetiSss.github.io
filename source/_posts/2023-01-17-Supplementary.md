@@ -18,37 +18,41 @@ W(x, y)=\sum_{m=1}^{p} \sum_{n=1}^{q} A_{m n} X_{m}(x) Y_{n}(y)
 $$
 where
 $$
+\begin{equation}
 \begin{array}{l}
 X_{n}=C_{1,x}\sin \alpha x + {C_{2,x}}\cos \alpha x + {C_{3,x}}\sinh \beta x + {C_{4,x}}\cosh \beta x\\
 {Y_m}=C_{1,y}\sin \alpha x + {C_{2,y}}\cos \alpha x + {C_{3,y}}\sinh \beta x + {C_{4,y}}\cosh \beta x
 \end{array}
+\end{equation}
 $$
 The simplified boundary conditions used in the paper is based on the Euler-Bernoulli beam, which is no longer applicable for these structures. A more precise form of boundary conditions of thin-walled plates are listed as follows:
 
 For fixed boundary at *x*=0,
 $$
-\begin{array}{*{20}{l} }
+\begin{equation}
 { {\left. W \right|}_{x = 0} = 0,\quad  {\left. {\frac{ {\partial W} }{ {\partial x} } } \right|}_{x = 0} } = 0
-\end{array}
+\end{equation}
 $$
 For simply supported boundary at *x*=0,
 $$ {% raw %}
-\begin{array}{*{20}{l} }
+\begin{equation}
 { {\left. W \right|}_{x = 0} = 0,\quad {\left. {\frac{ { {\partial ^2}W} }{ {\partial {x^2} } } } \right|}_{x = 0}} = 0
-\end{array}
+\end{equation}
 $$ {% endraw %}
 For free boundary at *x*=*a*,
 $$ {% raw %}
-\begin{array}{*{20}{l}}
+\begin{equation}
 {{{\left. {\frac{{{\partial ^2}W}}{{\partial {x^2}}} + \mu \frac{{{\partial ^2}W}}{{\partial {y^2}}}} \right|}_{x = a}} = 0,\quad {{\left. {\frac{{{\partial ^3}W}}{{\partial {x^3}}} + (2 - \mu )\frac{{{\partial ^3}W}}{{\partial x\partial {y^2}}}} \right|}_{x = a}} = 0}
-\end{array}
+\end{equation}
 $$ {% endraw %}
 Besides, for the angular corner with two adjacent free boundaries, the shear stress equals zero,
 $$ {% raw %}
+\begin{equation}
 {\left. {\frac{ { {\partial ^2}W}}{{\partial x\partial y}} } \right|_{\begin{array}{*{20}{c}}
 {x = a}\\
 {y = b}
 \end{array}}} = 0
+\end{equation}
 $$ {% endraw %}
 The above mode shape functions and boundary conditions can be adequate for various thin-walled structures like doubly-curved or pocket structures. Nevertheless, further researches is needed if the thickness and geometry irregularity of the structure is non-negligible.
 
