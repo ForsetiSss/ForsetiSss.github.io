@@ -34,26 +34,30 @@ $$
 \end{equation}
 $$
 For simply supported boundary at *x*=0,
-$$ {% raw %}
+$$
 \begin{equation}
 { {\left. W \right|}_{x = 0} = 0,\quad {\left. {\frac{ { {\partial ^2}W} }{ {\partial {x^2} } } } \right|}_{x = 0}} = 0
 \end{equation}
-$$ {% endraw %}
+$$
 For free boundary at *x*=*a*,
-$$ {% raw %}
-\begin{equation}
-{{{\left. {\frac{{{\partial ^2}W}}{{\partial {x^2}}} + \mu \frac{{{\partial ^2}W}}{{\partial {y^2}}}} \right|}_{x = a}} = 0,\quad {{\left. {\frac{{{\partial ^3}W}}{{\partial {x^3}}} + (2 - \mu )\frac{{{\partial ^3}W}}{{\partial x\partial {y^2}}}} \right|}_{x = a}} = 0}
-\end{equation}
-$$ {% endraw %}
+
+{% raw %}
+$$
+{ { {\left. {\frac{ { {\partial ^2}W} } { {\partial {x^2} } } + \mu \frac{{{\partial ^2}W} } { {\partial {y^2}}}} \right|}_{x = a}} = 0,\quad { {\left. {\frac{ { {\partial ^3}W}}{{\partial {x^3} } } + (2 - \mu )\frac{ { {\partial ^3}W} } { {\partial x\partial {y^2} } } } \right|}_{x = a} } = 0}
+$$
+{% endraw %}
+
 Besides, for the angular corner with two adjacent free boundaries, the shear stress equals zero,
-$$ {% raw %}
-\begin{equation}
+
+{% raw %}
+$$
 {\left. {\frac{ { {\partial ^2}W}}{{\partial x\partial y}} } \right|_{\begin{array}{*{20}{c}}
 {x = a}\\
 {y = b}
 \end{array}}} = 0
-\end{equation}
-$$ {% endraw %}
+$$
+{% endraw %}
+
 The above mode shape functions and boundary conditions can be adequate for various thin-walled structures like doubly-curved or pocket structures. Nevertheless, further researches is needed if the thickness and geometry irregularity of the structure is non-negligible.
 
 ### B. The acquisition of experimental FRF
