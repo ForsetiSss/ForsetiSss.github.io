@@ -78,7 +78,7 @@ As shown in the above figure, the mean coherence from 2000 Hz to 4500 Hz is 0.79
 
 For sample A, the coherence is acceptable and the measured FRF can provide useful information for the modal parameter update. A highly variant FRF estimation will undoubtedly affect the accuracy of the predictions of the mode shapes. For sample B, the estimated FRF is shown to be distorted by the noise and the true mode information cannot be extracted. 
 
-In practice, we reject the information from FRF when the mean coherence is lower than 0.5 by setting the relative coefficients in $h\left( {{{\bf{x}}_t}} \right)$ to zero when executing the measurement update
+In practice, we reject the information from FRF when the mean coherence is lower than 0.5 by setting the relative coefficients in $h\left( {\bf{x}}_t \right)$ to zero when executing the measurement update
 
 The installation locations may affect the signal-to-noise ratio (SNR) of the acceleration signals and FRF for different modes of the thin-walled structures. For comparison, two accelerometers are installed on the plate as shown in Fig. 2.  
 
