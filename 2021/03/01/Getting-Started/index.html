@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Getting Started：使用Jekyll创建GitHub Pages站点搭建博客（Windows） | Research Notes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="一、必要组件的安装 需要首先安装以下内容  Ruby - 是一种面向对象、命令式、函数式、动态的通用编程语言。Windows下直接下载安装即可Ruby installer。注意，如遇报错，可能需要将安装目录（xxx-x64）加入系统环境变量PATH。 Bundler - 是一个官方推荐的Ruby gem包管理软件，可以减少Jekyll的编译错误，和环境依赖相关的bug，相关链接Bund">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Getting Started：使用Jekyll创建GitHub Pages站点搭建博客（Windows）">
+<meta property="og:url" content="https://forsetisss.github.io/2021/03/01/Getting-Started/index.html">
+<meta property="og:site_name" content="Research Notes">
+<meta property="og:description" content="一、必要组件的安装 需要首先安装以下内容  Ruby - 是一种面向对象、命令式、函数式、动态的通用编程语言。Windows下直接下载安装即可Ruby installer。注意，如遇报错，可能需要将安装目录（xxx-x64）加入系统环境变量PATH。 Bundler - 是一个官方推荐的Ruby gem包管理软件，可以减少Jekyll的编译错误，和环境依赖相关的bug，相关链接Bund">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://forsetisss.github.io/images/QQ截图20210308194033.png">
+<meta property="article:published_time" content="2021-03-01T09:00:00.000Z">
+<meta property="article:modified_time" content="2021-08-15T01:47:48.233Z">
+<meta property="article:author" content="Shi Daming">
+<meta property="article:tag" content="getting started">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://forsetisss.github.io/images/QQ截图20210308194033.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Research Notes" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Research Notes</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://forsetisss.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Getting-Started" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/01/Getting-Started/" class="article-date">
+  <time class="dt-published" datetime="2021-03-01T09:00:00.000Z" itemprop="datePublished">2021-03-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/jekyll/">jekyll</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Getting Started：使用Jekyll创建GitHub Pages站点搭建博客（Windows）
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="一必要组件的安装">一、必要组件的安装</h3>
+<p>需要首先安装以下内容</p>
+<ul>
+<li><p><strong>Ruby</strong> - <a
+href="">是一种面向对象</a>、命令式、函数式、动态的通用编程语言。Windows下直接下载安装即可<a
+target="_blank" rel="noopener" href="https://rubyinstaller.org/">Ruby
+installer</a>。注意，如遇报错，可能需要将安装目录（xxx-x64）加入系统环境变量PATH。</p></li>
+<li><p><strong>Bundler</strong> - 是一个官方推荐的Ruby
+gem包管理软件，可以减少Jekyll的编译错误，和环境依赖相关的bug，相关链接<a
+target="_blank" rel="noopener" href="https://bundler.io/">Bundler</a>。只需在终端中运行以下两步：</p>
+<p>1.安装bundler</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">gem <span class="hljs-keyword">install</span> bundler<br></code></pre></td></tr></table></figure>
+<p>2.指定源</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">gem</span> sources <span class="hljs-string">&#x27;https://rubygems.org&#x27;</span><br></code></pre></td></tr></table></figure></li>
+<li><p><strong>Jekyll</strong>
+-相当于一个编译工具，安装好jekyll后，你可以通过jekyll创建一个网站模板从而在本地进行预览，而不用上传至Github后再进行查看，此软件包将在之后的步骤中自动安装。</p></li>
+</ul>
+<h3
+id="二网站托管在github上创建自己的repo">二、网站托管（在Github上创建自己的repo）</h3>
+<p>github.io是完全基于github创建的，其本质上是在你的github账户下创建一个特殊的repo。你可以参照如下步骤完成：</p>
+<ul>
+<li><p>创建repo</p>
+<p>登陆你的账户后，创建一个新的repo。请务必注意该repo的名字，必须保持格式<code>&lt;username&gt;.github.io</code>，其中
+`&lt;username） 替换成你的github账户名。</p></li>
+<li><p>把repo clone到本地</p>
+<p>在目录下新建一个index.html的文件,在里面输入任意内容，然后再把代码push送到github上。</p></li>
+<li><p>测试地址</p>
+<p>浏览器里访问<u>https://(username).github.io/</u>,可以发现这个url可以被访问了。</p></li>
+</ul>
+<p>到这里，一个免费且无限流量的Github代码托管仓库就创建完成了。</p>
+<h3 id="三基于jekyll模板建立网站">三、基于Jekyll模板建立网站</h3>
+<p>为了在发布前预览自己的网站，我们需要使用Jekyll，同时它也能为我们提供很多模板。</p>
+<ol type="1">
+<li><p>首先点击前往<a target="_blank" rel="noopener" href="http://jekyllthemes.org/">jekyll
+主题官网</a>。</p></li>
+<li><p>然后选择一个自己喜欢的主题模板，比如<a
+target="_blank" rel="noopener" href="http://jekyllthemes.org/themes/jekyll-theme-chirpy/">Chirpy</a>。</p></li>
+<li><p>点击Download下载该模板至repo的本地目录，注意确保根目录下含有Gemfile这个文件。</p>
+<p><img src="/images/QQ截图20210308194033.png"/></p>
+<p>注意插入图片时需要将图片文件放入assets文件夹，在md文件中由于路径不一致会无法正常显示，在网页中是正常的，无须担心。</p></li>
+<li><p>在本地repo目录下打开命令窗口并运行</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">bundle <span class="hljs-keyword">install</span><br></code></pre></td></tr></table></figure>
+<p>自动安装所有依赖的环境</p></li>
+<li><p>最后一步，开启测试</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm"><span class="hljs-keyword">bundle </span>exec <span class="hljs-keyword">jekyll </span>serve<br></code></pre></td></tr></table></figure>
+<p>成功运行之后，我们就可以通过http://127.0.0.1:4000/在本地访问创建的网站了。此时可以随时更改网站内容，并能实现自动实时更新。</p></li>
+</ol>
+<h3 id="四jekyll目录结构">四、Jekyll目录结构</h3>
+<p>​
+Jekyll使用Ruby脚本根据模板生成静态网页，实现了内容与排版的分离。模板以嵌入<a
+target="_blank" rel="noopener" href="https://shopify.github.io/liquid/">Liquid</a>脚本的HTML格式存放。内容为markdown或者html。为了撰写自己的博客，需要对模板内容进行修改。</p>
+<p>Jekyll模板通常包含的目录结构：</p>
+<figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs sqf"><span class="hljs-variable">_posts</span> 博客内容<br><span class="hljs-variable">_pages</span> 其他需要生成的网页，如About页<br><span class="hljs-variable">_layouts</span> 网页排版模板<br><span class="hljs-variable">_includes</span> 被模板包含的HTML片段，可在<span class="hljs-variable">_config</span>.yml中修改位置<br>assets 辅助资源 css布局 js脚本 图片等<br><span class="hljs-variable">_data</span> 动态数据<br><span class="hljs-variable">_sites</span> 最终生成的静态网页<br><span class="hljs-variable">_config</span>.yml 网站的一些配置信息<br>index.html 网站的入口<br></code></pre></td></tr></table></figure>
+<ol type="1">
+<li><p>我们打开根目录下的index.html可以看到：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html">---<br>layout: home<br># Index page<br>---<br></code></pre></td></tr></table></figure></li>
+<li><p>上面的home我们到_layouts目录下可以找到：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><code class="hljs html">---<br>layout: page<br># The Home page layout<br>---<br><br>&#123;% raw %&#125;<br>&#123;% assign pinned = site.posts | where_exp: &quot;item&quot;, &quot;item.pin == true&quot;  %&#125;<br>&#123;% assign default = site.posts | where_exp: &quot;item&quot;, &quot;item.pin != true&quot;  %&#125;<br>&#123;% assign posts = &quot;&quot; | split: &quot;&quot; %&#125;<br>...<br>   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;post-meta text-muted d-flex justify-content-between&quot;</span>&gt;</span><br><br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-comment">&lt;!-- posted date --&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;far fa-calendar fa-fw&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><br>        &#123;% include timeago.html date=post.date tooltip=true %&#125;<br><br>        <span class="hljs-comment">&lt;!-- time to read --&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;far fa-clock fa-fw&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><br>        &#123;% include read-time.html content=post.content %&#125;<br><br>        <span class="hljs-comment">&lt;!-- page views --&gt;</span><br>        &#123;% if site.google_analytics.pv.enabled %&#125;<br>        <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;far fa-eye fa-fw&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;pv_&#123;&#123;-post.title-&#125;&#125;&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;pageviews&quot;</span>&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;fas fa-spinner fa-spin fa-fw&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>        &#123;% endif %&#125;<br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br>      &#123;% if post.pin %&#125;<br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;pin&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;fas fa-thumbtack fa-fw&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>&#123;&#123; site.data.label.pin_prompt | default: &#x27;Pinned&#x27; &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>      &#123;% endif %&#125;<br><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span> <span class="hljs-comment">&lt;!-- .post-meta --&gt;</span><br><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span> <span class="hljs-comment">&lt;!-- .post-review --&gt;</span><br><br>&#123;% endfor %&#125;<br><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span> <span class="hljs-comment">&lt;!-- #post-list --&gt;</span><br><br>&#123;% if paginator.total_pages &gt; 0 %&#125;<br>  &#123;% include post-paginator.html %&#125;<br>&#123;% endif %&#125;<br>&#123;% endraw %&#125;<br></code></pre></td></tr></table></figure>
+<p>实际上根目录下index.html运行后是home里面的代码内容，1中<strong>html代码段</strong>会填充的上图中的<strong>content</strong>位置。jekyll是将分散在各个目录下的html文件拼接起来运行。</p></li>
+<li><p>上图的page布局也可以在_layouts目录下找到：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs html">---<br>layout: default<br># The page layout<br>---<br>&#123;% raw %&#125;<br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;row&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;col-12 col-lg-11 col-xl-8&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;page&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;post pb-5 pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4 mb-md-4&quot;</span>&gt;</span><br>    &#123;% if page.dynamic_title %&#125;<br>      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;dynamic-title&quot;</span>&gt;</span>&#123;&#123; page.title &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;post-content&quot;</span>&gt;</span><br>        &#123;&#123; content &#125;&#125;<br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    &#123;% else %&#125;<br>      &#123;&#123; content &#125;&#125;<br>    &#123;% endif %&#125;<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span> <span class="hljs-comment">&lt;!-- #page --&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><span class="hljs-comment">&lt;!-- .col-12 --&gt;</span><br><br>  &#123;% include panel.html %&#125;<br><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br>&#123;% if site.disqus.comments and page.comments %&#125;<br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;row&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;col-12 col-lg-11 col-xl-8&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4&quot;</span>&gt;</span><br><br>    &#123;% include disqus.html %&#125;<br><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span> <span class="hljs-comment">&lt;!-- .pl-1 pr-1 --&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span> <span class="hljs-comment">&lt;!-- .col-12 --&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span> <span class="hljs-comment">&lt;!-- .row --&gt;</span><br>&#123;% endif %&#125;<br>&#123;% endraw %&#125;<br></code></pre></td></tr></table></figure>
+<p>关于Jekyll的更详细用法可以参考<a
+target="_blank" rel="noopener" href="http://jekyllcn.com/docs/home/">官方网站</a></p>
+<p>ps:</p>
+<ul>
+<li>GitHub Page 的（一种）输入是 markdown 文件，输出是 HTML/CSS/JS
+文件。</li>
+</ul></li>
+</ol>
+<ul>
+<li><p>如果 markdown 文件包含代码块，且代码块中包含花括号 { 或
+}，尤其是包含 { % 或 { { 符号组合时，GitHub Page 会报错。</p>
+<ul>
+<li>在代码前后添加{ % raw % }和{ % endraw % }（去掉大括号内的空格）</li>
+</ul></li>
+<li><p>新版本Google Analytics的Tracking
+ID在管理→媒体资源→数据流中，也可以直接搜索。</p>
+<p>pps:</p></li>
+<li><p>本站已使用<strong>Hexo</strong>重新部署，以上仅供参考。</p></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://forsetisss.github.io/2021/03/01/Getting-Started/" data-id="clf57zax3000128ux1co2cx4i" data-title="Getting Started：使用Jekyll创建GitHub Pages站点搭建博客（Windows）" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/getting-started/" rel="tag">getting started</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/04/06/Matlab%E9%A2%9C%E8%89%B2%E8%BF%9B%E9%98%B6/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          Matlab作图：更改图像、填充或曲面的透明度
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Matlab/">Matlab</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jekyll/">jekyll</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/signal-processing/">signal processing</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/FFT/" rel="tag">FFT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HHT/" rel="tag">HHT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HT/" rel="tag">HT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Keras/" rel="tag">Keras</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LN/" rel="tag">LN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/" rel="tag">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STFT/" rel="tag">STFT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WT/" rel="tag">WT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/color/" rel="tag">color</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/filter/" rel="tag">filter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/getting-started/" rel="tag">getting started</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lambda/" rel="tag">lambda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/map/" rel="tag">map</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/signal-processing/" rel="tag">signal processing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/surf/" rel="tag">surf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/transparency/" rel="tag">transparency</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/FFT/" style="font-size: 10px;">FFT</a> <a href="/tags/HHT/" style="font-size: 10px;">HHT</a> <a href="/tags/HT/" style="font-size: 10px;">HT</a> <a href="/tags/Keras/" style="font-size: 10px;">Keras</a> <a href="/tags/LN/" style="font-size: 10px;">LN</a> <a href="/tags/Matlab/" style="font-size: 20px;">Matlab</a> <a href="/tags/STFT/" style="font-size: 10px;">STFT</a> <a href="/tags/WT/" style="font-size: 10px;">WT</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/filter/" style="font-size: 10px;">filter</a> <a href="/tags/getting-started/" style="font-size: 10px;">getting started</a> <a href="/tags/lambda/" style="font-size: 10px;">lambda</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/signal-processing/" style="font-size: 10px;">signal processing</a> <a href="/tags/surf/" style="font-size: 10px;">surf</a> <a href="/tags/transparency/" style="font-size: 10px;">transparency</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">七月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/01/17/Supplementary/">Supplementary</a>
+          </li>
+        
+          <li>
+            <a href="/2022/09/26/Windows%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">Windows相关问题</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/29/Matlab%E6%BB%A4%E6%B3%A2%E5%99%A8%E8%AE%BE%E8%AE%A1/">Matlab滤波器设计</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/11/hexo%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">hexo博客环境配置</a>
+          </li>
+        
+          <li>
+            <a href="/2021/11/29/%E8%96%84%E6%9D%BF%E7%BB%93%E6%9E%84%E7%9A%84%E6%A8%A1%E6%80%81%E5%88%86%E6%9E%90/">薄板结构的模态分析</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 Shi Daming<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

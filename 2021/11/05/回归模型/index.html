@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>回归模型 | Research Notes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="回归模型 广义线性模型、混合效应模型、高斯过程回归 三种模型中，相对最有名的应是广义线性模型(GLM)。包括吴恩达的机器学习课程中也包含GLM。简单来说，广义线性模型是采用线性方法来解决非线性的相关，实际上是一种特殊的非线性模型。 混合效应模型（MEM）在固定效应（如线性模型）的基础上加了一项“随机效应”。固定效应通常是传统的线性回归或者其它函数关系。随机效应则与所抽取的样本分布有关。因此随">
+<meta property="og:type" content="article">
+<meta property="og:title" content="回归模型">
+<meta property="og:url" content="https://forsetisss.github.io/2021/11/05/%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/index.html">
+<meta property="og:site_name" content="Research Notes">
+<meta property="og:description" content="回归模型 广义线性模型、混合效应模型、高斯过程回归 三种模型中，相对最有名的应是广义线性模型(GLM)。包括吴恩达的机器学习课程中也包含GLM。简单来说，广义线性模型是采用线性方法来解决非线性的相关，实际上是一种特殊的非线性模型。 混合效应模型（MEM）在固定效应（如线性模型）的基础上加了一项“随机效应”。固定效应通常是传统的线性回归或者其它函数关系。随机效应则与所抽取的样本分布有关。因此随">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-11-05T11:06:19.000Z">
+<meta property="article:modified_time" content="2021-11-09T02:00:07.915Z">
+<meta property="article:author" content="Shi Daming">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Research Notes" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Research Notes</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://forsetisss.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-回归模型" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/11/05/%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/" class="article-date">
+  <time class="dt-published" datetime="2021-11-05T11:06:19.000Z" itemprop="datePublished">2021-11-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      回归模型
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="回归模型">回归模型</h3>
+<p>广义线性模型、混合效应模型、高斯过程回归</p>
+<p>三种模型中，相对最有名的应是<strong>广义线性模型(GLM)。</strong>包括吴恩达的机器学习课程中也包含GLM。简单来说，广义线性模型是采用线性方法来解决非线性的相关，实际上是一种特殊的非线性模型。
+<strong>混合效应模型（MEM）</strong>在固定效应（如线性模型）的基础上加了一项“随机效应”。固定效应通常是传统的线性回归或者其它函数关系。随机效应则与所抽取的样本分布有关。因此随机效应具有先验分布，而固定效应没有。MEM拟合能力较强，相对模型也更容易解释，缺点是需要有大量的项，模型建立时需要自己指定每一项，故而相当繁琐。下面重点介绍一下<strong>高斯过程回归（GPR）</strong>。</p>
+<h4 id="reference">Reference</h4>
+<p>[1] <a
+target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=Mzg3NTAzOTYzOA==&amp;mid=2247483762&amp;idx=1&amp;sn=23d193866ce6ee128ce9485e90e952f3&amp;chksm=cec6df8bf9b1569d117c4042c81199310d6e652f1fcb0675aa367af7f3ddbdf946c1a7949900&amp;scene=21#wechat_redirect">功能强大的回归模型——高斯过程回归</a></p>
+<p>[2] <a
+target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/101160180">高斯过程的最强实现工具--GPflow
+OR GPyTorch - 知乎 (zhihu.com)</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://forsetisss.github.io/2021/11/05/%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/" data-id="clf57zaxj000h28uxamn3hgia" data-title="回归模型" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/11/08/%E6%95%B0%E6%8D%AE%E8%9E%8D%E5%90%88/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          数据融合
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/11/03/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%9E%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">代理模型</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Matlab/">Matlab</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jekyll/">jekyll</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/signal-processing/">signal processing</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/FFT/" rel="tag">FFT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HHT/" rel="tag">HHT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HT/" rel="tag">HT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Keras/" rel="tag">Keras</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LN/" rel="tag">LN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/" rel="tag">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STFT/" rel="tag">STFT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WT/" rel="tag">WT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/color/" rel="tag">color</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/filter/" rel="tag">filter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/getting-started/" rel="tag">getting started</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lambda/" rel="tag">lambda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/map/" rel="tag">map</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/signal-processing/" rel="tag">signal processing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/surf/" rel="tag">surf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/transparency/" rel="tag">transparency</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/FFT/" style="font-size: 10px;">FFT</a> <a href="/tags/HHT/" style="font-size: 10px;">HHT</a> <a href="/tags/HT/" style="font-size: 10px;">HT</a> <a href="/tags/Keras/" style="font-size: 10px;">Keras</a> <a href="/tags/LN/" style="font-size: 10px;">LN</a> <a href="/tags/Matlab/" style="font-size: 20px;">Matlab</a> <a href="/tags/STFT/" style="font-size: 10px;">STFT</a> <a href="/tags/WT/" style="font-size: 10px;">WT</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/filter/" style="font-size: 10px;">filter</a> <a href="/tags/getting-started/" style="font-size: 10px;">getting started</a> <a href="/tags/lambda/" style="font-size: 10px;">lambda</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/signal-processing/" style="font-size: 10px;">signal processing</a> <a href="/tags/surf/" style="font-size: 10px;">surf</a> <a href="/tags/transparency/" style="font-size: 10px;">transparency</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">七月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/01/17/Supplementary/">Supplementary</a>
+          </li>
+        
+          <li>
+            <a href="/2022/09/26/Windows%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">Windows相关问题</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/29/Matlab%E6%BB%A4%E6%B3%A2%E5%99%A8%E8%AE%BE%E8%AE%A1/">Matlab滤波器设计</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/11/hexo%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">hexo博客环境配置</a>
+          </li>
+        
+          <li>
+            <a href="/2021/11/29/%E8%96%84%E6%9D%BF%E7%BB%93%E6%9E%84%E7%9A%84%E6%A8%A1%E6%80%81%E5%88%86%E6%9E%90/">薄板结构的模态分析</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 Shi Daming<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

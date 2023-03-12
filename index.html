@@ -1,0 +1,1682 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Research Notes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Research Notes">
+<meta property="og:url" content="https://forsetisss.github.io/index.html">
+<meta property="og:site_name" content="Research Notes">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Shi Daming">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Research Notes" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Research Notes</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://forsetisss.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-Supplementary" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/17/Supplementary/" class="article-date">
+  <time class="dt-published" datetime="2023-01-17T00:51:35.000Z" itemprop="datePublished">2023-01-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/01/17/Supplementary/">Supplementary</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2
+id="supplementary-of-online-monitoring-dynamic-characteristics-in-thin-walled-structures-milling-a-physics-constrained-bayesian-updating-approach">Supplementary
+of 'Online monitoring dynamic characteristics in thin-walled structures
+milling: A physics-constrained Bayesian updating approach'</h2>
+<h3 id="a.-the-practicability-on-complicated-thin-walled-structures">A.
+The practicability on complicated thin-walled structures</h3>
+<p>The vibration model used in the paper are only applicable to the
+Kirchhoff-Love plate with fixed-free boundary conditions. Nonetheless,
+the physical constraints can be revised to adapt to more complicated
+structures such as doubly-curved (e.g. turbine blades) or pocket
+structures (e.g. airframe parts). A general equation of the mode shape
+functions can be expressed as: <span class="math display">\[
+\begin{equation}
+W(x, y)=\sum_{m=1}^{p} \sum_{n=1}^{q} A_{m n} X_{m}(x) Y_{n}(y)
+\end{equation}
+\]</span> where <span class="math display">\[
+\begin{equation}
+\begin{array}{l}
+X_{n}=C_{1,x}\sin \alpha x + {C_{2,x}}\cos \alpha x + {C_{3,x}}\sinh
+\beta x + {C_{4,x}}\cosh \beta x\\
+{Y_m}=C_{1,y}\sin \alpha x + {C_{2,y}}\cos \alpha x + {C_{3,y}}\sinh
+\beta x + {C_{4,y}}\cosh \beta x
+\end{array}
+\end{equation}
+\]</span> The simplified boundary conditions used in the paper is based
+on the Euler-Bernoulli beam, which is no longer applicable for these
+structures. A more precise form of boundary conditions of thin-walled
+plates are listed as follows:</p>
+<p>For fixed boundary at <em>x</em>=0, <span class="math display">\[
+\begin{equation}
+{ {\left. W \right|}_{x = 0} = 0,\quad  {\left. {\frac{ {\partial W} }{
+{\partial x} } } \right|}_{x = 0} } = 0
+\end{equation}
+\]</span> For simply supported boundary at <em>x</em>=0, <span
+class="math display">\[
+\begin{equation}
+{ {\left. W \right|}_{x = 0} = 0,\quad {\left. {\frac{ { {\partial ^2}W}
+}{ {\partial {x^2} } } } \right|}_{x = 0}} = 0
+\end{equation}
+\]</span> For free boundary at <em>x</em>=<em>a</em>,</p>
+
+$$
+{ { {\left. {\frac{ { {\partial ^2}W} } { {\partial {x^2} } } + \mu \frac{{{\partial ^2}W} } { {\partial {y^2}}}} \right|}_{x = a}} = 0,\quad { {\left. {\frac{ { {\partial ^3}W}}{{\partial {x^3} } } + (2 - \mu )\frac{ { {\partial ^3}W} } { {\partial x\partial {y^2} } } } \right|}_{x = a} } = 0}
+$$
+
+
+Besides, for the angular corner with two adjacent free boundaries, the shear stress equals zero,
+
+
+$$
+{\left. {\frac{ { {\partial ^2}W}}{{\partial x\partial y}} } \right|_{\begin{array}{*{20}{c}}
+{x = a}\\
+{y = b}
+\end{array}}} = 0
+$$
+
+<p>The above mode shape functions and boundary conditions can be
+adequate for various thin-walled structures like doubly-curved or pocket
+structures. Nevertheless, further researches is needed if the thickness
+and geometry irregularity of the structure is non-negligible.</p>
+<h3 id="b.-the-acquisition-of-experimental-frf">B. The acquisition of
+experimental FRF</h3>
+<p>In the experimental work, the computation of experimental FRF uses
+Welch’s method and H1 estimator from the measured machining forces and
+accelerometer response. The resolution of the resulting FRF is equal to
+the spindle rotation frequency (i.e. 20 Hz in the experiment), the
+bandwidth of which is quite limited. Usually, spindle speed sweep or
+randomized workpiece pattern is used to enrich the excitation range and
+resolution. However, constant spindle speed and tool path can make the
+method more practical in practical machining. Furthermore, despite the
+relative low resolution in single measurement, the practical resolution
+can be improved by the proposed online monitoring method by continuous
+multiple measurement and updating. Because there are more than 10
+thousand updating steps during machining process, and the practical
+resolution and accuracy can be improved step by step. Thus, the
+monitoring accuracy of the frequency is sufficient in common
+applications.</p>
+<p>Another problem is that the natural frequency of the plates is much
+higher than the spindle rotation frequency. It is true that the 50th
+harmonic of the spindle rotation frequency is far from the plates’ first
+mode. However, the experimental results show that the concerning modes
+of the plates can be well excited as shown in the following figure.</p>
+<p><img src="/images/2023-01-17-Supplementary/A sample of monitoring process.png" alt="Fig. 1 A sample of the monitoring process of modal parameters. (a) Measured acceleration signal in real time. (b) Acceleration spectrum with FFT. (c) Simulated force spectrum with FFT. (d) Corrected Force spectrum with FFT. (e) Derived FRF at the measurement point." style="auto;zoom:80%;" /></p>
+<p>A randomly selected sample of- the monitored signals and the
+preprocessing are presented in- Fig. 3. The spindle speed and the feed
+rate are pre-defined and kept unchanged in each tool path during the
+machining. Therefore, the real-time tool contact location can be
+obtained by integrating the feed speed as long as the moment of tool
+entrance is detected in each pass. The differential signal of the
+acceleration is utilized to detect these moments. The measured force
+spectrum and corrected force spectrum are presented as in Fig. 1. It
+shows a cut-off of 1 kHz in the measured force spectrum because of the
+limits of dynamometer. The corrected cutting force is utilized for a
+more accurate calculation in high frequency in the monitoring process as
+the cut-off frequency of the dynamometer is only 1 kHz. Thus, the FRF
+between the tool contact location and the response point (location of
+accelerometer) can be calculated with the cutting force and the
+acceleration signal. From the FRF, observation values of modal
+parameters including natural frequencies and modal shapes can be
+derived. The FRF is sampled at the harmonic frequencies of the spindle
+to avoid unexpected noise.</p>
+<p>As shown in the Fig. 1, the spectrum of the (corrected) forces
+becomes almost zero after 2000Hz. There is a risk that the coherence
+between the cutting force and the acceleration response becomes poor in
+high frequency when the workpiece may not be fully excited due to the
+low magnitude of the force spectrum. Here give two different samples of
+the magnitude-squared coherence estimated at the harmonic frequencies of
+spindle speed via welch.</p>
+<p><img src="/images/2023-01-17-Supplementary/coherence analysis.png" alt="Fig. 2. The comparison of magnitude-squared coherence between sample A (normal) and sample B (excessive noise)." style="auto;zoom:80%;" /></p>
+<p>As shown in the above figure, the mean coherence from 2000 Hz to 4500
+Hz is 0.79 for sample A, while the mean coherence from 2000 Hz to 4500
+Hz is as low as 0.46 for sample B. The coherence of the FRF depends on
+the noise level of the input signals. The actual processing conditions
+at different cutting positions and cutting parameters would have various
+degrees of influence on the noise level of the measured signals.</p>
+<p>For sample A, the coherence is acceptable and the measured FRF can
+provide useful information for the modal parameter update. A highly
+variant FRF estimation will undoubtedly affect the accuracy of the
+predictions of the mode shapes. For sample B, the estimated FRF is shown
+to be distorted by the noise and the true mode information cannot be
+extracted.</p>
+<p>In practice, we reject the information from FRF when the mean
+coherence is lower than 0.5 by setting the relative coefficients in
+<span class="math inline">\(h\left( {\bf{x}}_t \right)\)</span> to zero
+when executing the measurement update</p>
+<p>The installation locations may affect the signal-to-noise ratio (SNR)
+of the acceleration signals and FRF for different modes of the
+thin-walled structures. For comparison, two accelerometers are installed
+on the plate as shown in Fig. 2.</p>
+<p><img src="/images/2023-01-17-Supplementary/Installation of sensors.png" alt="Fig. 3. The installation location of the two accelerometers during the machining experiment." style="auto;zoom:60%;" /></p>
+<p>The Acc1 is the accelerometer used in the experiments. The Acc2 works
+as a reference accelerometer located at (0,0.8) in normalized
+coordinate. The acceleration spectrums of two accelerometers are
+presented as follows.</p>
+<p><img src="/images/2023-01-17-Supplementary/Installation of sensors signal comparison.png" alt="Fig. 4. The acceleration signals and spectrums of two accelerometers at the same moment of the machining" style="auto;zoom:80%;" /></p>
+<p>As shown in the figure, the spectrums of two accelerometers have
+different peak amplitude for each mode. Assuming the signal noises keep
+the same, the greater the amplitude, the higher the SNR is. For the
+samples presented in Fig. 6, the SNR of the acceleration signal for Acc2
+installed at (0, 0.8) is lower than the other one, which can lead to a
+relatively lower accuracy for the modal parameters monitoring of the
+proposed method.</p>
+<p>Furthermore, the installation location of the accelerometer should
+avoid the nodes of modal shapes of all concerned modes because at these
+locations the response is always zero for the corresponding mode. So the
+finite element analysis and pre-experiment need to be conducted to
+provide proper location for the sensor installation.</p>
+<h3 id="c.-more-experimental-data">C. More experimental data</h3>
+<p>The experiments show the machining processes of two kinds of
+thin-walled structures from the 4 mm to 3 mm thickness. Due to the page
+limit, part of the results of the experiments are not presented in the
+paper. The following figure shows the result of predicted mode shapes of
+W2 with the proposed physics-constrained method.</p>
+<p><img src="/images/2023-01-17-Supplementary/modal shape of W2.png" alt="Fig. 5. The final predicted mode shapes of W2 with the proposed physics-constrained method, where (a) (c) (e) represent the normalized predicted mode shapes of the first three orders and (b) (d) (f) represent the relative errors of the proposed method compared with the results of impact hammer test." style="auto;zoom:80%;" /></p>
+<p>Besides, part of the results of tracking of mode shapes are presented
+here as a supplementary. Some samples of the monitored mode shapes of W1
+with the proposed method before the final stage are presented. The mode
+shapes keep stable in the machining process because of the physical
+constraints.</p>
+<p><img src="/images/2023-01-17-Supplementary/modal shape of W2.png" alt="Fig. 6. modal shape tracking" style="auto;zoom:80%;" /></p>
+<p>Despite of the deficiency of global modal information and signal
+noise, the proposed method can help to reduce the average relative
+errors of mode shapes steadily as presented in Fig. 6.</p>
+<p><img src="/images/2023-01-17-Supplementary/modal shape tracking errors.png" alt="Fig. 7. The average relative errors of tracking of mode shapes of W1 with the proposed physics-constrained method compared with the impact hammer test." style="auto;zoom:40%;" /></p>
+<p>The paper mainly focuses on the principles and framework of the
+updating approach. The validation experiments are only based on two
+typical kinds of workpiece to present the practicability and the
+performance of the proposed method. In further studies, the generality
+of the proposed method will be discussed with improved theoretical
+analysis and more sufficient experimental data on more complicated
+thin-walled structures like turbine blades and pocket structures. The
+generality of the proposed method can be extended by selecting proper
+mode shape functions <span class="math inline">\(W (x, y)\)</span> and
+boundary conditions for various structures.</p>
+<h3 id="d.-modal-damping-update">D. Modal damping update</h3>
+<p>As illustrated in the paper, the damping ratios are directly obtained
+by impact hammer modal analysis considering the significant disturbance
+of process damping and the high noise introduced by the machining
+process. As there is no prior information on the damping ratios given by
+the FEM, the varying damping ratios during the machining can only be
+approximated by the interpolation of the tested values. Consequently,
+the variance of the predicted results can be very large, and the final
+results of damping ratios are not reliable in practical application.</p>
+<p>Nevertheless, we try to present the monitoring results of the damping
+ratios.</p>
+<p><img src="/images/2023-01-17-Supplementary/modal damping update.png" alt="Fig. 8. The updating process of the damping ratios of the first 3 orders of W1 from the thickness of 4 mm to 3 mm. The observation value and the prediction value with the proposed Bayesian filter method are indicated by the dotted lines and solid lines respectively. The shadow areas denote the 95% confidence interval. The circles represent the measured damping ratios with impact hammer test. The predicted values and relative errors are labeled by red arrows at the initial, middle and final states respectively." style="auto;zoom:40%;" /></p>
+<p>The true values of the damping ratios are measured by impact hammer
+modal test and indicated as circles on each line. The relative errors of
+the predicted results to the true values are presented in the brackets.
+The true values of the final state after machining process are 2.0 %,
+0.16 %, and 0.09 % respectively, and the corresponding relative errors
+are -96 %，195 %， and -100 % of the first 3 modes. The relative errors
+are equal to zero at the beginning because the initialization is based
+on the values of the modal test. The results indicate a significant
+variance even with an artificial pre-processing of abnormal values,
+suggesting that the predicted value may not be reliable. Consequently,
+the update of damping ratios is not implemented in the paper. Improved
+modal parameters identification method for damping ratios under such
+noisy conditions can be studied in future research to enhance the
+accuracy and stability.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://forsetisss.github.io/2023/01/17/Supplementary/" data-id="clf57zaxs001428ux0px8bprs" data-title="Supplementary" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Windows相关问题" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/09/26/Windows%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/" class="article-date">
+  <time class="dt-published" datetime="2022-09-26T06:59:36.000Z" itemprop="datePublished">2022-09-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/09/26/Windows%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">Windows相关问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="mklink实现两个文件夹同步更新">mklink实现两个文件夹同步更新</h3>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">MKLINK [[<span class="hljs-string">/D</span>] | [<span class="hljs-string">/H</span>] | [<span class="hljs-string">/J</span>]] <span class="hljs-string">&quot;Link&quot;</span> <span class="hljs-string">&quot;Target&quot;</span><br><br>        <span class="hljs-string">/D</span>      创建目录符号链接。默认为文件<br>                符号链接。<br>        <span class="hljs-string">/H</span>      创建硬链接，而不是符号链接。<br>        <span class="hljs-string">/J</span>      创建目录联接。<br>        Link    指定新的符号链接名称。<br>        Target  指定新链接引用的路径<br>                <span class="hljs-params">(相对或绝对)</span>。<br></code></pre></td></tr></table></figure>
+<p>例子：</p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">mklink <span class="hljs-string">/D</span> <span class="hljs-string">&quot;D:\xxxxxx&quot;</span> <span class="hljs-string">&quot;D:\yyyyyyy&quot;</span><br></code></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://forsetisss.github.io/2022/09/26/Windows%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/" data-id="clf57zaxs001228uxeu6e2986" data-title="Windows相关问题" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Matlab滤波器设计" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/03/29/Matlab%E6%BB%A4%E6%B3%A2%E5%99%A8%E8%AE%BE%E8%AE%A1/" class="article-date">
+  <time class="dt-published" datetime="2022-03-29T01:26:02.000Z" itemprop="datePublished">2022-03-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Matlab/">Matlab</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/03/29/Matlab%E6%BB%A4%E6%B3%A2%E5%99%A8%E8%AE%BE%E8%AE%A1/">Matlab滤波器设计</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="butterworth滤波器">Butterworth滤波器</h3>
+<p>设计滤波器就是设计滤波器系数[B,A]。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs matlab">[B,A] = BUTTER(n,Wn,ftype)<br></code></pre></td></tr></table></figure>
+<p>返回归一化截止频率Wn的n阶巴特沃斯滤波器的传递函数系数</p>
+<p>fytpe —— 滤波器类型 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs matlab">‘low’|<span class="hljs-string">&#x27;bandpass&#x27;</span>|<span class="hljs-string">&#x27;high&#x27;</span>|<span class="hljs-string">&#x27;stop&#x27;</span><br></code></pre></td></tr></table></figure></p>
+<p>滤波器可视化工具 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs matlab">fvtool(B,A)<br></code></pre></td></tr></table></figure></p>
+<p><img src="/source/images/2022-03-29-Matlab滤波器设计/fvtool.png" alt="图1 滤波器响应" style="auto;zoom:80%;" /></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs matlab">signal_env=filter(b,a,signal_r);<br></code></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://forsetisss.github.io/2022/03/29/Matlab%E6%BB%A4%E6%B3%A2%E5%99%A8%E8%AE%BE%E8%AE%A1/" data-id="clf57zaxr001028ux29rufh6n" data-title="Matlab滤波器设计" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Matlab/" rel="tag">Matlab</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/filter/" rel="tag">filter</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-hexo环境配置相关问题" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/02/11/hexo%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/" class="article-date">
+  <time class="dt-published" datetime="2022-02-11T09:15:49.000Z" itemprop="datePublished">2022-02-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/02/11/hexo%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">hexo博客环境配置</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3
+id="git-clone出现-fatal-unable-to-access-httpsgithub.com...的解决办法">git
+clone出现 fatal: unable to access
+<code>https://github.com/</code>...的解决办法</h3>
+<p>发生这种情况是因为代理是在git中配置的。既然它是https代理（而不是http）git
+config http.proxy和git config --global http.proxy也无济于事。</p>
+<p>在开启shadowsocks的前提下，手动配置git的代理。git客户端输入如下两个命令就可以了。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs stylus">git config <span class="hljs-attr">--global</span> http<span class="hljs-selector-class">.proxy</span> http:<span class="hljs-comment">//127.0.0.1:1080</span><br>git config <span class="hljs-attr">--global</span> https<span class="hljs-selector-class">.proxy</span> http:<span class="hljs-comment">//127.0.0.1:1080</span><br></code></pre></td></tr></table></figure>
+<p><code>http://</code>也可以改成<code>sockets5://</code>，但是区别在于：socks5不支持通过pubkey免密登录github，每次提交代码只能输入用户名和密码。http可以支持免密登录。</p>
+<p>取消代理</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs stylus">git config <span class="hljs-attr">--global</span> <span class="hljs-attr">--unset</span> http<span class="hljs-selector-class">.proxy</span><br>git config <span class="hljs-attr">--global</span> <span class="hljs-attr">--unset</span> https.proxy<br></code></pre></td></tr></table></figure>
+<h3 id="hexo博客mathjax公式渲染问题">hexo博客MathJax公式渲染问题</h3>
+<p>用<strong>MathJax语法</strong>写的一些公式，在本地<strong>Markdown编译器</strong>上渲染是没问题的，可是部署到hexo博客中就出现问题了</p>
+<p>hexo默认使用<strong>hexo-renderer-marked</strong>引擎去渲染网页，它会把利用<strong>Markdown语法</strong>写的文本去转换为相应的<strong>html标签</strong>。在利用Markdown写<strong>MathJax公式</strong>的时候，经常会用到下划线<code>_</code>表示<strong>下标</strong>，但是下划线<code>_</code>会被hexo的默认引擎<strong>hexo-renderer-marked</strong>渲染成html中的<code>&lt;em&gt;</code>标签，表示<strong>斜体</strong>，这样一来，我们写的MathJax公式就被错误渲染了，也就没办法正确显示出来。</p>
+<p>问题或许出在hexo的<strong>渲染引擎</strong>上，如果渲染引擎不把公式中的一些特殊字符渲染成html标签，也就避免了这个问题。当然已经有人意识到了这个问题，并且对原先的渲染引擎进行了改进，生成了新的<strong>hexo-renderer-kramed</strong>引擎，这里是它的<a
+target="_blank" rel="noopener" href="https://github.com/sun11/hexo-renderer-kramed">Github页面</a>，所以我们只需要<strong>卸载</strong>默认引擎，并<strong>安装</strong>这个新的渲染引擎即可。</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ada">npm uninstall hexo-renderer-marked <span class="hljs-comment">--save</span><br>npm install hexo-renderer-kramed <span class="hljs-comment">--save 或者</span><br>npm install hexo-renderer-pandoc <span class="hljs-comment">--save（需要本地安装pandoc）</span><br></code></pre></td></tr></table></figure>
+<p>渲染引擎更换之后，发现大部分公式都正确渲染了，但可能仍然存在错误，即是<strong>行间公式</strong>都没有问题，但是个别<strong>行内公式</strong>还会出现渲染出错。</p>
+<p>定位到你的<strong>博客根目录</strong>，找到<strong>../node_modules/kramed/lib/rules/inline.js</strong>文件，进行部分修改：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">//escape: /^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,      第11行，将其修改为</span><br><span class="hljs-attr">escape</span>: <span class="hljs-regexp">/^\\([`*\[\]()#$+\-.!_&gt;])/</span>,<br><span class="hljs-comment">//em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,    第20行，将其修改为</span><br><span class="hljs-attr">em</span>: <span class="hljs-regexp">/^\*((?:\*\*|[\s\S])+?)\*(?!\*)/</span>,<br></code></pre></td></tr></table></figure>
+<p>它取消了该渲染引擎对<code>\,&#123;,&#125;</code>的转义，然后再<code>hexo clean、hexo g</code>重新部署，即可解决问题。</p>
+<p><strong>另外</strong>，可以使用 <code>\brace</code>
+代替花括号避免公式中多个括号连用时渲染出现如下报错</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs livecodeserver">parseAggregate: expected <span class="hljs-literal">colon</span> <span class="hljs-keyword">after</span> dict key <br></code></pre></td></tr></table></figure>
+<h4 id="ravis-ci报错的问题">ravis CI报错的问题</h4>
+<p>由于ravis
+CI上node.js版本或者pandoc版本问题，可能出现部署时渲染错误，需要将根目录下.travis.yml文件内容改为如下</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-attr">sudo</span>: <span class="hljs-literal">true</span><br><span class="hljs-attr">language</span>: node_js<br><span class="hljs-attr">node_js</span>:<br>  - <span class="hljs-number">16</span> # use nodejs v12 <span class="hljs-variable constant_">LTS</span><br><span class="hljs-attr">cache</span>: <br>  - npm <br>  - pandoc<br>  - hexo-cli<br>  - hexo-renderer-pandoc<br><span class="hljs-attr">install</span>:<br>  - wget <span class="hljs-attr">https</span>:<span class="hljs-comment">//github.com/jgm/pandoc/releases/download/2.7/pandoc-2.7-1-amd64.deb</span><br>  - sudo dpkg -i ./pandoc-<span class="hljs-number">2.7</span>-<span class="hljs-number">1</span>-amd64.<span class="hljs-property">deb</span><br>  - npm install -g hexo-cli<br>  - npm uninstall hexo-renderer-marked --save<br>  - npm install hexo-renderer-pandoc --save<br><span class="hljs-attr">branches</span>:<br>  <span class="hljs-attr">only</span>:<br>    - main # build master branch only<br><span class="hljs-attr">script</span>:<br>  - hexo clean<br>  - hexo generate # generate <span class="hljs-keyword">static</span> files<br><span class="hljs-attr">deploy</span>:<br>  <span class="hljs-attr">provider</span>: pages<br>  skip-<span class="hljs-attr">cleanup</span>: <span class="hljs-literal">true</span><br>  github-<span class="hljs-attr">token</span>: $GH_TOKEN<br>  keep-<span class="hljs-attr">history</span>: <span class="hljs-literal">true</span><br>  <span class="hljs-attr">on</span>:<br>    <span class="hljs-attr">branch</span>: main<br>  local-<span class="hljs-attr">dir</span>: public<br></code></pre></td></tr></table></figure>
+<h3 id="reference">reference</h3>
+<p>[1] <a
+target="_blank" rel="noopener" href="https://blog.csdn.net/Dashi_Lu/article/details/89641778?spm=1001.2101.3001.6650.1&amp;utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~default-1.essearch_pc_relevant&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~default-1.essearch_pc_relevant">git
+clone出现 fatal: unable to access
+'https://github.com/...'的解决办法(亲测有效)_Dashi_Lu的博客-CSDN博客</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://forsetisss.github.io/2022/02/11/hexo%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/" data-id="clf57zaxq000x28uxfwe2gn6e" data-title="hexo博客环境配置" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-薄板结构的模态分析" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/11/29/%E8%96%84%E6%9D%BF%E7%BB%93%E6%9E%84%E7%9A%84%E6%A8%A1%E6%80%81%E5%88%86%E6%9E%90/" class="article-date">
+  <time class="dt-published" datetime="2021-11-29T02:38:02.000Z" itemprop="datePublished">2021-11-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/11/29/%E8%96%84%E6%9D%BF%E7%BB%93%E6%9E%84%E7%9A%84%E6%A8%A1%E6%80%81%E5%88%86%E6%9E%90/">薄板结构的模态分析</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="薄板结构的模态分析">薄板结构的模态分析</h2>
+<h3 id="薄板的小挠度弯曲">1. 薄板的小挠度弯曲</h3>
+<h4 id="薄板的基本概念和基本假设">1.1 薄板的基本概念和基本假设</h4>
+<p>薄板是工程结构中的一种常用构件，它是由两个平行面和垂直于它们的柱面所围成的物体，几何特征是其高度远小于底面尺寸，简称板。薄板的弯曲变形属于弹性力学空间问题，由于数学求解的复杂性，因此，需要首先建立应力和变形分布的基本假设。</p>
+<p><img src="/images/2021-11-29-薄板结构的模态分析/薄板的基本概念.bmp" alt="图1 薄板的基本概念" style="auto;zoom:80%;" /></p>
+<p>薄板的上下两个平行面称为板面，垂直于平行面的柱面称为板边，如图所示。两个平行面之间的距离称为板厚，用<span
+class="math inline">\(\delta\)</span>
+表示。平分板厚的平面称为板的中面。假设板的厚度为<span
+class="math inline">\(\delta\)</span>，平分厚度<span
+class="math inline">\(\delta\)</span>的平面成为板的中间平面，简称为中面。如果板的厚度<span
+class="math inline">\(\delta\)</span>远小于中面的最小特征尺寸<span
+class="math inline">\(b\)</span>，例如<span
+class="math inline">\(1/5≤\delta/b≤1/80\)</span>，则称为薄板。如果外载荷为垂直于板的中面作用的横向载荷，则板主要变形为弯曲变形。中面在薄板弯曲时变形成为曲面，中面沿垂直方向，即横向位移称为挠度。对于薄板，仍然有相当的弯曲刚度，如果挠度小于厚度的五分之一，属于小挠度问题。</p>
+<p>根据薄板的外载荷和几何特征，外力为横向载荷，厚度远小于薄板的平面宽度，可以忽略一些次要因素。薄板的小挠度弯曲理论是由三个基本假设作为基础，因为这些基本假设是由基尔霍夫首先提出的，因此又称为<strong>基尔霍夫假设</strong>。</p>
+<ol type="1">
+<li><p>变形前垂直于中面的直线变形后仍然保持直线，而且长度不变。这相当于梁的弯曲变形平面假设。根据这一假设，
+<span
+class="math inline">\(ε_z＝γ_{zx}＝γ_{zy}＝0\)</span>。因此，在板内所有的点，位移分量<span
+class="math inline">\(w\)</span>只是<span
+class="math inline">\(x\)</span>和<span
+class="math inline">\(y\)</span>的函数而与<span
+class="math inline">\(z\)</span>无关。也就是说，在中面的任意一根法线上，薄板沿厚度方向的所有点都具有挠度<span
+class="math inline">\(w\)</span>。</p></li>
+<li><p>垂直于中面方向的应力分量<span
+class="math inline">\(σ_z，τ_{zx}，τ_{zy}\)</span>
+远小于其他应力分量，其引起的变形可以不计，但是对于维持平衡是必要的，这相当于梁的弯曲无挤压应力假设。</p></li>
+<li><p>薄板弯曲时，中面各点只有垂直中面的位移w，没有平行中面的位移，即</p></li>
+</ol>
+<p><span class="math display">\[
+\begin{equation}
+u_{z=0}=0, \quad v_{z=0}=0
+\end{equation}
+\]</span></p>
+<p>根据这一假设，板的中面将没有变形发生。板的中面位移函数<span
+class="math inline">\(w(x, y)\)</span>称为挠度函数。</p>
+<h4 id="板的小挠度弯曲的基本方程">1.2 板的小挠度弯曲的基本方程</h4>
+<p>根据基尔霍夫假设和几何方程可以得到挠度函数表达的应变分量</p>
+<p><span class="math display">\[
+\begin{equation}
+\begin{array}{l}
+\varepsilon_{x}=\frac{\partial u}{\partial x}=-\frac{\partial^{2}
+w}{\partial x^{2}} z \\
+\varepsilon_{y}=\frac{\partial v}{\partial y}=-\frac{\partial^{2}
+w}{\partial y^{2}} z \\
+y_{x y}=\frac{\partial u}{\partial y}+\frac{\partial v}{\partial x}=-2
+\frac{\partial^{2} w}{\partial x \partial y} z
+\end{array}
+\end{equation}
+\]</span></p>
+<p>和应力分量</p>
+<p><span class="math display">\[
+\begin{equation}
+\begin{array}{l}
+\sigma_{x}=\frac{-E z}{1-v^{2}}\left(\frac{\partial^{2} w}{\partial
+x^{2}}+v \frac{\partial^{2} w}{\partial y^{2}}\right) \\
+\sigma_{y}=\frac{-E z}{1-v^{2}}\left(\frac{\partial^{2} w}{\partial
+y^{2}}+v \frac{\partial^{2} w}{\partial x^{2}}\right) \\
+\tau_{x y}=\frac{-E z}{1-v^{2}} \frac{\partial^{2} w}{\partial x
+\partial y}
+\end{array}
+\end{equation}
+\]</span></p>
+<p>薄板的小挠度弯曲问题，将挠度<span
+class="math inline">\(w(x,y)\)</span>取为基本未知函数，所谓的弹性曲面微分方程可由内力与载荷平衡条件或微元的应力平衡条件得到，如下所示</p>
+<p><span class="math display">\[
+\begin{equation}
+D\nabla^{2} \nabla^{2} w=q
+\end{equation}
+\]</span></p>
+<p>其中<span class="math inline">\(D\)</span>称为薄板的弯曲刚度</p>
+<p><span class="math display">\[
+\begin{equation}
+D=\frac{E \delta^{3}}{12\left(1-\mu^{2}\right)}
+\end{equation}
+\]</span></p>
+<p>该方程已经考虑并完全满足了弹性力学空间问题的平衡微分方程、集合方程和物理方程，以及薄板上、下板面的应力边界条件，得到了求解挠度<span
+class="math inline">\(w\)</span>的基本微分方程。这样，在求解时，只需按照薄板侧面上的边界条件，求出挠度<span
+class="math inline">\(w\)</span>，从而求出应力分量。</p>
+<h4 id="边界条件和挠度函数形式">1.3 边界条件和挠度函数形式</h4>
+<p>进行薄板结构的模态分析时，关键在于薄板的边界条件。以下给出几种常见的边界条件</p>
+<h5 id="固定边oax0">1.3.1 固定边OA(<span
+class="math inline">\(x=0\)</span>)</h5>
+<p>显然有边界挠度和转角均为零的几何条件。因此，在<span
+class="math inline">\(x=0\)</span>边界，有</p>
+<p><span class="math display">\[
+\begin{equation}
+\begin{array}{l}
+\left.w\right|_{x=0}=0 , \quad
+\left.\frac{\partial w}{\partial x}\right|_{x=0}=0
+\end{array}
+\end{equation}
+\]</span></p>
+<h5 id="简支边oax0">1.3.2 简支边OA(<span
+class="math inline">\(x=0\)</span>)</h5>
+<p>薄板在简支边界，不能有挠度，但是可以有微小的转动。因此边界条件为挠度为零和弯矩为零，属于混合边界条件。在<span
+class="math inline">\(x=0\)</span> 边界，有</p>
+<p><span class="math display">\[
+\begin{equation}
+\begin{array}{l}
+\left.w\right|_{x=0}=0 , \quad
+\left.\frac{\partial^{2} w}{\partial x^{2}}\right|_{x=0}=0
+\end{array}
+\end{equation}
+\]</span></p>
+<h5 id="自由边oaxa">1.3.3 自由边OA(<span
+class="math inline">\(x=a\)</span>)</h5>
+<p>沿自由边OA，薄板的弯矩和扭矩以及横向剪力都等于零，因而有三个边界条件</p>
+<p><span class="math display">\[
+\begin{equation}
+\begin{array}{l}
+\left.M_{x}\right|_{x=a}=0, \quad
+\left.M_{x y}\right|_{x=a}=0, \quad
+\left.F_{S x}\right|_{x=a}=0
+\end{array}
+\end{equation}
+\]</span></p>
+<p>但是，薄板的挠曲微分方程式四阶的椭圆形偏微分方程，根据偏微分方程理论，在每个边界上，只需要两个边界条件。为此，基尔霍夫指出，薄板任一边界上的扭矩都可以变换为等效的横向剪力，和原来的剪力合并，因而后两个边界条件并不独立。自由边的边界条件用<span
+class="math inline">\(w\)</span>表示为</p>
+<p><span class="math display">\[
+\begin{equation}
+\begin{array}{l}
+{\left[\frac{\partial^{2} w}{\partial x^{2}}+v \frac{\partial^{2}
+w}{\partial y^{2}}\right]_{x=a}=0}, \quad
+{\left[\frac{\partial^{3} w}{\partial x^{3}}+(2-v) \frac{\partial^{3}
+w}{\partial x \partial y^{2}}\right]_{x=a}=0}
+\end{array}
+\end{equation}
+\]</span></p>
+<p>应该指出，如果相邻的两个边界都是自由边界，则扭矩用上述剪力等效替代时，在两个边界的角点将会出现没有抵消的集中剪力<span
+class="math inline">\(F_{SR}\)</span>，如果边界角点没有受到支承，则应该还有角点条件</p>
+<p><span class="math display">\[
+\begin{equation}
+\left.\frac{\partial^{2} w}{\partial x \partial y}\right|_{x=a \atop
+y=b}=0
+\end{equation}
+\]</span></p>
+<h5 id="振型函数的近似表示">1.3.4 振型函数的近似表示</h5>
+<p>对于四边简支的矩形薄板，能够通过理论推导求出其精确解，然而实际中往往边界条件复杂。因此实际中利用近似法对薄板结构物体进行模态分析是较为方便的。能量法能够近似分析出薄板在不同边界条件下的模态。任意边界条件下的薄板的振型函数$
+w(x,y)$都可以利用分离变量法写成下式所示的形式[1]</p>
+<p><span class="math display">\[
+\begin{equation}
+W(x, y)=\sum_{m=1}^{p} \sum_{n=1}^{q} A_{m n} X_{m}(x) Y_{n}(y)
+\end{equation}
+\]</span></p>
+<p>式中$ w(x,y)$表示薄板中Q点处的挠度， <span class="math inline">\(x ,
+y\)</span> 是归一化的坐标，<span class="math inline">\(p, q\)</span>
+分别代表了 <span class="math inline">\(x, y\)</span>
+方向上的多项式总数。 <span class="math inline">\(X_{m}(x),
+Y_{n}(y)\)</span>为满足不同边界条件的多项式。<span
+class="math inline">\(A_{mn}\)</span>表示这些多项式的权重参数。对于不同的边界条件
+<span class="math inline">\(X_{m}(x),
+Y_{n}(y)\)</span>的选择也不同。选取适当的多项式后，就可以求取该边界条件下薄板振动时的能量分布，从而求得各种边界条件下的振动模态。</p>
+<h3 id="梁的弯曲振动">2. 梁的弯曲振动</h3>
+<p>如图1所示是一弯曲振动的梁，假设梁的长度和截面高度之比大于10，因而满足材料力学中的欧拉伯努利梁的假设，即（1）变形前垂直梁中心线的平剖面，变形后仍然为平面（刚性横截面假定）；（2）变形后横截面的平面仍与变形后的轴线相垂直。其中忽略了梁的转动动能和剪切变形势能。</p>
+<h4 id="梁的边界条件">2.1 梁的边界条件</h4>
+<p><img src="/images/2021-11-29-薄板结构的模态分析/梁的典型边界条件.png" alt="图2 梁的典型边界条件" style="auto;zoom:80%;" /></p>
+<p>梁的典型边界条件有如下几种：</p>
+<ol type="1">
+<li>固支端的边界条件是位移与转角为零 ，即</li>
+</ol>
+<p><span class="math display">\[
+\begin{equation}
+y(0, t)=0
+\end{equation}
+\]</span></p>
+<p><span class="math display">\[
+\begin{equation}
+\left.\frac{\partial y(x, t)}{\partial x}\right|_{x=0}=0
+\end{equation}
+\]</span></p>
+<ol start="2" type="1">
+<li>简支端的边界条件是位移与弯矩为零，即</li>
+</ol>
+<p><span class="math display">\[
+\begin{equation}
+y(0, t)=0
+\end{equation}
+\]</span></p>
+<p><span class="math display">\[
+\begin{equation}
+\left.E I(x) \frac{\partial^{2} y(x, t)}{\partial x^{2}}\right|_{x=0}=0
+\end{equation}
+\]</span></p>
+<ol start="3" type="1">
+<li>自由端的边界条件是弯矩与剪力为零，即</li>
+</ol>
+<p><span class="math display">\[
+\begin{equation}
+\left.E I(x) \frac{\partial^{2} y(x, t)}{\partial x^{2}}\right|_{x=L}=0
+\end{equation}
+\]</span></p>
+<p><span class="math display">\[
+\begin{equation}
+\frac{\partial}{\partial x}\left[E I(x) \frac{\partial^{2} y(x,
+t)}{\partial x^{2}}\right]_{x=L}=0
+\end{equation}
+\]</span></p>
+<ol start="4" type="1">
+<li>自由端带有弹簧<span
+class="math inline">\(k\)</span>的边界条件是位移与剪力存在如下关系，且弯矩为零，即</li>
+</ol>
+<p><span class="math display">\[
+\begin{equation}
+\frac{\partial}{\partial x}\left[E I(x) \frac{\partial^{2} y(x,
+t)}{\partial x^{2}}\right]_{x=L}=k y(L, t)
+\end{equation}
+\]</span></p>
+<p><span class="math display">\[
+\begin{equation}
+\left.E I(x) \frac{\partial^{2} y(x, t)}{\partial x^{2}}\right|_{x=L}=0
+\end{equation}
+\]</span></p>
+<ol start="5" type="1">
+<li>简支端带有卷簧<span
+class="math inline">\(k\)</span>的边界条件是转角与弯矩之间存在如下关系，且位移为零，即</li>
+</ol>
+<p><span class="math display">\[
+\begin{equation}
+\left.E I(x) \frac{\partial^{2} y(x, t)}{\partial x^{2}}\right|_{x=L}=-k
+\frac{\partial y(x, t)}{\partial x}
+\end{equation}
+\]</span></p>
+<p><span class="math display">\[
+\begin{equation}
+y(L)=0
+\end{equation}
+\]</span></p>
+<ol start="6" type="1">
+<li>自由端带有集中质量<span
+class="math inline">\(M\)</span>的边界条件是剪力与加速度之间存在如下关系，且弯矩为零，即</li>
+</ol>
+<p><span class="math display">\[
+\begin{equation}
+\left.\frac{\partial}{\partial x}\left[E I(x) \frac{\partial^{2} y(x,
+t)}{\partial x^{2}}\right]\right|_{x=L}=M \frac{\partial^{2} y(x,
+t)}{\partial x^{2}}
+\end{equation}
+\]</span></p>
+<p><span class="math display">\[
+\begin{equation}
+\left.E I(x) \frac{\partial^{2} y(x, t)}{\partial x^{2}}\right|_{x=L}=0
+\end{equation}
+\]</span></p>
+<h4 id="梁的自由振动与模态">2.2 梁的自由振动与模态</h4>
+<p>自由振动情况下<span
+class="math inline">\(f(x,t)=0\)</span>，考虑到梁的弯矩和弯矩变形之间的关系式</p>
+<p><span class="math display">\[
+\begin{equation}
+E I(x) \frac{\partial^{2} y(x, t)}{\partial x^{2}}=M(x, t)
+\end{equation}
+\]</span></p>
+<p>通过对梁微元分析并略去高阶小量，梁的自由振动的运动方程可以表示为：</p>
+<p><span class="math display">\[
+\begin{equation}
+\frac{\partial^{2}}{\partial x^{2}}\left[E I(x) \frac{\partial^{2} y(x,
+t)}{\partial x^{2}}\right]+m(x) \frac{\partial^{2} y(x, t)}{\partial
+t^{2}}=0
+\end{equation}
+\]</span></p>
+<p>设同步运动为</p>
+<p><span class="math display">\[
+\begin{equation}
+y(x, t)=Y(x) \eta(t)
+\end{equation}
+\]</span></p>
+<p>x带入上式并假定为均匀梁，可得</p>
+<p><span class="math display">\[
+\begin{equation}
+\frac{\mathrm{d}^{4} Y(x)}{\mathrm{d} x^{4}}-\beta^{4} Y(x)=0
+\end{equation}
+\]</span></p>
+<p>式中<span class="math inline">\(\beta^{4}=\frac{\omega^{2}
+m}{EI}\)</span>，方程的通解为</p>
+<p><span class="math display">\[
+\begin{equation}
+Y(x)=C_{1} \sin \beta x+C_{2} \cos \beta x+C_{3} \operatorname{sh} \beta
+x+C_{4} \operatorname{ch} \beta x
+\end{equation}
+\]</span></p>
+<p>其中<span
+class="math inline">\(C_{i}\)</span>的值需要通过边界条件进一步确定。</p>
+<h5 id="一端固支一端自由的梁悬臂梁的自然模态">2.2.1
+一端固支，一端自由的梁（悬臂梁）的自然模态</h5>
+<p><img src="/images/2021-11-29-薄板结构的模态分析/悬臂梁自然模态.png" alt="图3 悬臂梁自然模态" style="zoom:80%;" /></p>
+<p>悬臂梁的边界条件可以表示为</p>
+<p><span class="math display">\[
+\begin{equation}
+Y(0)=0,\left.\quad \frac{\mathrm{d} Y(x)}{\mathrm{d} x}\right|_{=-0}=0
+\end{equation}
+\]</span></p>
+<p><span class="math display">\[
+\begin{equation}
+\left.\frac{\mathrm{d}^{2} Y(x)}{\mathrm{d} x^{2}}\right|_{x=L}=0,
+\left.\quad \frac{\mathrm{d}^{3} Y(x)}{\mathrm{d} x^{3}}\right|_{x=L}=0
+\end{equation}
+\]</span></p>
+<p>可知式28中的系数满足如下关系</p>
+<p><span class="math display">\[
+\begin{equation}
+\left\{
+{\begin{array}{l}
+C_{1}+C_{3}=0 \\
+C_{2}+C_{4}=0
+\end{array}}
+\right.
+\end{equation}
+\]</span></p>
+<p><span class="math display">\[
+\begin{equation}
+\begin{aligned}
+(\sin \beta L+\operatorname{sh} \beta L) C_{1}+(\cos \beta
+L+\operatorname{ch} \beta L) C_{2} &amp;=0 \\
+(\cos \beta L+\operatorname{ch} \beta L) C_{1}+(-\sin \beta
+L+\operatorname{sh} \beta L) C_{2} &amp;=0
+\end{aligned}
+\end{equation}
+\]</span></p>
+<p>为得到上式的非零解，系数行列式必为零，即</p>
+<p><span class="math display">\[
+\begin{equation}
+\left|\begin{array}{rr}
+\sin \beta L+\operatorname{sh} \beta L &amp; \cos \beta
+L+\operatorname{ch} \beta L \\
+\cos \beta L+\operatorname{ch} \beta L &amp; -\sin \beta
+L+\operatorname{sh} \beta L
+\end{array}\right|=0
+\end{equation}
+\]</span></p>
+<p>展开上式化简得特征方程为</p>
+<p><span class="math display">\[
+\begin{equation}
+\cos \beta L \operatorname{ch} \beta L=-1
+\end{equation}
+\]</span></p>
+<p>可由数值方法求得一系列的<span class="math inline">\(\beta_r
+L\)</span>的值。</p>
+<p>则特征函数<span class="math inline">\(Y(x)\)</span>可表示为</p>
+<p><span class="math display">\[
+\begin{equation}
+Y_{r}(x)=C_{1}\left[\left(\sin \beta_{r} x-\operatorname{sh} \beta_{r}
+x\right)+\xi_{r}\left(\cos \beta_{r} x-\operatorname{ch} \beta_{r}
+x\right)\right],\quad r=1,2 ...
+\end{equation}
+\]</span></p>
+<p>其中</p>
+<p><span class="math display">\[
+\begin{equation}
+\xi_{r}=\left(\frac{C_{2}}{C_{1}}\right)_{r}=-\frac{\sin \beta_{r}
+L+\operatorname{sh} \beta_{r} L}{\cos \beta_{r} L+\operatorname{ch}
+\beta_{r} L}=\frac{\cos \beta_{r} L+\operatorname{ch} \beta_{r} L}{\sin
+\beta_{r} L-\operatorname{sh} \beta_{r} L}
+\end{equation}
+\]</span></p>
+<p><span
+class="math inline">\(\beta_{r}\)</span>可由边界条件以数值方法得出，<span
+class="math inline">\(C_{1}\)</span>为待定常数，前三阶振型及相应的自然频率在图2中给出，在图中可以看到，<span
+class="math inline">\(Y_{r}(x)\)</span>有<span
+class="math inline">\(r-1\)</span>个节点。</p>
+<h5 id="两端自由的梁的自然模态">2.2.2 两端自由的梁的自然模态</h5>
+<p>此处需要注意的是，由于两端自由梁的约束不足，因此前两阶为刚体模态，分别为平动和转动。刚体模态跟刚体运动定义相似，结构内部不发生变形的模态振型即为刚体模态，即刚体运动对应刚体模态。该边界条件下前两节模态如下。</p>
+<p><span class="math display">\[
+\begin{equation}
+{\begin{array}{l}
+Y_1(x) = C_{1,1}\\
+Y_2(x) = C_{1,2}(2x-L)
+\end{array}}
+\end{equation}
+\]</span></p>
+<p>自由梁的边界条件可以表示为</p>
+<p><span class="math display">\[
+\begin{equation}
+\left.\frac{\mathrm{d}^{2} Y(x)}{\mathrm{d} x^{2}}\right|_{x=0}=0,
+\left.\quad \frac{\mathrm{d}^{3} Y(x)}{\mathrm{d} x^{3}}\right|_{x=0}=0
+\end{equation}
+\]</span></p>
+<p><span class="math display">\[
+\begin{equation}
+\left.\frac{\mathrm{d}^{2} Y(x)}{\mathrm{d} x^{2}}\right|_{x=L}=0,
+\left.\quad \frac{\mathrm{d}^{3} Y(x)}{\mathrm{d} x^{3}}\right|_{x=L}=0
+\end{equation}
+\]</span></p>
+<p>可知式28中的系数满足如下关系</p>
+<p><span class="math display">\[
+\begin{equation}
+\left\{
+{\begin{array}{l}
+-C_{1}+C_{3}=0 \\
+-C_{2}+C_{4}=0
+\end{array}}
+\right.
+\end{equation}
+\]</span></p>
+<p><span class="math display">\[
+\begin{equation}
+\begin{aligned}
+(-\sin \beta L+\operatorname{sh} \beta L) C_{1}+(-\cos \beta
+L+\operatorname{ch} \beta L) C_{2} &amp;=0 \\
+(-\cos \beta L+\operatorname{ch} \beta L) C_{1}+(\sin \beta
+L+\operatorname{sh} \beta L) C_{2} &amp;=0
+\end{aligned}
+\end{equation}
+\]</span></p>
+<p>为得到上式的非零解，系数行列式必为零，即</p>
+<p><span class="math display">\[
+\begin{equation}
+\left|\begin{array}{rr}
+-\sin \beta L+\operatorname{sh} \beta L &amp; -\cos \beta
+L+\operatorname{ch} \beta L \\
+-\cos \beta L+\operatorname{ch} \beta L &amp; \sin \beta
+L+\operatorname{sh} \beta L
+\end{array}\right|=0
+\end{equation}
+\]</span></p>
+<p>展开上式化简得特征方程为</p>
+<p><span class="math display">\[
+\begin{equation}
+\cos \beta L \operatorname{ch} \beta L=1
+\end{equation}
+\]</span></p>
+<p>可由数值方法求得一系列的<span class="math inline">\(\beta_r
+L\)</span>的值。</p>
+<p>同上一小节一样，特征函数<span
+class="math inline">\(Y(x)\)</span>可表示为</p>
+<p><span class="math display">\[
+\begin{equation}
+Y_{r}(x)=C_{1}\left[\left(\sin \beta_{r} x+\operatorname{sh} \beta_{r}
+x\right)+\xi_{r}\left(\cos \beta_{r} x+\operatorname{ch} \beta_{r}
+x\right)\right],\quad r=3,4 ...
+\end{equation}
+\]</span></p>
+<p>其中</p>
+<p><span class="math display">\[
+\begin{equation}
+\xi_{r}=\left(\frac{C_{2}}{C_{1}}\right)_{r}=\frac{\sin \beta_{r}
+L-\operatorname{sh} \beta_{r} L}{-\cos \beta_{r} L+\operatorname{ch}
+\beta_{r} L}=\frac{\cos \beta_{r} L-\operatorname{ch} \beta_{r} L}{\sin
+\beta_{r} L+\operatorname{sh} \beta_{r} L}
+\end{equation}
+\]</span></p>
+<p><span class="math inline">\(C_{1}\)</span>为待定常数。</p>
+<h5 id="gram-schmidt正交多项式方法">2.2.3
+Gram-Schmidt正交多项式方法</h5>
+<p>另一种简单的方法是利用Gram-Schmidt正交多项式方法进行表征。在区间<span
+class="math inline">\([a,b]\)</span>上的正交多项式可以通过如下过程</p>
+<p><span class="math display">\[
+\begin{equation}
+\phi_{1}(x)=\left(x-B_{1}\right) \phi_{0}(x), \quad
+\phi_{k}(x)=\left(x-B_{k}\right) \phi_{k-1}(x)-C_{k} \phi_{k-2}(x)
+\end{equation}
+\]</span></p>
+<p><span class="math display">\[
+\begin{equation}
+\begin{array}{c}
+B_{k}=\frac{(xg_{k},g_{k})}{(g_{k},g_{k})}
+\\C_{k}=\frac{(g_{k},g_{k})}{(g_{k-1},g_{k-1})}
+\end{array}
+\end{equation}
+\]</span></p>
+<p>其中<span class="math inline">\(w(x)\)</span>是权重系数。</p>
+<p>在本例中，权重选为1，区间为<span
+class="math inline">\([0,1]\)</span>，同时使之成为标准正交多项式，系数满足以下关系</p>
+<p><span class="math display">\[
+\begin{equation}
+\int_{0}^{1} w(x) \phi_{j}(x) \phi_{k}(x) \mathrm{d}
+x=\left\{\begin{array}{ll}
+0 &amp; \text { if } j \neq k \\
+1 &amp; \text { if } j=k
+\end{array}\right\}
+\end{equation}
+\]</span></p>
+<p>该正多项式序列的首项的选取需要满足伴随板问题的梁问题的边界条件。即使首项<span
+class="math inline">\(\phi_{0}(x)\)</span>满足所有的几何和力边界条件，其他的多项式一般也只满足几何边界条件，这一点可以通过构造过程得出。</p>
+<p>满足边界条件的多项式首项<span
+class="math inline">\(\phi_{0}(x)\)</span>的构造方式如</p>
+<h6 id="一边固定一边自由的梁"><strong>一边固定一边自由的梁</strong></h6>
+<p>挠度函数假设如下</p>
+<p><span class="math display">\[
+\begin{equation}
+Y(x)=a_{0}+a_{1} x+a_{2} x^{2}+a_{3} x^{3}+a_{4} x^{4}
+\end{equation}
+\]</span></p>
+<p>且满足边界条件</p>
+<p><span class="math display">\[
+\begin{equation}
+Y(0)=Y^{\prime \prime}(0)=Y^{\prime \prime}(1)=Y^{\prime \prime
+\prime}(1)=0
+\end{equation}
+\]</span></p>
+<p>则挠曲形状为（略去任意常数）</p>
+<p><span class="math display">\[
+\begin{equation}
+Y(x)=6 x^{2}-4 x^{3}+x^{4}
+\end{equation}
+\]</span></p>
+<p>将该多项式标准化得</p>
+<p><span class="math display">\[
+\begin{equation}
+\phi_{0}(x)=\left(6 x^{2}-4 x^{3}+x^{4}\right) /\left(\int_{0}^{1}
+Y^{2}(x) \mathrm{d} x\right)^{1 / 2}
+\end{equation}
+\]</span></p>
+<h6 id="两端自由的梁"><strong>两端自由的梁</strong></h6>
+<p>满足边界条件</p>
+<p><span class="math display">\[
+\begin{equation}
+Y^{\prime \prime}(0)=Y^{\prime \prime \prime}(0)=Y^{\prime
+\prime}(1)=Y^{\prime \prime \prime}(1)=0
+\end{equation}
+\]</span></p>
+<p>标准化后的前两项为</p>
+<p><span class="math display">\[
+\begin{equation}
+\phi_{0}(x)=1\\
+\phi_{1}(x)=2 \sqrt{3}\left(x-\frac{1}{2}\right)
+\end{equation}
+\]</span></p>
+<h6 id="reference">Reference</h6>
+<p>[1] Bhat R B. Natural frequencies of rectangular plates using
+characteristic orthogonal polynomials in Rayleigh-Ritz method[J].
+Journal of Sound and Vibration, 1985, 102(4): 493-499.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://forsetisss.github.io/2021/11/29/%E8%96%84%E6%9D%BF%E7%BB%93%E6%9E%84%E7%9A%84%E6%A8%A1%E6%80%81%E5%88%86%E6%9E%90/" data-id="clf57zaxo000r28uxa0ig0ift" data-title="薄板结构的模态分析" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-数据融合" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/11/08/%E6%95%B0%E6%8D%AE%E8%9E%8D%E5%90%88/" class="article-date">
+  <time class="dt-published" datetime="2021-11-08T11:52:32.000Z" itemprop="datePublished">2021-11-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/11/08/%E6%95%B0%E6%8D%AE%E8%9E%8D%E5%90%88/">数据融合</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://forsetisss.github.io/2021/11/08/%E6%95%B0%E6%8D%AE%E8%9E%8D%E5%90%88/" data-id="clf57zaxm000n28ux7agz0myh" data-title="数据融合" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-回归模型" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/11/05/%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/" class="article-date">
+  <time class="dt-published" datetime="2021-11-05T11:06:19.000Z" itemprop="datePublished">2021-11-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/11/05/%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/">回归模型</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="回归模型">回归模型</h3>
+<p>广义线性模型、混合效应模型、高斯过程回归</p>
+<p>三种模型中，相对最有名的应是<strong>广义线性模型(GLM)。</strong>包括吴恩达的机器学习课程中也包含GLM。简单来说，广义线性模型是采用线性方法来解决非线性的相关，实际上是一种特殊的非线性模型。
+<strong>混合效应模型（MEM）</strong>在固定效应（如线性模型）的基础上加了一项“随机效应”。固定效应通常是传统的线性回归或者其它函数关系。随机效应则与所抽取的样本分布有关。因此随机效应具有先验分布，而固定效应没有。MEM拟合能力较强，相对模型也更容易解释，缺点是需要有大量的项，模型建立时需要自己指定每一项，故而相当繁琐。下面重点介绍一下<strong>高斯过程回归（GPR）</strong>。</p>
+<h4 id="reference">Reference</h4>
+<p>[1] <a
+target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=Mzg3NTAzOTYzOA==&amp;mid=2247483762&amp;idx=1&amp;sn=23d193866ce6ee128ce9485e90e952f3&amp;chksm=cec6df8bf9b1569d117c4042c81199310d6e652f1fcb0675aa367af7f3ddbdf946c1a7949900&amp;scene=21#wechat_redirect">功能强大的回归模型——高斯过程回归</a></p>
+<p>[2] <a
+target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/101160180">高斯过程的最强实现工具--GPflow
+OR GPyTorch - 知乎 (zhihu.com)</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://forsetisss.github.io/2021/11/05/%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/" data-id="clf57zaxj000h28uxamn3hgia" data-title="回归模型" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-代理模型" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/11/03/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%9E%8B/" class="article-date">
+  <time class="dt-published" datetime="2021-11-03T02:44:23.000Z" itemprop="datePublished">2021-11-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/11/03/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%9E%8B/">代理模型</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="代理模型简介">代理模型简介</h3>
+<p>代理模型是复杂工程优化设计问题的关键技术之一。许多复杂问题的优化方法，如遗传算法、模拟退火算法、粒子群算法和蚁群算法等等。与传统的基于梯度的优化方法比，上述这些算法具有很好的鲁棒性、全局性和高度并行性等特点，在多峰值的非线性函数优化问题中得到了成功的应用。但是这些算法的最大缺点是收敛速度慢，需要对目标函数进行大量的评估，如果目标函数评估方法比较耗时(如工程优化中的CFD和FEM分析)，则计算量很大，严重制约了其在工程中的应用。为了克服全局优化算法的这个缺点，人们采用了一种称为代理模型(surrogate
+model)的方法来代替耗时的精确模型评估。代理模型的计算量比精确模型小得多，同时精度也可以得到保证，采用代理模型可以大大减少优化过程的计算量，提高工程优化设计的效率。常用的代理模型主要包括<strong>插值法</strong>、<strong>响应面模型</strong>、<strong>人工神经元网络模型</strong>、<strong>径向基函数模型</strong>及<strong>Kriging模型</strong>等。其中Kriging模型具有训练样本点处无偏估计、良好的高度非线性近似能力，非常适合作为代理模型使用。目前Kriging模型在工程优化设计领域得到了广泛应用。[1]</p>
+<p>这其中，多项式响应面、多项式插值接近于回归拟合领域，比较简单。相对于分类支持向量机，支持向量机回归其应用较少，在此不做讨论。神经网络作为一套独立的体系，应该说其对原模型的近似程度最高，随着节点和隐含层的增多，实现模型的完美逼近。不过其运算速度也不会很快，且可解释性差，很多网络本身就是一个黑箱。克里金插值和径向基函数插值是目前应用较多的两种方法。</p>
+<h4 id="插值法">1. 插值法</h4>
+<p>利用函数f
+(x)在某区间中插入若干点的函数值，作出适当的特定函数，在这些点上取已知值，在区间的其他点上用这特定函数的值作为函数f
+(x)的近似值。</p>
+<h4 id="响应面模型">2. 响应面模型</h4>
+<p>也称作响应曲面设计方法(Response Surface
+Methodology，RSM)，是通过一系列多变量试验，通过多项式回归方程来模拟真实状态曲面的方法。一般情况下，二次回归方程可以给出较为满意的答案，即
+<span class="math display">\[
+\begin{equation}
+y=\beta_{0}+\sum_{i=1}^{m} \beta_{i} x_{i}+\sum_{i=1}^{m} \beta_{i i}
+x_{i} x_{i}+\sum \sum_{i&lt;j} \beta_{i j} x_{i} x_{j}+\varepsilon
+\end{equation}
+\]</span> 写成更紧凑的形式： <span class="math display">\[
+\begin{equation}
+y_{i}=\beta_{0}+\sum_{j=1}^{k} \beta_{j} x_{i j}+\varepsilon_{i} \quad
+i=1,2, \ldots, n
+\end{equation}
+\]</span> 多次观测后写成矩阵形式为： <span class="math display">\[
+\begin{equation}
+\mathbf{y}=\mathbf{X} \boldsymbol{\beta}+\boldsymbol{\varepsilon}
+\end{equation}
+\]</span> 其中 <span class="math display">\[
+\begin{equation}
+\begin{split}
+&amp; \mathbf{y}=\left[\begin{array}{c}
+y_{1} \\
+y_{2} \\
+\vdots \\
+y_{n}
+\end{array}\right], \mathbf{X}=\left[\begin{array}{ccccc}
+1 &amp; x_{11} &amp; x_{12} &amp; \ldots &amp; x_{1 k} \\
+1 &amp; x_{21} &amp; x_{22} &amp; \ldots &amp; x_{2 k} \\
+\vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots \\
+1 &amp; x_{n 1} &amp; x_{n 2} &amp; \ldots &amp; x_{n k}
+\end{array}\right], \\
+&amp; \boldsymbol{\beta}=\left[\begin{array}{c}
+\beta_{0} \\
+\beta_{1} \\
+\vdots \\
+\beta_{k}
+\end{array}\right],\boldsymbol{\varepsilon}=\left[\begin{array}{c}
+\varepsilon_{0} \\
+\varepsilon_{1} \\
+\vdots \\
+\varepsilon_{k}
+\end{array}\right]
+\end{split}
+\end{equation}
+\]</span></p>
+<p>观测误差方差为 <span class="math display">\[
+\mathbf{L}=\sum_{i=1}^{n}
+\varepsilon_{i}^{2}=\boldsymbol{\varepsilon}^{\prime}
+\boldsymbol{\varepsilon}=(\mathbf{y}-\mathbf{X}
+\boldsymbol{\beta})^{\prime}(\mathbf{y}-\mathbf{X} \boldsymbol{\beta})
+\]</span> 当方差最小时，显然拟合曲面和实际值最接近，此时 <span
+class="math display">\[
+\left.\frac{\partial \mathbf{L}}{\partial
+\boldsymbol{\beta}}\right|_{\hat{\beta}}=-2 \mathbf{X}^{\prime}
+\mathbf{y}+2 \mathbf{X}^{\prime} \mathbf{X} \hat{\boldsymbol{\beta}}=0
+\]</span></p>
+<p>则</p>
+<p><span class="math display">\[
+\hat{\boldsymbol{\beta}}=\left(\mathbf{X}^{\prime}
+\mathbf{X}\right)^{-1} \mathbf{X}^{\prime} \mathbf{y}
+\]</span></p>
+<p>可得响应面为</p>
+<p><span class="math display">\[
+\hat{\mathbf{y}}=\mathbf{X} \hat{\boldsymbol{\beta}}
+\]</span></p>
+<h4 id="神经网络模型">3. 神经网络模型</h4>
+<p>一种万能逼近模型。当代人工智能、深度学习的核心。</p>
+<h4 id="径向基函数模型">4. 径向基函数模型</h4>
+<p>1985年，Powell提出了多变量插值的径向基函数（RBF）方法。1988年Moody和Darken提出了一种神经网络结构，即RBF神经网络，属于前向神经网络类型，它能够以任意精度逼近任意连续函数，特别适合于解决分类问题。</p>
+<p>RBF网络的结构与多层前向网络类似，它是一种三层前向网络。输入层由信号源结点组成，第二层为隐含层，隐单元数视所描述问题的需要而定，隐单元的变换函数是RBF，它是对中心点径向对称且衰减的非负非线性函数，第三层为输出层，它对输入模式的作用作出相应。从输入空间到隐含层空间的变换是非线性的，而从隐含层空间到输出层空间变换是线性的。</p>
+<p>RBF网络的基本思想是：用RBF作为隐单元的“基”构成隐含层空间，这样就可以将输入矢量直接映射到隐空间，而不需要通过权连接。当RBF的中心点确定以后，这种映射关系也就确定了。而隐含层空间到输出空间的映射是线性的，即网络的输出是隐单元输出的线性加权和，此处的权即为网络可调参数。从总体上看，网络由输入到输出的映射是非线性的，而网络输出对可调参数而言却又是线性的。这样，网络由输入到输出的映射是非线性的，而网络输出对可调参数而言却又是线性的。这样网络的权就可由线性方程组直接解出，从而大大加快学习速度并避免局部极小问题。</p>
+<p><img src="/images/2021-11-03-代理模型/RBF.jpg" alt="RBF网络结构" style="zoom:70%;" /></p>
+<h4 id="克里金模型">5. 克里金模型</h4>
+<p>克里金（Kriging）模型实际上就是<strong>高斯随机过程模型</strong>，只是实现上稍有不同。</p>
+<p>代理模型在<strong>优化过程</strong>中的使用方式非常重要，最常用的也是最简单的方式是以代理模型的预测值为目标函数对其寻优得到校正点，然后把校正点用精确模型评估并把结果用以更新代理模型，依此往复迭代直至收敛。这种选择校正点的方法极易使优化过程陷入局部极值点。Kriging模型与多项式响应面模型及人工神经网络模型最大的不同之处在于，Kriging模型不仅提供了1)
+未知点处的<strong>预测值</strong>，还提供了2)
+未知点处的<strong>预测标准差</strong>，可以方便地衡量预测的精度。针对简单地对代理模型预测值寻优确定校正点的方法所带来的局部收敛问题。Schonlau提出了以
+Kriging 模型为代理模型的 EGO(efficient global optimization)算法，
+该算法在 选取校正点时综合考虑了 Kriging 模型的预测值和 预测精度
+，避免了优化过程局部收敛的风险。</p>
+<h5 id="克里金模型的基本理论">5.1 克里金模型的基本理论</h5>
+<h6 id="形式一-6">形式一 [6]</h6>
+<p><span class="math display">\[
+\left\{\begin{array}{l}
+\hat{y}_{1}(x)=\hat{\mu}+r^{T} C^{-1}(y-\mathbf{1} \hat{\mu}) \\
+s_{1}^{2}(x)=\hat{\sigma}\left[1-r^{T} C^{-1}
+r+\frac{\left(1-\mathbf{1}^{T} C^{-1} r\right)^{2}}{\mathbf{1}^{T}
+C^{-1} \mathbf{1}}\right]
+\end{array}\right.
+\]</span></p>
+<p>其中 <span class="math display">\[
+\left\{\begin{array}{l}
+\hat{\mu}=\frac{\mathbf{1}^{T} C^{-1} y}{\mathbf{1}^{T} C^{-1}
+\mathbf{1}} \\
+\hat{\sigma}^{2}=\frac{(y-\mathbf{1} \hat{\mu})^{T} C^{-1}(y-\mathbf{1}
+\hat{\mu})}{n}
+\end{array}\right.
+\]</span>
+假设有n个数据点，1个预测点。r是数据点X和预测点x之间的协方差矩阵。C是数据点X之间的协方差矩阵。y是数据点的目标值。<strong>1</strong>是n*1的矩阵。</p>
+<h6 id="形式二-7">形式二 [7]</h6>
+<p><span class="math display">\[
+\left\{\begin{array}{l}
+\hat{y}_{2}(x)=f(x)^{T} \beta^{*}+r^{T}(x) \gamma^{*} \\
+s_{2}^{2}(x)=\sigma^{2}\left(1+u^{T}\left(F^{T} C^{-1} F\right)^{-1}
+u-r^{T} R^{-1} r\right)
+\end{array}\right.
+\]</span></p>
+<p>其中 <span class="math display">\[
+\left\{\begin{array}{l}
+\beta^{*}=\left(F^{T} R^{-1} F\right)^{-1} F^{T} C^{-1} Y \\
+C \gamma^{*}=Y-F \beta^{*} \\
+u=F^{T} C^{-1} r-f(x) \\
+\sigma^{2}=\frac{1}{m}\left(Y-F \beta^{*}\right)^{T} C^{-1}\left(Y-F
+\beta^{*}\right)
+\end{array}\right.
+\]</span>
+<strong>形式一是形式二在基函数为0次函数(即f(x)=1)时的特例</strong>。</p>
+<p>对于形式一，给定数据集为<span
+class="math inline">\(\boldsymbol{X}=\{\boldsymbol{x}^{1},
+\boldsymbol{x}^{2}, \ldots,
+\boldsymbol{x}^{n}\}^{T}\)</span>​​​​​，对应的目标函数为<span
+class="math inline">\(\boldsymbol{y}=\{y^{1}, y^{2}, \ldots,
+y^{n}\}^{T}\)</span>​​​​​克里金法假设所有数据之间都服从n维的正态分布。所以目标函数<span
+class="math inline">\(\boldsymbol{y}\)</span>​​​​​​是一个随机过程，里面的每一个变量<span
+class="math inline">\(y_i\)</span>​​​都是一个随机变量。我们把这个随机过程记做：
+<span class="math display">\[
+\left(\begin{array}{c}
+Y\left(\boldsymbol{x}^{\mathbf{1}}\right) \\
+Y\left(\boldsymbol{x}^{\mathbf{1}}\right) \\
+\vdots \\
+Y\left(\boldsymbol{x}^{n}\right)
+\end{array}\right) \sim N(\boldsymbol{\mu}, C)
+\]</span> 我们把均值取为常数<span
+class="math inline">\(\boldsymbol{1}\)</span>​ 是n*1的矩阵。协方差取为
+<span class="math display">\[
+\begin{equation}
+\begin{aligned}
+&amp;\operatorname{cor}\left[Y\left(\boldsymbol{x}^{i}\right),
+Y\left(\boldsymbol{x}^{l}\right)\right]=\exp \left(-\sum_{j=1}^{k}
+\theta_{j}\left|x_{j}^{i}-x_{j}^{l}\right|^{2}\right) \\
+&amp;C=\left(\begin{array}{ccc}
+\operatorname{cor}\left(Y\left(\boldsymbol{x}^{\mathbf{1}}\right),
+Y\left(\boldsymbol{x}^{\mathbf{1}}\right)\right), &amp; \ldots, &amp;
+\operatorname{cor}\left(Y\left(\boldsymbol{x}^{\mathbf{1}}\right),
+Y\left(\boldsymbol{x}^{\mathbf{n}}\right)\right) \\
+\vdots &amp; \ddots, &amp; \vdots \\
+\operatorname{cor}\left(Y\left(\boldsymbol{x}^{n}\right),
+Y\left(\boldsymbol{x}^{\mathbf{1}}\right)\right), &amp; \ldots, &amp;
+\operatorname{cor}\left(Y\left(\boldsymbol{x}^{n}\right),
+Y\left(\boldsymbol{x}^{\mathbf{n}}\right)\right)
+\end{array}\right)
+\end{aligned}
+\end{equation}
+\]</span> 则Y的条件概率为 <span class="math display">\[
+\begin{equation}
+L\left(\boldsymbol{Y}^{1}, \boldsymbol{Y}^{2}, \ldots,
+\boldsymbol{Y}^{n} \mid \mu, \sigma\right)=\frac{1}{\left(2 \pi
+\sigma^{2}\right)^{n / 2}} \exp
+\left(-\frac{\Sigma\left(\boldsymbol{Y}^{i}-\boldsymbol{\mu}\right)^{2}}{2
+\sigma^{2}}\right)
+\end{equation}
+\]</span> 这个条件概率可以表示为 <span class="math display">\[
+\begin{equation}
+L=\frac{1}{\left(2 \pi \sigma^{2}\right)^{n / 2}|C|^{1 / 2}} \exp
+\left[-\frac{(\boldsymbol{y}-\mathbf{1} \mu)^{T}
+C^{-1}(\boldsymbol{y}-\mathbf{1} \mu)}{2 \sigma^{2}}\right]
+\end{equation}
+\]</span> 利用最大似然概率的方法可以得到先验参数<span
+class="math inline">\(\hat{\mu}，\hat{\sigma}，\theta_{i}\)</span>​​​​的值，最后通过代入已知和未知点，最大​化对数似然概率函数可得式(9.1)。证明过程详见参考文献[8]。</p>
+<h5 id="改进的ego算法">5.2 改进的EGO算法</h5>
+<p>选择代理模型预测值的最优点作为校正点的方法称为响应最优策略。如图所示，当最初的样本点分布不均匀时，Kriging模型的预测值在样本点稀疏的地方与真实函数值相差很大，如果以预测值的最优点作为校正点只是使校正后的Kriging模型在样本点集中的区域预测精度不断提高，在样本点稀疏区域预测精度却没有太多变化，如果真实函数的最优值在样本点稀疏区域，则采用最优策略选择校正点就使得优化过程陷入了局部极值点，可见为了避免采用响应最优策略确定校正点所带来的局部收敛问题，有必要在选择校正点时综合考虑Kriging模型的预测值与预测标准差。</p>
+<p><img src="/images/2021-11-03-代理模型/Kriging模型.png" alt="Kriging模型拟合函数示意图" style="zoom: 20%;" /></p>
+<p>Jones 和
+Schonlau提出的EGO算法是一种贝叶斯全局优化算法，针对式(10)表示的一般形式的优化问题，其基本流程为:</p>
+<ol type="1">
+<li>在设计空间中，利用试验设计方法(DOE)生成初始样本库。</li>
+<li>采用Kriging模型分别构建设计变量与目标函数、约束函数间的近似映射关系。</li>
+<li>EI (expected
+improvement)函数的值为目标函数，选择使其最大的点作为校正点。</li>
+<li>对校正点采用高精度初始模型评估得到校正点的响应值，把校正点及其响应值加入样本库中。</li>
+<li>重复步骤(2),(3),(4)直至收敛。</li>
+</ol>
+<p>其中EI函数(加点准则)定义为: <span class="math display">\[
+\begin{equation}
+EI(\boldsymbol{x})=\left(y_{\min }-\mu_{\hat{y}}(\boldsymbol{x})\right)
+\Phi\left(\frac{y_{\min
+}-\mu_{\hat{y}}(\boldsymbol{x})}{s_{\hat{y}}(\boldsymbol{x})}\right)+s_{\hat{y}}(\boldsymbol{x})
+\phi\left(\frac{y_{\min
+}-\mu_{\hat{y}}(\boldsymbol{x})}{s_{\hat{y}}(\boldsymbol{x})}\right)
+\end{equation}
+\]</span> 其中$y_{} <span
+class="math inline">\(​​为当前试验点上的目标函数的最小值，\)</span><em>{}()<span
+class="math inline">\(​​和\)</span>s</em>{}<span
+class="math inline">\(​​分别是\)</span><span
+class="math inline">\(​​处的Kriging模型的预测值和标准差，\)</span>( )<span
+class="math inline">\(​​和\)</span>(
+)$​​分别是标准正态分布的密度函数和分布函数。</p>
+<p>EGO算法将EI准则的最大值点作为新增试验点，故EGO算法倾向于在Kriging模型预测值优（小）和预测不确定性大（预测标准差大）的地方添加新试验点，兼具了开发局部最优区域和探索潜在最优区域的功能。</p>
+<p>EI加点准则巧妙利用了Kriging模型的预测不确定性度量能力，倾向于在Kriging模型预测值优和不确定性大的地方添加新试验点，保证了EGO算法的收敛效率和全局收敛性。此后的代理优化算法，大多沿袭了EGO算法的自适应优化思想，并致力于设计出合理的兼具局部开发和全局探索功能的加点准则。</p>
+<h4 id="多精度代理模型">6. 多精度代理模型</h4>
+<p>代理模型的预测精度取决于其训练集的精度，可以想象训练集的精度越高、数量越多，训练得到的代理模型精度也会越高。但是在实际应用过程中，如果要获取大量高精度训练集需要耗费过多的时间和计算资源，因此为了解决这一问题，我们可以考虑使用多精度代理模型（multi-fidelity
+surrogate
+model）。多精度代理模型的出发点是希望能够用<strong>大量低精度</strong>的数据和<strong>少量高精度</strong>的数据构建高精度代理模型，这样就可以大大江都获取高精度代理模型的难度。</p>
+<h4 id="reference">Reference</h4>
+<p>[1]王红涛,竺晓程,杜朝辉.基于Kriging代理模型的改进EGO算法研究[J].工程设计学报,2009,16(04):266-270+302.</p>
+<p>[2]张建侠.
+基于Kriging模型的全局代理优化算法研究[D].南京理工大学,2018.</p>
+<p>[3]乐春宇,马义中,张建侠.结合Kriging和物理规划的多目标代理优化算法[J].计算机工程与应用,2019,55(21):240-246.</p>
+<p>[4]乐春宇.
+基于Kriging模型的代理优化理论研究和应用[D].南京理工大学,2020.</p>
+<p>[5] 偷天换日，斗转星移——代理优化算法
+https://zhuanlan.zhihu.com/p/99609634</p>
+<p>[6] Zhan, D., et al. (2017). "Expected Improvement Matrix-Based
+Infill Criteria for Expensive Multiobjective Optimization." IEEE
+Transactions on Evolutionary Computation 21(6): 956-975.</p>
+<p>[7] Sacks, Jerome, et al. "Design and analysis of computer
+experiments."<em>Statistical science</em>(1989): 409-423.</p>
+<p>[8] <a
+target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/377620800">克里金(Kriging)模型详细推导
+- 知乎 (zhihu.com)</a></p>
+<p>[9] <a
+target="_blank" rel="noopener" href="https://link.jianshu.com?t=http%3A%2F%2Fwww.southampton.ac.uk%2F~aijf197%2F07PA0124.pdf">Multi-fidelity
+optimization via surrogate modelling</a> by Alexander I. J. Forrester,
+Andras Sobester and Andy J. Keane</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://forsetisss.github.io/2021/11/03/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%9E%8B/" data-id="clf57zaxh000g28uxg5i8eid6" data-title="代理模型" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-微分方程" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/09/07/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" class="article-date">
+  <time class="dt-published" datetime="2021-09-07T02:55:37.000Z" itemprop="datePublished">2021-09-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/09/07/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">微分方程</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="微分方程边界条件">微分方程边界条件</h3>
+<p>以二阶常微分方程为例 <span class="math display">\[
+y^{\prime \prime}(s)=f\left(y(s), y^{\prime}(s), s\right)
+\]</span> 柯西边界条件（起始值条件） <span class="math display">\[
+y(a)=\alpha，
+y^{\prime}(a)=\beta
+\]</span> 狄利克雷边界条件（第一类边界条件） <span
+class="math display">\[
+y(a)=\alpha_{1}，y(b)=\alpha_{2}
+\]</span> 诺依曼边界条件（第二类边界条件） <span class="math display">\[
+y^{\prime}(a)=\alpha_{1},y^{\prime}(b)=\alpha_{2}
+\]</span></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://forsetisss.github.io/2021/09/07/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" data-id="clf57zaxl000l28ux1nip0cuh" data-title="微分方程" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-小波散射网络" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/07/23/%E5%B0%8F%E6%B3%A2%E6%95%A3%E5%B0%84%E7%BD%91%E7%BB%9C/" class="article-date">
+  <time class="dt-published" datetime="2021-07-23T03:45:25.000Z" itemprop="datePublished">2021-07-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/signal-processing/">signal processing</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/07/23/%E5%B0%8F%E6%B3%A2%E6%95%A3%E5%B0%84%E7%BD%91%E7%BB%9C/">小波散射网络</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="小波散射网络和小波神经网络">小波散射网络和小波神经网络</h3>
+<h4 id="小波网络">1. 小波网络</h4>
+<p>小波神经网络是一种改进的BP网络，区别是将原来隐藏层的激活函数替换为小波函数，该网络属于小波分析和神经网络“紧致型”结合的一种方式，按照文献[1]中的说法，由于小波变换的时频局部特性，使得该网络在信号处理方面具有自适应性、容错能力和较强的网络逼近能力。小波神经网络的结构</p>
+<figure>
+<img src="/images/2021-07-23-小波散射网络/小波神经网络的结构.png"
+alt="图1 小波神经网络的结构" />
+<figcaption aria-hidden="true">图1 小波神经网络的结构</figcaption>
+</figure>
+<p>小波网络模型可以表示为 <span class="math display">\[
+y_{i}(t)=\sum_{i=0}^{n} w_{i j} \psi_{a, b}\left(\sum_{k=0}^{m} w_{j k}
+x_{k}(t)\right)
+\]</span>
+本质上该网络的表示能力和BP网络并无区别，虽然在某些情况下可以获得更为优良的收敛速度和容错能力，但随着数据量提高，其预设的小波基会限制泛化性能。</p>
+<p>讨论：</p>
+<p>传统方法里，平移不变表示可以用配准算法或傅立叶变换模量来构造。为了避免傅立叶变换的不稳定性，建议用局部波形(如小波)代替正弦波。然而，小波变换对变化会有些敏感。从小波系数建立不变表示需要引入非线性算子，而卷积网络结构正好可以与之互补，有能力建立对变形反应稳定的大规模不变量。（PS:卷积网络的平移不变性仍然存疑[3]）。</p>
+<h4 id="小波散射网络">2. 小波散射网络</h4>
+<p>小波散射网络是由Mallat[2]等人提出的具有平移不变性的小波散射卷积神经网络，且对形变稳定，能保留高频信息进行分类。它将具有非线性模量和平均算子的小波反式卷积级联。第一网络层起到SIFT方法的效果，而下一层提供互补的不变信息，改进分类。小波散射网络的数学分析解释了深度卷积网络分类的重要性质。平稳过程的散射表示包含了高阶矩，因此可以区分具有相同傅立叶功率谱的纹理。</p>
+<p>设旋转变量$ rG= { angles=2k/K|0≤k&lt;K }<span
+class="math inline">\(​，\)</span>j$​表示尺度且<span
+class="math inline">\(0≤j≤J\)</span>​，则二维方向小波函数为 <span
+class="math display">\[
+\psi_{\lambda}(u)=2^{-2 j} \psi\left(2^{-j} r^{-1}
+u\right),   \lambda=2^{-j} r
+\]</span> 其中如果小波基的傅里叶变换<span
+class="math inline">\(\hat{\psi}(\omega)\)</span>​的中心频率为<span
+class="math inline">\(\eta\)</span>​，则<span
+class="math inline">\(\hat{\psi}_{2^{-j}
+r}(\omega)=\hat{\psi}\left(2^{j} r^{-1}
+\omega\right)\)</span>​的中心为<span
+class="math inline">\(2^{-j}r\eta\)</span>​，带宽正比于<span
+class="math inline">\(2^{-j}\)</span>​。</p>
+<p>设<span class="math inline">\(x\)</span>的小波系数为 <span
+class="math display">\[
+U[\lambda] x=\left|x * \psi_{\lambda}\right|
+\]</span> 则序列<span
+class="math inline">\(p=(\lambda_{1}，\lambda_{2}...\lambda_{m})\)</span>​​​定义了一个路径，沿此路径频率降低，传播算子为
+<span class="math display">\[
+\begin{aligned} U[p] x &amp;=U\left[\lambda_{m}\right] \cdots
+U\left[\lambda_{2}\right] U\left[\lambda_{1}\right] x \\ &amp;=\left|\|
+x * \psi_{\lambda_{1}}\right| * \psi_{\lambda_{2}}|\cdots| *
+\psi_{\lambda_{m}} \end{aligned}
+\]</span> 由此可得加窗的小波散射系数的表达式： <span
+class="math display">\[
+S[p] x(u)=U[p] x * \phi_{2^{J}}(u)=\int U[p] x(v) \phi_{2^{J}}(u-v) d v
+\]</span> 对于每个路径<span class="math inline">\(p\)</span>，<span
+class="math inline">\(S[p] x(u)\)</span>取决于窗的位置<span
+class="math inline">\(u\)</span>。平均滤波器<span
+class="math inline">\(\phi_{2^{J}}(u)\)</span>使得当<span
+class="math inline">\(|c| \ll 2^{J}\)</span>时，<span
+class="math inline">\(x_{c}(u)=x(u-c)\)</span>​​​
+，因此加窗的小波散射系数是近似具有平移不变性的。</p>
+<p>小波散射网络的迭代过程可以表示为如下所示</p>
+<figure>
+<img
+src="/images/2021-07-23-小波散射网络/A%20scattering%20propagator.png"
+alt="图2 A scattering propagator" />
+<figcaption aria-hidden="true">图2 A scattering propagator</figcaption>
+</figure>
+<p>图3为两幅图像的傅里叶变换及其散射系数的幅值。平均尺度系数<span
+class="math inline">\(2^J\)</span>等于图像尺寸。上面和下面的图像是非常不同的，但它们有相同的一阶散射系数。二阶系数可以清楚地分辨出这些图像。由于图像小波系数更稀疏，顶部图像的二阶散射系数振幅较大。高阶系数没有显示出来，因为它们的能量可以忽略不计。</p>
+<figure>
+<img src="/images/2021-07-23-小波散射网络/Scattering%20coefficients.PNG"
+alt="图3 Scattering coefficients" />
+<figcaption aria-hidden="true">图3 Scattering coefficients</figcaption>
+</figure>
+<p><strong>参考文献</strong></p>
+<p>[1] 左东广, 周帅, 张欣豫. 小波神经网络[J]. 四川兵工学报,
+2012(05):90-92+104.</p>
+<p>[2] Bruna J, Mallat S. Invariant scattering convolution networks[J].
+IEEE transactions on pattern analysis and machine intelligence, 2013,
+35(8): 1872-1886.</p>
+<p>[3] Azulay A, Weiss Y. Why do deep convolutional networks generalize
+so poorly to small image transformations?[J]. arXiv preprint
+arXiv:1805.12177, 2018.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://forsetisss.github.io/2021/07/23/%E5%B0%8F%E6%B3%A2%E6%95%A3%E5%B0%84%E7%BD%91%E7%BB%9C/" data-id="clf57zaxf000b28uxdo5f953c" data-title="小波散射网络" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Matlab/">Matlab</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jekyll/">jekyll</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/signal-processing/">signal processing</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/FFT/" rel="tag">FFT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HHT/" rel="tag">HHT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HT/" rel="tag">HT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Keras/" rel="tag">Keras</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LN/" rel="tag">LN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/" rel="tag">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STFT/" rel="tag">STFT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WT/" rel="tag">WT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/color/" rel="tag">color</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/filter/" rel="tag">filter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/getting-started/" rel="tag">getting started</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lambda/" rel="tag">lambda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/map/" rel="tag">map</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/signal-processing/" rel="tag">signal processing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/surf/" rel="tag">surf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/transparency/" rel="tag">transparency</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/FFT/" style="font-size: 10px;">FFT</a> <a href="/tags/HHT/" style="font-size: 10px;">HHT</a> <a href="/tags/HT/" style="font-size: 10px;">HT</a> <a href="/tags/Keras/" style="font-size: 10px;">Keras</a> <a href="/tags/LN/" style="font-size: 10px;">LN</a> <a href="/tags/Matlab/" style="font-size: 20px;">Matlab</a> <a href="/tags/STFT/" style="font-size: 10px;">STFT</a> <a href="/tags/WT/" style="font-size: 10px;">WT</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/filter/" style="font-size: 10px;">filter</a> <a href="/tags/getting-started/" style="font-size: 10px;">getting started</a> <a href="/tags/lambda/" style="font-size: 10px;">lambda</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/signal-processing/" style="font-size: 10px;">signal processing</a> <a href="/tags/surf/" style="font-size: 10px;">surf</a> <a href="/tags/transparency/" style="font-size: 10px;">transparency</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">七月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/01/17/Supplementary/">Supplementary</a>
+          </li>
+        
+          <li>
+            <a href="/2022/09/26/Windows%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">Windows相关问题</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/29/Matlab%E6%BB%A4%E6%B3%A2%E5%99%A8%E8%AE%BE%E8%AE%A1/">Matlab滤波器设计</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/11/hexo%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">hexo博客环境配置</a>
+          </li>
+        
+          <li>
+            <a href="/2021/11/29/%E8%96%84%E6%9D%BF%E7%BB%93%E6%9E%84%E7%9A%84%E6%A8%A1%E6%80%81%E5%88%86%E6%9E%90/">薄板结构的模态分析</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 Shi Daming<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

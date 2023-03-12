@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>信号处理|傅里叶变换、短时傅里叶变换、小波变换、希尔伯特变换、希尔伯特黄变换、经验小波变换、变分模态分解 | Research Notes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="对于非平稳信号，其频率特性会随时间变化，为了捕获这一时变特性，我们需要对信号进行时频域分析，包括短时傅里叶变换、小波变换、希尔伯特变换和希尔伯特黄变换，一下注意进行分析。 傅里叶变换(Fourier Transform, FT) 简单介绍一下一个连续信号\(f(t)\)的傅里叶变换和其逆变换 \[ \begin{array}{l} F(\omega)&#x3D;F[f(t)]&#x3D;\int_{-\in">
+<meta property="og:type" content="article">
+<meta property="og:title" content="信号处理|傅里叶变换、短时傅里叶变换、小波变换、希尔伯特变换、希尔伯特黄变换、经验小波变换、变分模态分解">
+<meta property="og:url" content="https://forsetisss.github.io/2021/06/20/%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E3%80%81%E7%9F%AD%E6%97%B6%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E3%80%81%E5%B0%8F%E6%B3%A2%E5%8F%98%E6%8D%A2%E3%80%81%E5%B8%8C%E5%B0%94%E4%BC%AF%E7%89%B9%E5%8F%98%E6%8D%A2%E3%80%81%E5%B8%8C%E5%B0%94%E4%BC%AF%E7%89%B9%E9%BB%84%E5%8F%98%E6%8D%A2/index.html">
+<meta property="og:site_name" content="Research Notes">
+<meta property="og:description" content="对于非平稳信号，其频率特性会随时间变化，为了捕获这一时变特性，我们需要对信号进行时频域分析，包括短时傅里叶变换、小波变换、希尔伯特变换和希尔伯特黄变换，一下注意进行分析。 傅里叶变换(Fourier Transform, FT) 简单介绍一下一个连续信号\(f(t)\)的傅里叶变换和其逆变换 \[ \begin{array}{l} F(\omega)&#x3D;F[f(t)]&#x3D;\int_{-\in">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://forsetisss.github.io/images/QQ截图20210722190017.png">
+<meta property="og:image" content="https://forsetisss.github.io/images/2d-fft.jpg">
+<meta property="og:image" content="https://forsetisss.github.io/images/QQ截图20210722185927.png">
+<meta property="og:image" content="https://forsetisss.github.io/images/QQ截图20210722185958.png">
+<meta property="article:published_time" content="2021-06-20T02:00:00.000Z">
+<meta property="article:modified_time" content="2021-11-05T09:11:43.535Z">
+<meta property="article:author" content="Shi Daming">
+<meta property="article:tag" content="FFT">
+<meta property="article:tag" content="STFT">
+<meta property="article:tag" content="WT">
+<meta property="article:tag" content="HT">
+<meta property="article:tag" content="HHT">
+<meta property="article:tag" content="signal processing">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://forsetisss.github.io/images/QQ截图20210722190017.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Research Notes" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Research Notes</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://forsetisss.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-信号处理傅里叶变换、短时傅里叶变换、小波变换、希尔伯特变换、希尔伯特黄变换" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/06/20/%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E3%80%81%E7%9F%AD%E6%97%B6%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E3%80%81%E5%B0%8F%E6%B3%A2%E5%8F%98%E6%8D%A2%E3%80%81%E5%B8%8C%E5%B0%94%E4%BC%AF%E7%89%B9%E5%8F%98%E6%8D%A2%E3%80%81%E5%B8%8C%E5%B0%94%E4%BC%AF%E7%89%B9%E9%BB%84%E5%8F%98%E6%8D%A2/" class="article-date">
+  <time class="dt-published" datetime="2021-06-20T02:00:00.000Z" itemprop="datePublished">2021-06-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/signal-processing/">signal processing</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      信号处理|傅里叶变换、短时傅里叶变换、小波变换、希尔伯特变换、希尔伯特黄变换、经验小波变换、变分模态分解
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>对于非平稳信号，其频率特性会随时间变化，为了捕获这一时变特性，我们需要对信号进行时频域分析，包括短时傅里叶变换、小波变换、希尔伯特变换和希尔伯特黄变换，一下注意进行分析。</p>
+<h3 id="傅里叶变换fourier-transform-ft">傅里叶变换(Fourier Transform,
+FT)</h3>
+<p>简单介绍一下一个连续信号<span
+class="math inline">\(f(t)\)</span>的傅里叶变换和其逆变换 <span
+class="math display">\[
+\begin{array}{l}
+F(\omega)=F[f(t)]=\int_{-\infty}^{+\infty} f(t) e^{-j \omega t} d t \\
+f(t)=F^{-1}[F(\omega)]=\frac{1}{2 \pi} \int_{-\infty}^{+\infty}
+F(\omega) e^{j \omega t} d \omega
+\end{array}
+\]</span></p>
+<p>当然在实际应用中，一般使用离散傅里叶变换 <span
+class="math display">\[
+X(k)=\sum_{n=0}^{N-1} x(n) e^{-j2\pi kn/N}\\
+x(n)=\frac{1}{N}\sum_{n=0}^{N-1} X(n) e^{j2\pi kn/N}
+\]</span>
+如果信号的频率特性在任何时间都不发生改变(即该信号是平稳信号)的话，使用傅里叶变换是没有问题的，然而如果该信号是非平稳信号，这时候时域信息就相当重要了。</p>
+<h3
+id="短时傅里叶变换short-time-fourier-transform-stft">短时傅里叶变换(Short-Time
+Fourier Transform, STFT)</h3>
+<p><span class="math display">\[
+X(n, \omega)=\sum_{m=-\infty}^{\infty} x(m) w(n-m) e^{-j \omega m}
+\]</span></p>
+<p>其中<span
+class="math inline">\(w(n-m)\)</span>是窗函数，我们可以据此对信号进行时频分析。</p>
+<h3 id="小波变换wavelet-transform-wt">小波变换(Wavelet Transform,
+WT)</h3>
+<p>对于任意能量有限信号<span
+class="math inline">\(f(t)\)</span>，其连续小波变换(CWT)定义为 <span
+class="math display">\[
+W_{f}(a, b)=\frac{1}{\sqrt{a}} \int_{-\infty}^{+\infty} f(t)
+\psi^{*}\left(\frac{t-b}{a}\right) d t
+\]</span>
+在低频区域的变换结果具有较高的频率分辨率(频率轴是对数轴，在低频区域跨度较小)，在高频区域具有较高的时间分辨率。</p>
+<h3 id="小结">小结</h3>
+<ul>
+<li>对于时域信号，它可以有很高的时间分辨率，然而其频率分辨率为零。</li>
+<li>经过傅里叶变换得到的频域信号可以实现很高的频率分辨率，然而其时间分辨率为零。</li>
+<li>对于短时傅里叶变换(STFT)，它在时域和频域都有一定的分辨率，并且在全局范围内STFT的时频分辨率都是一样的。但是由于Heisenberg不确定原理(也就是量子力学中的测不准原理)的制约，每一个时频窗的面积都是固定的，即时间分辨率和频率分辨率成反比，所以这两个分辨率不能同时很高。</li>
+<li>小波变换在不同时间和频率上具有不同尺寸的时频窗，可以在低频区域实现较高的频率分辨率，然而其仍然受到Heisenberg不确定原理的限制，时间分辨率和频率分辨率不能两全其美。同时小波变换的时频窗并非完全是自适应的，它还需要人为地选择基函数。</li>
+</ul>
+<p>上述的方法都会受到Heisenberg不确定原理的限制，而且并不是完全自适应的方法。接下来介绍一种不受Heisenberg不确定原理限制、同时还有更好的自适应性的时频分析方法——希尔伯特黄变换</p>
+<h3 id="希尔伯特变换hilbert-transform-ht">希尔伯特变换(Hilbert
+Transform, HT)</h3>
+<p>希尔伯特变换也是傅里叶变换的一种扩展，它常常用于通信系统中的调制解调，当然它也可以用于信号的时频分析。</p>
+<p>单频率成分信号，即同一时刻只有一个频率分量的信号，我们可以由Hilbert谱很好地观察出信号的时频特征，且有很高的的时间分辨率，但是信号边界处的误差往往较大。</p>
+<p>对多频率成分信号不能直接进行Hilbert变换，我们还需要对其进行进一步处理，将原始信号分解成单频率信号的叠加，这就要用到希尔伯特黄变换中的EMD分解。</p>
+<h3
+id="希尔伯特黄变换hilbert-huang-transform-hht">希尔伯特黄变换(Hilbert-Huang
+Transform, HHT)</h3>
+<p>相比于HT，HHT就多了一个经验模态分解(Empirical Mode Decomposition,
+EMD)，EMD就是把复杂信号分解成从高频到低频的若干个固有模态函数(Intrinsic
+Mode Function, IMF)，IMF需要满足两个条件：</p>
+<ol type="1">
+<li>信号极值点的数量与零点数相等或相差为1</li>
+<li>信号的由极大值定义的上包络和由极小值定义
+的下包络的局部均值为0(即包络上下对称)</li>
+</ol>
+<p>简单的理解就是，EMD是依次提取信号在每个局部的最高频分量的过程，所以每个IMF实际上是一个单频率分量信号，这样我们就可以对每个IMF分量进行Hilbert变换，从而得到每个分量的Hilbert谱。</p>
+<p>当然HHT并不是完美的，目前对于它的关键步骤EMD分解的研究尚不完善，缺乏一些理论基础。HHT在低频区域可能会出现一些不存在的频率分量。</p>
+<h3 id="经验小波变换ewt">经验小波变换(EWT)</h3>
+<p>经验小波变换（EWT）是一种新的自适应信号分解方法,该方法继承了EMD和小波分析方法的各自优点,通过提取频域极大值点自适应地分割傅里叶频谱以分离不同的模态,然后在频域自适应地构造带通滤波器组从而构造正交小波函数,以提取具有紧支撑傅立叶频谱的调幅-调频（AM-FM）成分。</p>
+<p>推荐论文：<a
+target="_blank" rel="noopener" href="https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&amp;dbname=CJFDLAST2015&amp;filename=YQXB201411003&amp;v=BAME6dADRg3hOUnynmQVUKsxm%25mmd2FjYPYGBRfazqTaU5nsKX1iiwwW3TcNUdsL%25mmd2F2hgO">基于经验小波变换的机械故障诊断方法研究</a></p>
+<h3 id="变分模态分解vmd">变分模态分解(VMD)</h3>
+<p>VMD（Variational mode
+decomposition）是一种自适应、完全非递归的模态变分和信号处理的方法。该技术具有可以确定模态分解个数的优点，其自适应性表现在根据实际情况确定所给序列的模态分解个数，随后的搜索和求解过程中可以自适应地匹配每种模态的最佳中心频率和有限带宽，并且可以实现固有模态分量（IMF）的有效分离、信号的频域划分、进而得到给定信号的有效分解成分，最终获得变分问题的最优解。它克服了EMD方法存在端点效应和模态分量混叠的问题。</p>
+<p>VMD的核心思想是构建和求解变分问题实现IMF的有效分离。</p>
+<p>推荐论文：<a
+target="_blank" rel="noopener" href="https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&amp;dbname=CJFDLAST2019&amp;filename=JGHW201811024&amp;v=UsZgNaRI7%25mmd2BXIcXhf68qkQ0zRFSa2mGSVb5rb%25mmd2FL48hZ9plvZdpsKV6H3NsWeyu3YT">基于VMD的激光雷达回波信号去噪方法研究</a></p>
+<h3 id="二维傅里叶变换2d-ft">二维傅里叶变换(2D-FT)</h3>
+<p><strong>定义</strong></p>
+<p>一维信号是一个序列，FT将其分解成若干个一维的简单函数之和。而二维FT将一个图像分解成若干个复平面波<span
+class="math inline">\(e^{j 2 \pi(u x+v
+y)}\)</span>之和。<strong>二维FT的公式</strong>如下： <span
+class="math display">\[
+F(u, v)=\int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} f(x, y) e^{-j
+2 \pi(u x+v y)} d x d y
+\]</span>
+通过公式，我们可以计算出，每个平面波在图像中成分是多少。从公式也可以看到，二维傅里叶变换就是将图像与每个不同频率的不同方向的复平面波做内积（先点乘在求和），也就是一个求在<strong>基</strong><span
+class="math inline">\(e^{-j 2 \pi(u x+v
+y)}\)</span>上的<strong>投影</strong>的过程。</p>
+<figure>
+<img src="/images/QQ截图20210722190017.png" alt="通过傅里叶变换分解" />
+<figcaption aria-hidden="true">通过傅里叶变换分解</figcaption>
+</figure>
+<p><strong>二维频率域K-SPACE</strong></p>
+<p>对于正弦平面波，可以这样理解，在一个方向上存在一个正弦函数，在法线方向上将其拉伸。前面说过三个参数可以确定一个一维的正弦波。哪几个参数可以确定一个二维的正弦平面波呢？答案是四个，其中三个和一维的情况一样（频率<span
+class="math inline">\(\omega\)</span> ,幅度<span
+class="math inline">\(A\)</span>，相位<span
+class="math inline">\(\varphi\)</span>），但是具有相同这些参数的平面波却可以有不同的方向<span
+class="math inline">\(\vec{n}\)</span> 。</p>
+<p>类比一维中，幅度和相位可以用一个复数表示，它可以作为我们存储的内容。但是还有两个：一个频率一个方向。这时想到向量是有方向的，也是有长度的。所以我们用一个二维的矩阵的来保存分解之后得到的信息。这个矩阵就是K空间。（一般用k来表示空间频率，单位是1/m）</p>
+<p>就是说一个二维矩阵点 <span
+class="math inline">\((u,v)\)</span>代表这个平面波的法向量<span
+class="math inline">\(\vec{n}\)</span>，这个向量的模<span
+class="math inline">\(\sqrt{u^{2}+v^{2}}\)</span>代表这个平面波的频率<span
+class="math inline">\(\omega\)</span>
+，这个点里面保存的内容复数就是此平面波的幅度和相位。下面这个图很好的体现了这一点：</p>
+<figure>
+<img src="/images/2d-fft.jpg" alt="二维傅里叶变换的K空间" />
+<figcaption aria-hidden="true">二维傅里叶变换的K空间</figcaption>
+</figure>
+<p>也因此K空间的中心对于低频，周围对于高频。再如下面这个图片，<strong>中心低频贡献了图像的主体，周围高频提供图像的细节和边缘。</strong></p>
+<figure>
+<img src="/images/QQ截图20210722185927.png" alt="低通滤波和高通滤波" />
+<figcaption aria-hidden="true">低通滤波和高通滤波</figcaption>
+</figure>
+<p>因此，k空间的每一个位置存储的数代表了所在位置复平面波在图像中占多少成分，我们就可以用每个系数所代表的平面波相加得到原来的图像。所以<strong>k空间和对应图像储存的信息含量是一样的</strong>，只不过表现形式不同，或者说基不同。</p>
+<p><strong>K空间的一些性质</strong></p>
+<p>频率混叠。在数字图像中，数据都是离散的。也就涉及到采样的问题，和一维一样，如果采样率过低，k空间就会混叠。同时在k空间中采样过低，图像也会混叠。<strong>FOV和分辨率在k空间和图像中是相反的关系</strong>
+<span class="math display">\[
+\Delta x=\frac{1}{2 * k_{x m a x}}, \Delta k=\frac{1}{2 * x_{x m a
+x}}=\frac{1}{F O V}
+\]</span>
+旋转不变性。从平面波的角度很容易理解，旋转没有改变平面波的幅度相位，只是将所有的平面波都旋转了一个角度。下面这个图像显示了二维傅里叶变换中，实空间旋转多少，频率空间也会相应旋转多少。这其实是<strong>高维傅里叶变换缩放定理的一种特殊情况。</strong></p>
+<p><strong>PS</strong></p>
+<ul>
+<li><p>1.因为matlab中的fft算法都是将0放在第一个的，所有写matlab时一定要将k空间fftshift一下使得零频回到k空间中心。</p></li>
+<li><p>2.简单的应用k空间进行去噪例子。通过去掉明显的k空间的异常峰，可以去除图像中有规律变化的噪声或者伪影。</p></li>
+</ul>
+<p><img src="/images/QQ截图20210722185958.png" alt="应用k空间进行降噪" style="zoom:80%;" /></p>
+<p><strong>Reference</strong></p>
+<p>https://zhuanlan.zhihu.com/p/150705777</p>
+<p>https://www.zhihu.com/question/22611929</p>
+<p>https://zhuanlan.zhihu.com/p/110026009</p>
+<p>https://www.robots.ox.ac.uk/~az/lectures/ia/lect2.pdf</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://forsetisss.github.io/2021/06/20/%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E3%80%81%E7%9F%AD%E6%97%B6%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E3%80%81%E5%B0%8F%E6%B3%A2%E5%8F%98%E6%8D%A2%E3%80%81%E5%B8%8C%E5%B0%94%E4%BC%AF%E7%89%B9%E5%8F%98%E6%8D%A2%E3%80%81%E5%B8%8C%E5%B0%94%E4%BC%AF%E7%89%B9%E9%BB%84%E5%8F%98%E6%8D%A2/" data-id="clf57zaxd000728ux2iwedfyh" data-title="信号处理|傅里叶变换、短时傅里叶变换、小波变换、希尔伯特变换、希尔伯特黄变换、经验小波变换、变分模态分解" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/FFT/" rel="tag">FFT</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HHT/" rel="tag">HHT</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HT/" rel="tag">HT</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/STFT/" rel="tag">STFT</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WT/" rel="tag">WT</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/signal-processing/" rel="tag">signal processing</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/07/01/2021%E6%80%BB%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          周总结
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/06/09/keras%E4%B8%ADLN%E5%B1%82%E7%9A%84%E4%BD%BF%E7%94%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">Keras中LN层的使用</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Matlab/">Matlab</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jekyll/">jekyll</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/signal-processing/">signal processing</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/FFT/" rel="tag">FFT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HHT/" rel="tag">HHT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HT/" rel="tag">HT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Keras/" rel="tag">Keras</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LN/" rel="tag">LN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/" rel="tag">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STFT/" rel="tag">STFT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WT/" rel="tag">WT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/color/" rel="tag">color</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/filter/" rel="tag">filter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/getting-started/" rel="tag">getting started</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lambda/" rel="tag">lambda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/map/" rel="tag">map</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/signal-processing/" rel="tag">signal processing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/surf/" rel="tag">surf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/transparency/" rel="tag">transparency</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/FFT/" style="font-size: 10px;">FFT</a> <a href="/tags/HHT/" style="font-size: 10px;">HHT</a> <a href="/tags/HT/" style="font-size: 10px;">HT</a> <a href="/tags/Keras/" style="font-size: 10px;">Keras</a> <a href="/tags/LN/" style="font-size: 10px;">LN</a> <a href="/tags/Matlab/" style="font-size: 20px;">Matlab</a> <a href="/tags/STFT/" style="font-size: 10px;">STFT</a> <a href="/tags/WT/" style="font-size: 10px;">WT</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/filter/" style="font-size: 10px;">filter</a> <a href="/tags/getting-started/" style="font-size: 10px;">getting started</a> <a href="/tags/lambda/" style="font-size: 10px;">lambda</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/signal-processing/" style="font-size: 10px;">signal processing</a> <a href="/tags/surf/" style="font-size: 10px;">surf</a> <a href="/tags/transparency/" style="font-size: 10px;">transparency</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">七月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/01/17/Supplementary/">Supplementary</a>
+          </li>
+        
+          <li>
+            <a href="/2022/09/26/Windows%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">Windows相关问题</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/29/Matlab%E6%BB%A4%E6%B3%A2%E5%99%A8%E8%AE%BE%E8%AE%A1/">Matlab滤波器设计</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/11/hexo%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">hexo博客环境配置</a>
+          </li>
+        
+          <li>
+            <a href="/2021/11/29/%E8%96%84%E6%9D%BF%E7%BB%93%E6%9E%84%E7%9A%84%E6%A8%A1%E6%80%81%E5%88%86%E6%9E%90/">薄板结构的模态分析</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 Shi Daming<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

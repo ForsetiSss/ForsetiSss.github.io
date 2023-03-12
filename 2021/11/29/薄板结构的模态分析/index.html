@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>薄板结构的模态分析 | Research Notes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="薄板结构的模态分析 1. 薄板的小挠度弯曲 1.1 薄板的基本概念和基本假设 薄板是工程结构中的一种常用构件，它是由两个平行面和垂直于它们的柱面所围成的物体，几何特征是其高度远小于底面尺寸，简称板。薄板的弯曲变形属于弹性力学空间问题，由于数学求解的复杂性，因此，需要首先建立应力和变形分布的基本假设。  薄板的上下两个平行面称为板面，垂直于平行面的柱面称为板边，如图所示。两个平行面之间的距">
+<meta property="og:type" content="article">
+<meta property="og:title" content="薄板结构的模态分析">
+<meta property="og:url" content="https://forsetisss.github.io/2021/11/29/%E8%96%84%E6%9D%BF%E7%BB%93%E6%9E%84%E7%9A%84%E6%A8%A1%E6%80%81%E5%88%86%E6%9E%90/index.html">
+<meta property="og:site_name" content="Research Notes">
+<meta property="og:description" content="薄板结构的模态分析 1. 薄板的小挠度弯曲 1.1 薄板的基本概念和基本假设 薄板是工程结构中的一种常用构件，它是由两个平行面和垂直于它们的柱面所围成的物体，几何特征是其高度远小于底面尺寸，简称板。薄板的弯曲变形属于弹性力学空间问题，由于数学求解的复杂性，因此，需要首先建立应力和变形分布的基本假设。  薄板的上下两个平行面称为板面，垂直于平行面的柱面称为板边，如图所示。两个平行面之间的距">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://forsetisss.github.io/images/2021-11-29-薄板结构的模态分析/薄板的基本概念.bmp">
+<meta property="og:image" content="https://forsetisss.github.io/images/2021-11-29-薄板结构的模态分析/梁的典型边界条件.png">
+<meta property="og:image" content="https://forsetisss.github.io/images/2021-11-29-薄板结构的模态分析/悬臂梁自然模态.png">
+<meta property="article:published_time" content="2021-11-29T02:38:02.000Z">
+<meta property="article:modified_time" content="2023-01-20T03:56:54.518Z">
+<meta property="article:author" content="Shi Daming">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://forsetisss.github.io/images/2021-11-29-薄板结构的模态分析/薄板的基本概念.bmp">
+  
+    <link rel="alternate" href="/atom.xml" title="Research Notes" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Research Notes</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://forsetisss.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-薄板结构的模态分析" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/11/29/%E8%96%84%E6%9D%BF%E7%BB%93%E6%9E%84%E7%9A%84%E6%A8%A1%E6%80%81%E5%88%86%E6%9E%90/" class="article-date">
+  <time class="dt-published" datetime="2021-11-29T02:38:02.000Z" itemprop="datePublished">2021-11-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      薄板结构的模态分析
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="薄板结构的模态分析">薄板结构的模态分析</h2>
+<h3 id="薄板的小挠度弯曲">1. 薄板的小挠度弯曲</h3>
+<h4 id="薄板的基本概念和基本假设">1.1 薄板的基本概念和基本假设</h4>
+<p>薄板是工程结构中的一种常用构件，它是由两个平行面和垂直于它们的柱面所围成的物体，几何特征是其高度远小于底面尺寸，简称板。薄板的弯曲变形属于弹性力学空间问题，由于数学求解的复杂性，因此，需要首先建立应力和变形分布的基本假设。</p>
+<p><img src="/images/2021-11-29-薄板结构的模态分析/薄板的基本概念.bmp" alt="图1 薄板的基本概念" style="auto;zoom:80%;" /></p>
+<p>薄板的上下两个平行面称为板面，垂直于平行面的柱面称为板边，如图所示。两个平行面之间的距离称为板厚，用<span
+class="math inline">\(\delta\)</span>
+表示。平分板厚的平面称为板的中面。假设板的厚度为<span
+class="math inline">\(\delta\)</span>，平分厚度<span
+class="math inline">\(\delta\)</span>的平面成为板的中间平面，简称为中面。如果板的厚度<span
+class="math inline">\(\delta\)</span>远小于中面的最小特征尺寸<span
+class="math inline">\(b\)</span>，例如<span
+class="math inline">\(1/5≤\delta/b≤1/80\)</span>，则称为薄板。如果外载荷为垂直于板的中面作用的横向载荷，则板主要变形为弯曲变形。中面在薄板弯曲时变形成为曲面，中面沿垂直方向，即横向位移称为挠度。对于薄板，仍然有相当的弯曲刚度，如果挠度小于厚度的五分之一，属于小挠度问题。</p>
+<p>根据薄板的外载荷和几何特征，外力为横向载荷，厚度远小于薄板的平面宽度，可以忽略一些次要因素。薄板的小挠度弯曲理论是由三个基本假设作为基础，因为这些基本假设是由基尔霍夫首先提出的，因此又称为<strong>基尔霍夫假设</strong>。</p>
+<ol type="1">
+<li><p>变形前垂直于中面的直线变形后仍然保持直线，而且长度不变。这相当于梁的弯曲变形平面假设。根据这一假设，
+<span
+class="math inline">\(ε_z＝γ_{zx}＝γ_{zy}＝0\)</span>。因此，在板内所有的点，位移分量<span
+class="math inline">\(w\)</span>只是<span
+class="math inline">\(x\)</span>和<span
+class="math inline">\(y\)</span>的函数而与<span
+class="math inline">\(z\)</span>无关。也就是说，在中面的任意一根法线上，薄板沿厚度方向的所有点都具有挠度<span
+class="math inline">\(w\)</span>。</p></li>
+<li><p>垂直于中面方向的应力分量<span
+class="math inline">\(σ_z，τ_{zx}，τ_{zy}\)</span>
+远小于其他应力分量，其引起的变形可以不计，但是对于维持平衡是必要的，这相当于梁的弯曲无挤压应力假设。</p></li>
+<li><p>薄板弯曲时，中面各点只有垂直中面的位移w，没有平行中面的位移，即</p></li>
+</ol>
+<p><span class="math display">\[
+\begin{equation}
+u_{z=0}=0, \quad v_{z=0}=0
+\end{equation}
+\]</span></p>
+<p>根据这一假设，板的中面将没有变形发生。板的中面位移函数<span
+class="math inline">\(w(x, y)\)</span>称为挠度函数。</p>
+<h4 id="板的小挠度弯曲的基本方程">1.2 板的小挠度弯曲的基本方程</h4>
+<p>根据基尔霍夫假设和几何方程可以得到挠度函数表达的应变分量</p>
+<p><span class="math display">\[
+\begin{equation}
+\begin{array}{l}
+\varepsilon_{x}=\frac{\partial u}{\partial x}=-\frac{\partial^{2}
+w}{\partial x^{2}} z \\
+\varepsilon_{y}=\frac{\partial v}{\partial y}=-\frac{\partial^{2}
+w}{\partial y^{2}} z \\
+y_{x y}=\frac{\partial u}{\partial y}+\frac{\partial v}{\partial x}=-2
+\frac{\partial^{2} w}{\partial x \partial y} z
+\end{array}
+\end{equation}
+\]</span></p>
+<p>和应力分量</p>
+<p><span class="math display">\[
+\begin{equation}
+\begin{array}{l}
+\sigma_{x}=\frac{-E z}{1-v^{2}}\left(\frac{\partial^{2} w}{\partial
+x^{2}}+v \frac{\partial^{2} w}{\partial y^{2}}\right) \\
+\sigma_{y}=\frac{-E z}{1-v^{2}}\left(\frac{\partial^{2} w}{\partial
+y^{2}}+v \frac{\partial^{2} w}{\partial x^{2}}\right) \\
+\tau_{x y}=\frac{-E z}{1-v^{2}} \frac{\partial^{2} w}{\partial x
+\partial y}
+\end{array}
+\end{equation}
+\]</span></p>
+<p>薄板的小挠度弯曲问题，将挠度<span
+class="math inline">\(w(x,y)\)</span>取为基本未知函数，所谓的弹性曲面微分方程可由内力与载荷平衡条件或微元的应力平衡条件得到，如下所示</p>
+<p><span class="math display">\[
+\begin{equation}
+D\nabla^{2} \nabla^{2} w=q
+\end{equation}
+\]</span></p>
+<p>其中<span class="math inline">\(D\)</span>称为薄板的弯曲刚度</p>
+<p><span class="math display">\[
+\begin{equation}
+D=\frac{E \delta^{3}}{12\left(1-\mu^{2}\right)}
+\end{equation}
+\]</span></p>
+<p>该方程已经考虑并完全满足了弹性力学空间问题的平衡微分方程、集合方程和物理方程，以及薄板上、下板面的应力边界条件，得到了求解挠度<span
+class="math inline">\(w\)</span>的基本微分方程。这样，在求解时，只需按照薄板侧面上的边界条件，求出挠度<span
+class="math inline">\(w\)</span>，从而求出应力分量。</p>
+<h4 id="边界条件和挠度函数形式">1.3 边界条件和挠度函数形式</h4>
+<p>进行薄板结构的模态分析时，关键在于薄板的边界条件。以下给出几种常见的边界条件</p>
+<h5 id="固定边oax0">1.3.1 固定边OA(<span
+class="math inline">\(x=0\)</span>)</h5>
+<p>显然有边界挠度和转角均为零的几何条件。因此，在<span
+class="math inline">\(x=0\)</span>边界，有</p>
+<p><span class="math display">\[
+\begin{equation}
+\begin{array}{l}
+\left.w\right|_{x=0}=0 , \quad
+\left.\frac{\partial w}{\partial x}\right|_{x=0}=0
+\end{array}
+\end{equation}
+\]</span></p>
+<h5 id="简支边oax0">1.3.2 简支边OA(<span
+class="math inline">\(x=0\)</span>)</h5>
+<p>薄板在简支边界，不能有挠度，但是可以有微小的转动。因此边界条件为挠度为零和弯矩为零，属于混合边界条件。在<span
+class="math inline">\(x=0\)</span> 边界，有</p>
+<p><span class="math display">\[
+\begin{equation}
+\begin{array}{l}
+\left.w\right|_{x=0}=0 , \quad
+\left.\frac{\partial^{2} w}{\partial x^{2}}\right|_{x=0}=0
+\end{array}
+\end{equation}
+\]</span></p>
+<h5 id="自由边oaxa">1.3.3 自由边OA(<span
+class="math inline">\(x=a\)</span>)</h5>
+<p>沿自由边OA，薄板的弯矩和扭矩以及横向剪力都等于零，因而有三个边界条件</p>
+<p><span class="math display">\[
+\begin{equation}
+\begin{array}{l}
+\left.M_{x}\right|_{x=a}=0, \quad
+\left.M_{x y}\right|_{x=a}=0, \quad
+\left.F_{S x}\right|_{x=a}=0
+\end{array}
+\end{equation}
+\]</span></p>
+<p>但是，薄板的挠曲微分方程式四阶的椭圆形偏微分方程，根据偏微分方程理论，在每个边界上，只需要两个边界条件。为此，基尔霍夫指出，薄板任一边界上的扭矩都可以变换为等效的横向剪力，和原来的剪力合并，因而后两个边界条件并不独立。自由边的边界条件用<span
+class="math inline">\(w\)</span>表示为</p>
+<p><span class="math display">\[
+\begin{equation}
+\begin{array}{l}
+{\left[\frac{\partial^{2} w}{\partial x^{2}}+v \frac{\partial^{2}
+w}{\partial y^{2}}\right]_{x=a}=0}, \quad
+{\left[\frac{\partial^{3} w}{\partial x^{3}}+(2-v) \frac{\partial^{3}
+w}{\partial x \partial y^{2}}\right]_{x=a}=0}
+\end{array}
+\end{equation}
+\]</span></p>
+<p>应该指出，如果相邻的两个边界都是自由边界，则扭矩用上述剪力等效替代时，在两个边界的角点将会出现没有抵消的集中剪力<span
+class="math inline">\(F_{SR}\)</span>，如果边界角点没有受到支承，则应该还有角点条件</p>
+<p><span class="math display">\[
+\begin{equation}
+\left.\frac{\partial^{2} w}{\partial x \partial y}\right|_{x=a \atop
+y=b}=0
+\end{equation}
+\]</span></p>
+<h5 id="振型函数的近似表示">1.3.4 振型函数的近似表示</h5>
+<p>对于四边简支的矩形薄板，能够通过理论推导求出其精确解，然而实际中往往边界条件复杂。因此实际中利用近似法对薄板结构物体进行模态分析是较为方便的。能量法能够近似分析出薄板在不同边界条件下的模态。任意边界条件下的薄板的振型函数$
+w(x,y)$都可以利用分离变量法写成下式所示的形式[1]</p>
+<p><span class="math display">\[
+\begin{equation}
+W(x, y)=\sum_{m=1}^{p} \sum_{n=1}^{q} A_{m n} X_{m}(x) Y_{n}(y)
+\end{equation}
+\]</span></p>
+<p>式中$ w(x,y)$表示薄板中Q点处的挠度， <span class="math inline">\(x ,
+y\)</span> 是归一化的坐标，<span class="math inline">\(p, q\)</span>
+分别代表了 <span class="math inline">\(x, y\)</span>
+方向上的多项式总数。 <span class="math inline">\(X_{m}(x),
+Y_{n}(y)\)</span>为满足不同边界条件的多项式。<span
+class="math inline">\(A_{mn}\)</span>表示这些多项式的权重参数。对于不同的边界条件
+<span class="math inline">\(X_{m}(x),
+Y_{n}(y)\)</span>的选择也不同。选取适当的多项式后，就可以求取该边界条件下薄板振动时的能量分布，从而求得各种边界条件下的振动模态。</p>
+<h3 id="梁的弯曲振动">2. 梁的弯曲振动</h3>
+<p>如图1所示是一弯曲振动的梁，假设梁的长度和截面高度之比大于10，因而满足材料力学中的欧拉伯努利梁的假设，即（1）变形前垂直梁中心线的平剖面，变形后仍然为平面（刚性横截面假定）；（2）变形后横截面的平面仍与变形后的轴线相垂直。其中忽略了梁的转动动能和剪切变形势能。</p>
+<h4 id="梁的边界条件">2.1 梁的边界条件</h4>
+<p><img src="/images/2021-11-29-薄板结构的模态分析/梁的典型边界条件.png" alt="图2 梁的典型边界条件" style="auto;zoom:80%;" /></p>
+<p>梁的典型边界条件有如下几种：</p>
+<ol type="1">
+<li>固支端的边界条件是位移与转角为零 ，即</li>
+</ol>
+<p><span class="math display">\[
+\begin{equation}
+y(0, t)=0
+\end{equation}
+\]</span></p>
+<p><span class="math display">\[
+\begin{equation}
+\left.\frac{\partial y(x, t)}{\partial x}\right|_{x=0}=0
+\end{equation}
+\]</span></p>
+<ol start="2" type="1">
+<li>简支端的边界条件是位移与弯矩为零，即</li>
+</ol>
+<p><span class="math display">\[
+\begin{equation}
+y(0, t)=0
+\end{equation}
+\]</span></p>
+<p><span class="math display">\[
+\begin{equation}
+\left.E I(x) \frac{\partial^{2} y(x, t)}{\partial x^{2}}\right|_{x=0}=0
+\end{equation}
+\]</span></p>
+<ol start="3" type="1">
+<li>自由端的边界条件是弯矩与剪力为零，即</li>
+</ol>
+<p><span class="math display">\[
+\begin{equation}
+\left.E I(x) \frac{\partial^{2} y(x, t)}{\partial x^{2}}\right|_{x=L}=0
+\end{equation}
+\]</span></p>
+<p><span class="math display">\[
+\begin{equation}
+\frac{\partial}{\partial x}\left[E I(x) \frac{\partial^{2} y(x,
+t)}{\partial x^{2}}\right]_{x=L}=0
+\end{equation}
+\]</span></p>
+<ol start="4" type="1">
+<li>自由端带有弹簧<span
+class="math inline">\(k\)</span>的边界条件是位移与剪力存在如下关系，且弯矩为零，即</li>
+</ol>
+<p><span class="math display">\[
+\begin{equation}
+\frac{\partial}{\partial x}\left[E I(x) \frac{\partial^{2} y(x,
+t)}{\partial x^{2}}\right]_{x=L}=k y(L, t)
+\end{equation}
+\]</span></p>
+<p><span class="math display">\[
+\begin{equation}
+\left.E I(x) \frac{\partial^{2} y(x, t)}{\partial x^{2}}\right|_{x=L}=0
+\end{equation}
+\]</span></p>
+<ol start="5" type="1">
+<li>简支端带有卷簧<span
+class="math inline">\(k\)</span>的边界条件是转角与弯矩之间存在如下关系，且位移为零，即</li>
+</ol>
+<p><span class="math display">\[
+\begin{equation}
+\left.E I(x) \frac{\partial^{2} y(x, t)}{\partial x^{2}}\right|_{x=L}=-k
+\frac{\partial y(x, t)}{\partial x}
+\end{equation}
+\]</span></p>
+<p><span class="math display">\[
+\begin{equation}
+y(L)=0
+\end{equation}
+\]</span></p>
+<ol start="6" type="1">
+<li>自由端带有集中质量<span
+class="math inline">\(M\)</span>的边界条件是剪力与加速度之间存在如下关系，且弯矩为零，即</li>
+</ol>
+<p><span class="math display">\[
+\begin{equation}
+\left.\frac{\partial}{\partial x}\left[E I(x) \frac{\partial^{2} y(x,
+t)}{\partial x^{2}}\right]\right|_{x=L}=M \frac{\partial^{2} y(x,
+t)}{\partial x^{2}}
+\end{equation}
+\]</span></p>
+<p><span class="math display">\[
+\begin{equation}
+\left.E I(x) \frac{\partial^{2} y(x, t)}{\partial x^{2}}\right|_{x=L}=0
+\end{equation}
+\]</span></p>
+<h4 id="梁的自由振动与模态">2.2 梁的自由振动与模态</h4>
+<p>自由振动情况下<span
+class="math inline">\(f(x,t)=0\)</span>，考虑到梁的弯矩和弯矩变形之间的关系式</p>
+<p><span class="math display">\[
+\begin{equation}
+E I(x) \frac{\partial^{2} y(x, t)}{\partial x^{2}}=M(x, t)
+\end{equation}
+\]</span></p>
+<p>通过对梁微元分析并略去高阶小量，梁的自由振动的运动方程可以表示为：</p>
+<p><span class="math display">\[
+\begin{equation}
+\frac{\partial^{2}}{\partial x^{2}}\left[E I(x) \frac{\partial^{2} y(x,
+t)}{\partial x^{2}}\right]+m(x) \frac{\partial^{2} y(x, t)}{\partial
+t^{2}}=0
+\end{equation}
+\]</span></p>
+<p>设同步运动为</p>
+<p><span class="math display">\[
+\begin{equation}
+y(x, t)=Y(x) \eta(t)
+\end{equation}
+\]</span></p>
+<p>x带入上式并假定为均匀梁，可得</p>
+<p><span class="math display">\[
+\begin{equation}
+\frac{\mathrm{d}^{4} Y(x)}{\mathrm{d} x^{4}}-\beta^{4} Y(x)=0
+\end{equation}
+\]</span></p>
+<p>式中<span class="math inline">\(\beta^{4}=\frac{\omega^{2}
+m}{EI}\)</span>，方程的通解为</p>
+<p><span class="math display">\[
+\begin{equation}
+Y(x)=C_{1} \sin \beta x+C_{2} \cos \beta x+C_{3} \operatorname{sh} \beta
+x+C_{4} \operatorname{ch} \beta x
+\end{equation}
+\]</span></p>
+<p>其中<span
+class="math inline">\(C_{i}\)</span>的值需要通过边界条件进一步确定。</p>
+<h5 id="一端固支一端自由的梁悬臂梁的自然模态">2.2.1
+一端固支，一端自由的梁（悬臂梁）的自然模态</h5>
+<p><img src="/images/2021-11-29-薄板结构的模态分析/悬臂梁自然模态.png" alt="图3 悬臂梁自然模态" style="zoom:80%;" /></p>
+<p>悬臂梁的边界条件可以表示为</p>
+<p><span class="math display">\[
+\begin{equation}
+Y(0)=0,\left.\quad \frac{\mathrm{d} Y(x)}{\mathrm{d} x}\right|_{=-0}=0
+\end{equation}
+\]</span></p>
+<p><span class="math display">\[
+\begin{equation}
+\left.\frac{\mathrm{d}^{2} Y(x)}{\mathrm{d} x^{2}}\right|_{x=L}=0,
+\left.\quad \frac{\mathrm{d}^{3} Y(x)}{\mathrm{d} x^{3}}\right|_{x=L}=0
+\end{equation}
+\]</span></p>
+<p>可知式28中的系数满足如下关系</p>
+<p><span class="math display">\[
+\begin{equation}
+\left\{
+{\begin{array}{l}
+C_{1}+C_{3}=0 \\
+C_{2}+C_{4}=0
+\end{array}}
+\right.
+\end{equation}
+\]</span></p>
+<p><span class="math display">\[
+\begin{equation}
+\begin{aligned}
+(\sin \beta L+\operatorname{sh} \beta L) C_{1}+(\cos \beta
+L+\operatorname{ch} \beta L) C_{2} &amp;=0 \\
+(\cos \beta L+\operatorname{ch} \beta L) C_{1}+(-\sin \beta
+L+\operatorname{sh} \beta L) C_{2} &amp;=0
+\end{aligned}
+\end{equation}
+\]</span></p>
+<p>为得到上式的非零解，系数行列式必为零，即</p>
+<p><span class="math display">\[
+\begin{equation}
+\left|\begin{array}{rr}
+\sin \beta L+\operatorname{sh} \beta L &amp; \cos \beta
+L+\operatorname{ch} \beta L \\
+\cos \beta L+\operatorname{ch} \beta L &amp; -\sin \beta
+L+\operatorname{sh} \beta L
+\end{array}\right|=0
+\end{equation}
+\]</span></p>
+<p>展开上式化简得特征方程为</p>
+<p><span class="math display">\[
+\begin{equation}
+\cos \beta L \operatorname{ch} \beta L=-1
+\end{equation}
+\]</span></p>
+<p>可由数值方法求得一系列的<span class="math inline">\(\beta_r
+L\)</span>的值。</p>
+<p>则特征函数<span class="math inline">\(Y(x)\)</span>可表示为</p>
+<p><span class="math display">\[
+\begin{equation}
+Y_{r}(x)=C_{1}\left[\left(\sin \beta_{r} x-\operatorname{sh} \beta_{r}
+x\right)+\xi_{r}\left(\cos \beta_{r} x-\operatorname{ch} \beta_{r}
+x\right)\right],\quad r=1,2 ...
+\end{equation}
+\]</span></p>
+<p>其中</p>
+<p><span class="math display">\[
+\begin{equation}
+\xi_{r}=\left(\frac{C_{2}}{C_{1}}\right)_{r}=-\frac{\sin \beta_{r}
+L+\operatorname{sh} \beta_{r} L}{\cos \beta_{r} L+\operatorname{ch}
+\beta_{r} L}=\frac{\cos \beta_{r} L+\operatorname{ch} \beta_{r} L}{\sin
+\beta_{r} L-\operatorname{sh} \beta_{r} L}
+\end{equation}
+\]</span></p>
+<p><span
+class="math inline">\(\beta_{r}\)</span>可由边界条件以数值方法得出，<span
+class="math inline">\(C_{1}\)</span>为待定常数，前三阶振型及相应的自然频率在图2中给出，在图中可以看到，<span
+class="math inline">\(Y_{r}(x)\)</span>有<span
+class="math inline">\(r-1\)</span>个节点。</p>
+<h5 id="两端自由的梁的自然模态">2.2.2 两端自由的梁的自然模态</h5>
+<p>此处需要注意的是，由于两端自由梁的约束不足，因此前两阶为刚体模态，分别为平动和转动。刚体模态跟刚体运动定义相似，结构内部不发生变形的模态振型即为刚体模态，即刚体运动对应刚体模态。该边界条件下前两节模态如下。</p>
+<p><span class="math display">\[
+\begin{equation}
+{\begin{array}{l}
+Y_1(x) = C_{1,1}\\
+Y_2(x) = C_{1,2}(2x-L)
+\end{array}}
+\end{equation}
+\]</span></p>
+<p>自由梁的边界条件可以表示为</p>
+<p><span class="math display">\[
+\begin{equation}
+\left.\frac{\mathrm{d}^{2} Y(x)}{\mathrm{d} x^{2}}\right|_{x=0}=0,
+\left.\quad \frac{\mathrm{d}^{3} Y(x)}{\mathrm{d} x^{3}}\right|_{x=0}=0
+\end{equation}
+\]</span></p>
+<p><span class="math display">\[
+\begin{equation}
+\left.\frac{\mathrm{d}^{2} Y(x)}{\mathrm{d} x^{2}}\right|_{x=L}=0,
+\left.\quad \frac{\mathrm{d}^{3} Y(x)}{\mathrm{d} x^{3}}\right|_{x=L}=0
+\end{equation}
+\]</span></p>
+<p>可知式28中的系数满足如下关系</p>
+<p><span class="math display">\[
+\begin{equation}
+\left\{
+{\begin{array}{l}
+-C_{1}+C_{3}=0 \\
+-C_{2}+C_{4}=0
+\end{array}}
+\right.
+\end{equation}
+\]</span></p>
+<p><span class="math display">\[
+\begin{equation}
+\begin{aligned}
+(-\sin \beta L+\operatorname{sh} \beta L) C_{1}+(-\cos \beta
+L+\operatorname{ch} \beta L) C_{2} &amp;=0 \\
+(-\cos \beta L+\operatorname{ch} \beta L) C_{1}+(\sin \beta
+L+\operatorname{sh} \beta L) C_{2} &amp;=0
+\end{aligned}
+\end{equation}
+\]</span></p>
+<p>为得到上式的非零解，系数行列式必为零，即</p>
+<p><span class="math display">\[
+\begin{equation}
+\left|\begin{array}{rr}
+-\sin \beta L+\operatorname{sh} \beta L &amp; -\cos \beta
+L+\operatorname{ch} \beta L \\
+-\cos \beta L+\operatorname{ch} \beta L &amp; \sin \beta
+L+\operatorname{sh} \beta L
+\end{array}\right|=0
+\end{equation}
+\]</span></p>
+<p>展开上式化简得特征方程为</p>
+<p><span class="math display">\[
+\begin{equation}
+\cos \beta L \operatorname{ch} \beta L=1
+\end{equation}
+\]</span></p>
+<p>可由数值方法求得一系列的<span class="math inline">\(\beta_r
+L\)</span>的值。</p>
+<p>同上一小节一样，特征函数<span
+class="math inline">\(Y(x)\)</span>可表示为</p>
+<p><span class="math display">\[
+\begin{equation}
+Y_{r}(x)=C_{1}\left[\left(\sin \beta_{r} x+\operatorname{sh} \beta_{r}
+x\right)+\xi_{r}\left(\cos \beta_{r} x+\operatorname{ch} \beta_{r}
+x\right)\right],\quad r=3,4 ...
+\end{equation}
+\]</span></p>
+<p>其中</p>
+<p><span class="math display">\[
+\begin{equation}
+\xi_{r}=\left(\frac{C_{2}}{C_{1}}\right)_{r}=\frac{\sin \beta_{r}
+L-\operatorname{sh} \beta_{r} L}{-\cos \beta_{r} L+\operatorname{ch}
+\beta_{r} L}=\frac{\cos \beta_{r} L-\operatorname{ch} \beta_{r} L}{\sin
+\beta_{r} L+\operatorname{sh} \beta_{r} L}
+\end{equation}
+\]</span></p>
+<p><span class="math inline">\(C_{1}\)</span>为待定常数。</p>
+<h5 id="gram-schmidt正交多项式方法">2.2.3
+Gram-Schmidt正交多项式方法</h5>
+<p>另一种简单的方法是利用Gram-Schmidt正交多项式方法进行表征。在区间<span
+class="math inline">\([a,b]\)</span>上的正交多项式可以通过如下过程</p>
+<p><span class="math display">\[
+\begin{equation}
+\phi_{1}(x)=\left(x-B_{1}\right) \phi_{0}(x), \quad
+\phi_{k}(x)=\left(x-B_{k}\right) \phi_{k-1}(x)-C_{k} \phi_{k-2}(x)
+\end{equation}
+\]</span></p>
+<p><span class="math display">\[
+\begin{equation}
+\begin{array}{c}
+B_{k}=\frac{(xg_{k},g_{k})}{(g_{k},g_{k})}
+\\C_{k}=\frac{(g_{k},g_{k})}{(g_{k-1},g_{k-1})}
+\end{array}
+\end{equation}
+\]</span></p>
+<p>其中<span class="math inline">\(w(x)\)</span>是权重系数。</p>
+<p>在本例中，权重选为1，区间为<span
+class="math inline">\([0,1]\)</span>，同时使之成为标准正交多项式，系数满足以下关系</p>
+<p><span class="math display">\[
+\begin{equation}
+\int_{0}^{1} w(x) \phi_{j}(x) \phi_{k}(x) \mathrm{d}
+x=\left\{\begin{array}{ll}
+0 &amp; \text { if } j \neq k \\
+1 &amp; \text { if } j=k
+\end{array}\right\}
+\end{equation}
+\]</span></p>
+<p>该正多项式序列的首项的选取需要满足伴随板问题的梁问题的边界条件。即使首项<span
+class="math inline">\(\phi_{0}(x)\)</span>满足所有的几何和力边界条件，其他的多项式一般也只满足几何边界条件，这一点可以通过构造过程得出。</p>
+<p>满足边界条件的多项式首项<span
+class="math inline">\(\phi_{0}(x)\)</span>的构造方式如</p>
+<h6 id="一边固定一边自由的梁"><strong>一边固定一边自由的梁</strong></h6>
+<p>挠度函数假设如下</p>
+<p><span class="math display">\[
+\begin{equation}
+Y(x)=a_{0}+a_{1} x+a_{2} x^{2}+a_{3} x^{3}+a_{4} x^{4}
+\end{equation}
+\]</span></p>
+<p>且满足边界条件</p>
+<p><span class="math display">\[
+\begin{equation}
+Y(0)=Y^{\prime \prime}(0)=Y^{\prime \prime}(1)=Y^{\prime \prime
+\prime}(1)=0
+\end{equation}
+\]</span></p>
+<p>则挠曲形状为（略去任意常数）</p>
+<p><span class="math display">\[
+\begin{equation}
+Y(x)=6 x^{2}-4 x^{3}+x^{4}
+\end{equation}
+\]</span></p>
+<p>将该多项式标准化得</p>
+<p><span class="math display">\[
+\begin{equation}
+\phi_{0}(x)=\left(6 x^{2}-4 x^{3}+x^{4}\right) /\left(\int_{0}^{1}
+Y^{2}(x) \mathrm{d} x\right)^{1 / 2}
+\end{equation}
+\]</span></p>
+<h6 id="两端自由的梁"><strong>两端自由的梁</strong></h6>
+<p>满足边界条件</p>
+<p><span class="math display">\[
+\begin{equation}
+Y^{\prime \prime}(0)=Y^{\prime \prime \prime}(0)=Y^{\prime
+\prime}(1)=Y^{\prime \prime \prime}(1)=0
+\end{equation}
+\]</span></p>
+<p>标准化后的前两项为</p>
+<p><span class="math display">\[
+\begin{equation}
+\phi_{0}(x)=1\\
+\phi_{1}(x)=2 \sqrt{3}\left(x-\frac{1}{2}\right)
+\end{equation}
+\]</span></p>
+<h6 id="reference">Reference</h6>
+<p>[1] Bhat R B. Natural frequencies of rectangular plates using
+characteristic orthogonal polynomials in Rayleigh-Ritz method[J].
+Journal of Sound and Vibration, 1985, 102(4): 493-499.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://forsetisss.github.io/2021/11/29/%E8%96%84%E6%9D%BF%E7%BB%93%E6%9E%84%E7%9A%84%E6%A8%A1%E6%80%81%E5%88%86%E6%9E%90/" data-id="clf57zaxo000r28uxa0ig0ift" data-title="薄板结构的模态分析" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/02/11/hexo%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          hexo博客环境配置
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/11/08/%E6%95%B0%E6%8D%AE%E8%9E%8D%E5%90%88/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">数据融合</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Matlab/">Matlab</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jekyll/">jekyll</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/signal-processing/">signal processing</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/FFT/" rel="tag">FFT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HHT/" rel="tag">HHT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HT/" rel="tag">HT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Keras/" rel="tag">Keras</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LN/" rel="tag">LN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/" rel="tag">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STFT/" rel="tag">STFT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WT/" rel="tag">WT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/color/" rel="tag">color</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/filter/" rel="tag">filter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/getting-started/" rel="tag">getting started</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lambda/" rel="tag">lambda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/map/" rel="tag">map</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/signal-processing/" rel="tag">signal processing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/surf/" rel="tag">surf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/transparency/" rel="tag">transparency</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/FFT/" style="font-size: 10px;">FFT</a> <a href="/tags/HHT/" style="font-size: 10px;">HHT</a> <a href="/tags/HT/" style="font-size: 10px;">HT</a> <a href="/tags/Keras/" style="font-size: 10px;">Keras</a> <a href="/tags/LN/" style="font-size: 10px;">LN</a> <a href="/tags/Matlab/" style="font-size: 20px;">Matlab</a> <a href="/tags/STFT/" style="font-size: 10px;">STFT</a> <a href="/tags/WT/" style="font-size: 10px;">WT</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/filter/" style="font-size: 10px;">filter</a> <a href="/tags/getting-started/" style="font-size: 10px;">getting started</a> <a href="/tags/lambda/" style="font-size: 10px;">lambda</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/signal-processing/" style="font-size: 10px;">signal processing</a> <a href="/tags/surf/" style="font-size: 10px;">surf</a> <a href="/tags/transparency/" style="font-size: 10px;">transparency</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">七月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/01/17/Supplementary/">Supplementary</a>
+          </li>
+        
+          <li>
+            <a href="/2022/09/26/Windows%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">Windows相关问题</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/29/Matlab%E6%BB%A4%E6%B3%A2%E5%99%A8%E8%AE%BE%E8%AE%A1/">Matlab滤波器设计</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/11/hexo%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">hexo博客环境配置</a>
+          </li>
+        
+          <li>
+            <a href="/2021/11/29/%E8%96%84%E6%9D%BF%E7%BB%93%E6%9E%84%E7%9A%84%E6%A8%A1%E6%80%81%E5%88%86%E6%9E%90/">薄板结构的模态分析</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 Shi Daming<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

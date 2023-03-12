@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Matlab作图：更改图像、填充或曲面的透明度 | Research Notes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="1、坐标区框中所有对象的透明度 透明度值称为 alpha 值。使用 alpha 函数设置当前坐标区范围内所有图像、填充或曲面对象的透明度。指定一个介于 0（完全透明）和 1（完全不透明）之间的透明度值。 1234567891011t &#x3D; 0:0.1:2*pi;x &#x3D; sin(t);y &#x3D; cos(t);figurepatch(x,y,&amp;#x27;r&amp;#x27;)            %">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Matlab作图：更改图像、填充或曲面的透明度">
+<meta property="og:url" content="https://forsetisss.github.io/2021/04/06/Matlab%E9%A2%9C%E8%89%B2%E8%BF%9B%E9%98%B6/index.html">
+<meta property="og:site_name" content="Research Notes">
+<meta property="og:description" content="1、坐标区框中所有对象的透明度 透明度值称为 alpha 值。使用 alpha 函数设置当前坐标区范围内所有图像、填充或曲面对象的透明度。指定一个介于 0（完全透明）和 1（完全不透明）之间的透明度值。 1234567891011t &#x3D; 0:0.1:2*pi;x &#x3D; sin(t);y &#x3D; cos(t);figurepatch(x,y,&amp;#x27;r&amp;#x27;)            %">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-04-06T09:00:00.000Z">
+<meta property="article:modified_time" content="2021-08-15T01:47:48.236Z">
+<meta property="article:author" content="Shi Daming">
+<meta property="article:tag" content="Matlab">
+<meta property="article:tag" content="transparency">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Research Notes" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Research Notes</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://forsetisss.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Matlab颜色进阶" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/04/06/Matlab%E9%A2%9C%E8%89%B2%E8%BF%9B%E9%98%B6/" class="article-date">
+  <time class="dt-published" datetime="2021-04-06T09:00:00.000Z" itemprop="datePublished">2021-04-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Matlab/">Matlab</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Matlab作图：更改图像、填充或曲面的透明度
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="坐标区框中所有对象的透明度">1、坐标区框中所有对象的透明度</h3>
+<p>透明度值称为 alpha 值。使用 <code>alpha</code>
+函数设置当前坐标区范围内所有图像、填充或曲面对象的透明度。指定一个介于
+0（完全透明）和 1（完全不透明）之间的透明度值。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs matlab">t = <span class="hljs-number">0</span>:<span class="hljs-number">0.1</span>:<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>;<br>x = <span class="hljs-built_in">sin</span>(t);<br>y = <span class="hljs-built_in">cos</span>(t);<br><br><span class="hljs-built_in">figure</span><br>patch(x,y,<span class="hljs-string">&#x27;r&#x27;</span>)            <span class="hljs-comment">% make a red circular patch</span><br>patch(x+<span class="hljs-number">0.8</span>,y,<span class="hljs-string">&#x27;g&#x27;</span>)        <span class="hljs-comment">% make a green circular path</span><br>patch(x+<span class="hljs-number">0.4</span>,y+<span class="hljs-number">0.8</span>,<span class="hljs-string">&#x27;b&#x27;</span>)    <span class="hljs-comment">% make a blue circular path</span><br>axis square tight         <span class="hljs-comment">% set axis to square</span><br><br>alpha(<span class="hljs-number">0.3</span>)                <span class="hljs-comment">% set all patches transparency to 0.3</span><br></code></pre></td></tr></table></figure>
+<figure>
+<img
+src="https://ww2.mathworks.cn/help/matlab/creating_plots/changingtransparencyexample_01_zh_CN.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<h3 id="个别曲面的透明度">2、个别曲面的透明度</h3>
+<p>曲面的透明度由其 <code>AlphaData</code> 属性定义。将 alpha
+数据设置为用于指定曲面的每个顶点透明度的标量值或值矩阵。<code>FaceAlpha</code>
+属性指示如何从顶点透明度确定曲面透明度。</p>
+<figure class="highlight tp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs tp">[<span class="hljs-keyword">X</span>,<span class="hljs-keyword">Y</span>,<span class="hljs-keyword">Z</span>] = peaks(<span class="hljs-number">20</span>);<br>s<span class="hljs-number">2</span> = surf(<span class="hljs-keyword">X</span>,<span class="hljs-keyword">Y</span>,<span class="hljs-keyword">Z</span>);<br><br>s<span class="hljs-number">2</span>.AlphaData = gradient(<span class="hljs-keyword">Z</span>);    % set vertex transparencies<br>s<span class="hljs-number">2</span>.FaceAlpha = <span class="hljs-string">&#x27;flat&#x27;</span>;<br></code></pre></td></tr></table></figure>
+<figure>
+<img
+src="https://ww2.mathworks.cn/help/matlab/creating_plots/changingtransparencyexample_02_zh_CN.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<h3 id="个别图像的透明度">3、个别图像的透明度</h3>
+<p>与曲面一样，图像的透明度也由其 <code>AlphaData</code>
+属性定义。对于图像，将 alpha
+数据设置为用于指定图像数据的每个元素透明度的标量值或值矩阵。</p>
+<p>例如，使用透明度覆盖两个图像。首先，显示地球的图像。</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs maxima">earth = imread(&#x27;landOcean.jpg&#x27;);<br><span class="hljs-built_in">image</span>(earth)    <span class="hljs-symbol">%</span> <span class="hljs-built_in">display</span> Earth <span class="hljs-built_in">image</span><br>axis <span class="hljs-built_in">image</span><br></code></pre></td></tr></table></figure>
+<figure>
+<img
+src="https://ww2.mathworks.cn/help/matlab/creating_plots/changingtransparencyexample_03_zh_CN.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>然后，使用透明度将云图层添加到地球图像。</p>
+<figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs sqf">clouds = imread(<span class="hljs-string">&#x27;cloudCombined.jpg&#x27;</span>);<br><span class="hljs-built_in">image</span>(earth)<br>axis <span class="hljs-built_in">image</span><br>hold on<br><br>im = <span class="hljs-built_in">image</span>(clouds);<br>im.AlphaData = <span class="hljs-built_in">max</span>(clouds,[],<span class="hljs-number">3</span>);    % <span class="hljs-built_in">set</span> transparency <span class="hljs-keyword">to</span> maximum cloud value<br>hold off<br></code></pre></td></tr></table></figure>
+<figure>
+<img
+src="https://ww2.mathworks.cn/help/matlab/creating_plots/changingtransparencyexample_04_zh_CN.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<h3 id="个别填充的透明度">4、个别填充的透明度</h3>
+<p>填充的透明度由其 <code>FaceAlpha</code> 和
+<code>FaceVertexAlphaData</code>
+属性定义。若要在整个填充上实现单一的透明度，请将
+<code>FaceVertexAlphaData</code> 设置为一个介于 0（完全透明）和
+1（完全不透明）之间的常量，并将 <code>FaceAlpha</code> 属性设置为
+<code>'flat'</code>。</p>
+<figure class="highlight erlang-repl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs erlang-repl">cla<br>p1 = patch(x,y,<span class="hljs-string">&#x27;r&#x27;</span>);             <span class="hljs-comment">% make a red circular patch</span><br>axis square tight                <span class="hljs-comment">% set axis to square</span><br><br>p1.FaceVertexAlphaData = <span class="hljs-number">0.2</span>;    <span class="hljs-comment">% Set constant transparency </span><br>p1.FaceAlpha = <span class="hljs-string">&#x27;flat&#x27;</span> ;          <span class="hljs-comment">% Interpolate to find face transparency</span><br></code></pre></td></tr></table></figure>
+<figure>
+<img
+src="https://ww2.mathworks.cn/help/matlab/creating_plots/changingtransparencyexample_05_zh_CN.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>若要在整个填充上实现可变的透明度，请将
+<code>FaceVertexAlphaData</code>
+设置为用于指定填充的每个顶点或每个面的透明度的值矩阵。然后，通过
+<code>FaceAlpha</code> 属性指示如何使用 <code>FaceVertexAlphaData</code>
+确定面的透明度。如果为顶点指定了 alpha 数据，则必须将
+<code>FaceAlpha</code> 设置为 <code>'interp'</code>。</p>
+<figure class="highlight erlang-repl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs erlang-repl">p1.FaceVertexAlphaData = x&#x27;;   <span class="hljs-comment">% Set vertex transparency to x values</span><br>p1.FaceAlpha = <span class="hljs-string">&#x27;interp&#x27;</span> ;      <span class="hljs-comment">% Interpolate to find face transparency</span><br></code></pre></td></tr></table></figure>
+<figure>
+<img
+src="https://ww2.mathworks.cn/help/matlab/creating_plots/changingtransparencyexample_06_zh_CN.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<h3 id="包含纹理映射的透明度">5、包含纹理映射的透明度</h3>
+<p>纹理映射将二维图像映射到三维曲面上。通过将 <code>CData</code>
+属性设置为图像数据并将 <code>FaceColor</code> 属性设置为
+<code>'texturemap'</code>，可将图像映射到曲面上。</p>
+<p>此示例创建地球和云的三维视图。它创建球形表面，并使用纹理映射将地球和云的图像映射到曲面上。</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs routeros">[px,py,pz] = sphere(50);                % generate coordinates <span class="hljs-keyword">for</span> a 50 x 50 sphere<br><br>cla<br>sEarth = surface(py, px ,flip(pz));   <br>sEarth.FaceColor = <span class="hljs-string">&#x27;texturemap&#x27;</span>;        % <span class="hljs-built_in">set</span> color <span class="hljs-keyword">to</span> texture mapping<br>sEarth.EdgeColor = <span class="hljs-string">&#x27;none&#x27;</span>;              % <span class="hljs-built_in">remove</span> surface edge color<br>sEarth.CData = earth;                   % <span class="hljs-built_in">set</span> color data <br><br>hold on<br>sCloud = surface(px<span class="hljs-number">*1</span>.02,py<span class="hljs-number">*1</span>.02,flip(pz)<span class="hljs-number">*1</span>.02); <br><br>sCloud.FaceColor = <span class="hljs-string">&#x27;texturemap&#x27;</span>;        % <span class="hljs-built_in">set</span> color <span class="hljs-keyword">to</span> texture mapping<br>sCloud.EdgeColor = <span class="hljs-string">&#x27;none&#x27;</span>;              % <span class="hljs-built_in">remove</span> surface edge color<br>sCloud.CData = clouds;                  % <span class="hljs-built_in">set</span> color data <br> <br>sCloud.FaceAlpha = <span class="hljs-string">&#x27;texturemap&#x27;</span>;        % <span class="hljs-built_in">set</span> transparency <span class="hljs-keyword">to</span> texture mapping<br>sCloud.AlphaData = max(clouds,[],3);    % <span class="hljs-built_in">set</span> transparency data <br>hold off<br><br>view([80 2])                            % specify viewpoint <br>daspect([1 1 1])                        % <span class="hljs-built_in">set</span> aspect ratio<br>axis off tight                          % <span class="hljs-built_in">remove</span> axis <span class="hljs-keyword">and</span> <span class="hljs-built_in">set</span> limits <span class="hljs-keyword">to</span> data range<br></code></pre></td></tr></table></figure>
+<figure>
+<img
+src="https://ww2.mathworks.cn/help/matlab/creating_plots/changingtransparencyexample_07_zh_CN.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://forsetisss.github.io/2021/04/06/Matlab%E9%A2%9C%E8%89%B2%E8%BF%9B%E9%98%B6/" data-id="clf57zaxg000c28ux4pc5bof5" data-title="Matlab作图：更改图像、填充或曲面的透明度" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Matlab/" rel="tag">Matlab</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/transparency/" rel="tag">transparency</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/04/06/Matlab%E8%AE%BE%E7%BD%AE%E9%A2%9C%E8%89%B2%E5%9B%BE%E8%8C%83%E5%9B%B4/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          Matlab作图：设置曲面颜色及范围函数 caxis
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/03/01/Getting-Started/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">Getting Started：使用Jekyll创建GitHub Pages站点搭建博客（Windows）</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Matlab/">Matlab</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jekyll/">jekyll</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/signal-processing/">signal processing</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/FFT/" rel="tag">FFT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HHT/" rel="tag">HHT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HT/" rel="tag">HT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Keras/" rel="tag">Keras</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LN/" rel="tag">LN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/" rel="tag">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STFT/" rel="tag">STFT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WT/" rel="tag">WT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/color/" rel="tag">color</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/filter/" rel="tag">filter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/getting-started/" rel="tag">getting started</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lambda/" rel="tag">lambda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/map/" rel="tag">map</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/signal-processing/" rel="tag">signal processing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/surf/" rel="tag">surf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/transparency/" rel="tag">transparency</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/FFT/" style="font-size: 10px;">FFT</a> <a href="/tags/HHT/" style="font-size: 10px;">HHT</a> <a href="/tags/HT/" style="font-size: 10px;">HT</a> <a href="/tags/Keras/" style="font-size: 10px;">Keras</a> <a href="/tags/LN/" style="font-size: 10px;">LN</a> <a href="/tags/Matlab/" style="font-size: 20px;">Matlab</a> <a href="/tags/STFT/" style="font-size: 10px;">STFT</a> <a href="/tags/WT/" style="font-size: 10px;">WT</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/filter/" style="font-size: 10px;">filter</a> <a href="/tags/getting-started/" style="font-size: 10px;">getting started</a> <a href="/tags/lambda/" style="font-size: 10px;">lambda</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/signal-processing/" style="font-size: 10px;">signal processing</a> <a href="/tags/surf/" style="font-size: 10px;">surf</a> <a href="/tags/transparency/" style="font-size: 10px;">transparency</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">七月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/01/17/Supplementary/">Supplementary</a>
+          </li>
+        
+          <li>
+            <a href="/2022/09/26/Windows%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">Windows相关问题</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/29/Matlab%E6%BB%A4%E6%B3%A2%E5%99%A8%E8%AE%BE%E8%AE%A1/">Matlab滤波器设计</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/11/hexo%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">hexo博客环境配置</a>
+          </li>
+        
+          <li>
+            <a href="/2021/11/29/%E8%96%84%E6%9D%BF%E7%BB%93%E6%9E%84%E7%9A%84%E6%A8%A1%E6%80%81%E5%88%86%E6%9E%90/">薄板结构的模态分析</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 Shi Daming<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
