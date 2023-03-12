@@ -112,7 +112,7 @@ theme: fluid
 
 deploy:
   type: git
-  repo: https://github.com/ForsetiSss/ForsetiSss.github.io
+  repo: git@github.com:ForsetiSss/ForsetiSss.github.io.git
   # token: ''
   # example, https://github.com/hexojs/hexojs.github.io
-  branch: main
+  branch: gh-pages
