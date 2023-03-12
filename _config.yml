@@ -6,12 +6,6 @@ server:
   compress: true
   header: true
 
-deploy:
-  # type: git
-  # repo: https://github.com/ForsetiSss/ForsetiSss.github.io
-  token: ''
-  # example, https://github.com/hexojs/hexojs.github.io
-  branch: gh-pages
 
 # Site
 title: Research Notes
@@ -112,10 +106,13 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: fluid
-
+# remote_theme: hydecorp/hydejack
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 
-# deploy:
-  # type: ''
-  # branch: gh-pages
+deploy:
+  type: git
+  repo: https://github.com/ForsetiSss/ForsetiSss.github.io
+  # token: ''
+  # example, https://github.com/hexojs/hexojs.github.io
+  branch: main
