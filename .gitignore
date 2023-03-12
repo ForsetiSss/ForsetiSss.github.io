@@ -4,3 +4,4 @@ _/
 __old__/Architect/
 public/
 pages.yml
+.deploy_git/
