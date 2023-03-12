@@ -8,7 +8,7 @@ server:
 
 deploy:
   type: git
-  repo: https://github.com/ForsetiSss/ForsetiSss.github.io
+  repo: https://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@github.com/ForsetiSss/ForsetiSss.github.io
   # example, https://github.com/hexojs/hexojs.github.io
   branch: gh-pages
 
