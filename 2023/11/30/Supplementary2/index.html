@@ -196,7 +196,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.2k 字
+      1.1k 字
     </span>
   
 
@@ -206,7 +206,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      49
+      42
        分钟
     </span>
   
@@ -240,7 +240,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2023年11月30日 下午
+                  本文最后更新于：2023年11月30日 晚上
                 
               </p>
             
@@ -264,9 +264,9 @@ $$
 
 \begin{array}{l}
 
-  L = {\mathbb{E}_{q\left( {{\mathbf{x}_0}} \right)}}\left[ { - \log {p_\theta }\left( {{{\bf{x}}_0}} \right)} \right]\\
+  L = {\mathbb{E}_{q\left( {\mathbf{x}_0} \right)}}\left[ { - \log {p_\theta }\left( {\bf{x}}_0 \right)} \right]\\
 
-  \le {\mathbb{E}_{q\left( {{\mathbf{x}_0}} \right)}}\left[ { - \log {p_\theta }\left( {{{\bf{x}}_0}} \right) + {D_{{\rm{KL}}}}\left( {q\left( {{{\bf{x}}_{1:T}}\vert {{\bf{x}}_0}} \right)\| {p_\theta }\left( {{{\bf{x}}_{1:T}}\vert {{\bf{x}}_0}} \right)} \right)} \right]\\
+  \le {\mathbb{E}_{q\left( {\mathbf{x}_0} \right)}}\left[ { - \log {p_\theta }\left( {{{\bf{x}}_0}} \right) + {D_{{\rm{KL}}}}\left( {q\left( {{{\bf{x}}_{1:T}}\vert {{\bf{x}}_0}} \right)\| {p_\theta }\left( {{{\bf{x}}_{1:T}}\vert {{\bf{x}}_0}} \right)} \right)} \right]\\
 
   = {\mathbb{E}_{q\left( {{\mathbf{x}_0}} \right)}} \! \left[ {\! -\! \log {p_\theta }\left( {{{\mathbf{x}}_0}} \right) \!+\! {\mathbb{E}_{q\left( {{{\mathbf{x}}_{1:T}}\vert {{\mathbf{x}}_0}} \right)}} \! \left[ {\log \frac{{q\left( {{{\mathbf{x}}_{1:T}}\vert {{\mathbf{x}}_0}} \right)}}{{{p_\theta }\! \left( {{{\mathbf{x}}_{0:T}}} \right)\!/\!{p_\theta }\left( {{{\mathbf{x}}_0}} \right)}}} \right]} \! \right]\\
 
@@ -281,22 +281,21 @@ $$
 \right)\)</span> denotes the KL divergence which is always
 non-negative.</p>
 <p>Further, the loss function can be derived as follows:</p>
-<p>$$ <span class="math display">\[\begin{equation}
 
+
+$$
+\begin{equation}
 \begin{array}{l}
 
-  L &amp;= \underbrace{D_{\mathrm{KL}}\left(q\left(\mathbf{x}_T \vert
-\mathbf{x}_0\right) \| p_\theta\left(\mathbf{x}_T\right)\right)}_{L_T}\\
+  L &= \underbrace{D_{\mathrm{KL}}\left(q\left(\mathbf{x}_T \vert \mathbf{x}_0\right) \| p_\theta\left(\mathbf{x}_T\right)\right)}_{L_T}\\
 
-  &amp;+\sum_{t=1}^T \underbrace{\mathbb{E}_{q\left(\mathbf{x}_t \vert
-\mathbf{x}_0\right)}\left[D_{\mathrm{KL}}\left(q\left(\mathbf{x}_{t-1}
-\vert \mathbf{x}_t, \mathbf{x}_0\right) \|
-p_\theta\left(\mathbf{x}_{t-1} \vert
-\mathbf{x}_t,\mathbf{y}\right)\right)\right]}_{L_{t-1}}\\
+  &+\sum_{t=1}^T \underbrace{\mathbb{E}_{q\left(\mathbf{x}_t \vert \mathbf{x}_0\right)}\left[D_{\mathrm{KL}}\left(q\left(\mathbf{x}_{t-1} \vert \mathbf{x}_t, \mathbf{x}_0\right) \| p_\theta\left(\mathbf{x}_{t-1} \vert \mathbf{x}_t,\mathbf{y}\right)\right)\right]}_{L_{t-1}}\\
 
-\end{array}
+ \end{array}
+ \end{equation}
+$$
 
-\end{equation}\]</span> $$</p>
+
 <p>The final optimization objective contains <span
 class="math inline">\(T+1\)</span> terms. Because the prior distribution
 <span class="math inline">\(p_\theta
@@ -309,18 +308,21 @@ a constant which can be ignored in optimization.</p>
 class="math inline">\(\mathrm{q}\left(\mathbf{x}_{\mathrm{t}-1} \vert
 \mathbf{x}_{\mathrm{t}}, \mathbf{x}_0\right)\)</span> can be written
 as:</p>
-<p>$$ <span class="math display">\[\begin{equation}\label{eq7}
 
-\begin{aligned}
 
-  q\left(\mathbf{x}_{t-1} \vert \mathbf{x}_t,
-\mathbf{x}_0\right)=\mathcal{N}\left(\mathbf{x}_{t-1} ;
-\tilde{\boldsymbol{\mu}}_t\left(\mathbf{x}_t, \mathbf{x}_0\right),
-\tilde{\beta}_t \mathbf{I}\right)
+$$
+\begin{equation}\label{eq7}
 
-\end{aligned}
+ \begin{aligned}
 
-\end{equation}\]</span> $$</p>
+  q\left(\mathbf{x}_{t-1} \vert \mathbf{x}_t, \mathbf{x}_0\right)=\mathcal{N}\left(\mathbf{x}_{t-1} ; \tilde{\boldsymbol{\mu}}_t\left(\mathbf{x}_t, \mathbf{x}_0\right), \tilde{\beta}_t \mathbf{I}\right)
+
+ \end{aligned}
+
+\end{equation}
+$$
+
+
 <p>We can derive the mean and variance of <span
 class="math inline">\(\mathrm{q}\left(\mathbf{x}_{\mathrm{t}-1} \vert
 \mathbf{x}_{\mathrm{t}}, \mathbf{x}_0\right)\)</span> by the definition
@@ -341,46 +343,45 @@ class="math inline">\(p_\theta\left(\mathbf{x}_{t-1} \vert
 class="math inline">\(\mathbf{x}_{t}\)</span> is known in the reverse
 process, we may choose the parameterization of <span
 class="math inline">\(\boldsymbol{\mu}_\theta\)</span> as</p>
-<p>$$ <span class="math display">\[\begin{equation}
 
+
+$$
+\begin{equation}
 \begin{aligned}
 
-\boldsymbol{\mu}_\theta\left(\mathbf{x}_t,\mathbf{y}, t\right)
+ \boldsymbol{\mu}_\theta\left(\mathbf{x}_t,\mathbf{y}, t\right)
 
-=\frac{1}{\sqrt{\alpha_t}}\left(\mathbf{x}_t-\frac{\beta_t}{\sqrt{1-\bar{\alpha}_t}}
-\boldsymbol{\epsilon}_\theta\left(\mathbf{x}_t, \mathbf{y},
-t\right)\right)
+ =\frac{1}{\sqrt{\alpha_t}}\left(\mathbf{x}_t-\frac{\beta_t}{\sqrt{1-\bar{\alpha}_t}} \boldsymbol{\epsilon}_\theta\left(\mathbf{x}_t, \mathbf{y}, t\right)\right)
 
 \end{aligned}
+\end{equation}
+$$
 
-\end{equation}\]</span> $$ and <span
-class="math inline">\(\sigma_\theta\left(\mathbf{x}_t, t\right)\)</span>
-as a fixed constant <span
+<p>and <span class="math inline">\(\sigma_\theta\left(\mathbf{x}_t,
+t\right)\)</span> as a fixed constant <span
 class="math inline">\(\tilde{\beta}_t^{\frac{1}{2}}\)</span>.</p>
 <p>Consequently, by considering the KL divergence between two Gaussian
 distribution <span class="math inline">\(D_{KL}(p, q)=\log
 \frac{\sigma_2}{\sigma_1}+\frac{\sigma_1^2+\left(\mu_1-\mu_2\right)^2}{2
 \sigma_2^2}-\frac{1}{2}\)</span>, the optimization objective <span
 class="math inline">\(L_{t-1}\)</span> can be further simplified as</p>
-<p>$$ <span class="math display">\[\begin{equation}
 
-\begin{array}{l}
 
-  L_{t-1} &amp;= \mathbb{E}_{q\left(\mathbf{x}_t \vert
-\mathbf{x}_0\right)} \left[ \frac{1}{2
-\sigma_t^2}\left\|\tilde{\mathbf{\mu}}_t\left(\mathbf{x}_t,
-\mathbf{x}_0\right)-\mathbf{\mu}_\theta\left(\mathbf{x}_t,\mathbf{y},
-t\right)\right\|_2^2 \right] + C\\
+$$
+\begin{equation}
+ \begin{array}{l}
 
-  &amp;= \kappa_t \mathbb{E}_{\mathbf{x}_0, \epsilon} \left[
-\left\|\epsilon-\epsilon_\theta\left(\sqrt{\bar{\alpha}_t}
-\mathbf{x}_0+\sqrt{1-\bar{\alpha}_t} \epsilon,\mathbf{y},
-t\right)\right\|_2^2\right] + C
+  L_{t-1} &= \mathbb{E}_{q\left(\mathbf{x}_t \vert \mathbf{x}_0\right)} \left[ \frac{1}{2 \sigma_t^2}\left\|\tilde{\mathbf{\mu}}_t\left(\mathbf{x}_t, \mathbf{x}_0\right)-\mathbf{\mu}_\theta\left(\mathbf{x}_t,\mathbf{y}, t\right)\right\|_2^2 \right] + C\\
 
-\end{array}
+  &= \kappa_t \mathbb{E}_{\mathbf{x}_0, \epsilon} \left[ \left\|\epsilon-\epsilon_\theta\left(\sqrt{\bar{\alpha}_t} \mathbf{x}_0+\sqrt{1-\bar{\alpha}_t} \epsilon,\mathbf{y}, t\right)\right\|_2^2\right] + C
 
-\end{equation}\]</span> $$ where <span class="math inline">\(C\)</span>
-and <span class="math inline">\(\kappa_t=\frac{\beta_t}{2
+ \end{array}
+
+\end{equation}
+$$
+
+<p>where <span class="math inline">\(C\)</span> and <span
+class="math inline">\(\kappa_t=\frac{\beta_t}{2
 \alpha_t\left(1-\bar{\alpha}_{t-1}\right)}\)</span> is a constant.</p>
 <p>The point is to transform the intractable cross entropy between <span
 class="math inline">\(q\left( {\mathbf{x}_0} \right)\)</span> and <span
@@ -389,19 +390,20 @@ class="math inline">\({p_\theta }\left(
 divergences.</p>
 <p>According to Ho et al. , a simplified loss function which discards
 the weighting of <span class="math inline">\(L_{t-1}\)</span> has been
-proved more effective as follows.</p>
-<p>$$ <span class="math display">\[\begin{equation}
+proved more effective as follows:</p>
 
-\begin{aligned}
 
-  L_{simple}= \mathbb{E}_{\mathbf{x}_0, \epsilon} \left[
-\left\|\epsilon-\epsilon_\theta\left(\sqrt{\bar{\alpha}_t}
-\mathbf{x}_0+\sqrt{1-\bar{\alpha}_t} \epsilon,\mathbf{y},
-t\right)\right\|_2^2\right] + C
+$$
+\begin{equation}
+ \begin{aligned}
 
-\end{aligned}
+  L_{simple}= \mathbb{E}_{\mathbf{x}_0, \epsilon} \left[ \left\|\epsilon-\epsilon_\theta\left(\sqrt{\bar{\alpha}_t} \mathbf{x}_0+\sqrt{1-\bar{\alpha}_t} \epsilon,\mathbf{y}, t\right)\right\|_2^2\right] + C
 
-\end{equation}\]</span> $$</p>
+ \end{aligned}
+\end{equation}
+$$
+
+
 <p>It can be noticed that diffusion step <span
 class="math inline">\(t\)</span> is specifically added in <span
 class="math inline">\(\boldsymbol{\epsilon}_{\boldsymbol{\theta}}\left(\bar{\alpha}_t
@@ -412,27 +414,6 @@ diffusion step <span class="math inline">\(t\)</span>, a different model
 needs to be learned to represent the reverse process. The diffusion step
 embedding structures within a neural network will be further discussed
 in next section.</p>
-<p><strong>Accelerated sampling:</strong> Given the learned reverse
-process, the high-resolution cutting force signals can be generated by
-first sampling a Gaussian noise <span class="math inline">\(\mathbf{x}_T
-\sim \mathcal{N}(0, I)\)</span>, and then <span
-class="math inline">\(\mathbf{x}_{t-1} \sim
-p_\theta\left(\mathbf{x}_{t-1} \vert \mathbf{x}_t,
-\mathbf{y}\right)\)</span> for step by step. The final output <span
-class="math inline">\(\mathbf{x}_0\)</span> will be the target force
-signal. However, for a general reverse process the calculation of the
-sampling can be time-consuming with large denoising step <span
-class="math inline">\(T\)</span> (e.g. 200). This encourages us to
-improve the inference process and design a fast sampling algorithm with
-fewer denoising steps <span
-class="math inline">\(T_{\text{infer}}\)</span> (<span
-class="math inline">\(T_{\text{infer}}\ll T\)</span>). The key point is
-to rearrange the <span class="math inline">\(T\)</span> step in training
-process into <span class="math inline">\(T_{\text{infer}}\)</span> step
-process with specially selected variance schedule <span
-class="math inline">\({\beta^ {\prime}_s}\)</span>. The design approach
-of the variance schedule and the calculation of corresponding constants
-can reference the algorithm in .</p>
 
             </div>
             <hr>
